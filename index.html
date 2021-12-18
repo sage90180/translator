@@ -35,6 +35,13 @@
   <br><br>
   <div>圖片名字：<input class="img new" type="text"> <span>Ex: nordson-efd-performus-x-dispenser</span></div>
   <br><br>
+  <h1 class="dec">tests</h1>
+  <div>.</div>
+  <h1>FEATURES</h1>
+  <div>.</div>
+  <h1>SPECIFICATION</h1>
+  <div>.</div>
+
   <div>
     下面兩個工具可以把pdf檔案的頁面轉換word
     <a href="https://www.ilovepdf.com/zh-tw/pdf_to_word">轉world_1</a>
@@ -46,6 +53,9 @@
   <a href="https://drive.google.com/drive/u/0/folders/1poa6ROYB5R6h71benZQynSHg693AfGSx">雲端圖片</a>
   <br><br>
   <a href="http://en.sudong.com">http://en.sudong.com</a>
+
+  <h1>Optional specification of screwdriver bits</h1>
+
 
   <script>
     let transform_input = document.querySelector('.transform_input')
@@ -64,7 +74,7 @@
       if (localStorage.getItem('keyWord')) {
         document.querySelector('.keyWord').value = localStorage.getItem('keyWord')
       } else {
-        return
+        console.log('123')
       }
     }
 
@@ -89,6 +99,8 @@
         title.value = newStrArr.join(' ')
         type.value = newStrArr.join(' ')
         seo_title.value = newStrArr.join(' ')
+        let dec = document.querySelector('.dec')
+        dec.innerHTML = newStrArr.join(' ')
       }
 
       if (e.target.classList.contains('new')) {
@@ -99,6 +111,8 @@
         let keyWordInput = document.querySelector('.keyWord').value
         localStorage.setItem('keyWord', keyWordInput)
       }
+
+
     })
   </script>
 
