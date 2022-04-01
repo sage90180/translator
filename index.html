@@ -159,19 +159,19 @@
         }
 
 
-        let titleWords = localStorage.getItem('keyWord').split(' ')
-        let newTitleWords = []
+        // let titleWords = localStorage.getItem('keyWord').split(' ')
+        // let newTitleWords = []
 
-        for (let str of titleWords) {
-          let newStr = ''
-          newStr = str[0].toUpperCase() + str.slice(1)
-          newTitleWords.push(newStr)
-        }
+        // for (let str of titleWords) {
+        //   let newStr = ''
+        //   newStr = str[0].toUpperCase() + str.slice(1)
+        //   newTitleWords.push(newStr)
+        // }
 
 
 
-        // title.value = newStrArr.join(' ')
-        title.value = newTitleWords.join(' ')
+        title.value = newStrArr.join(' ')
+        // title.value = newTitleWords.join(' ')
         type.value = newStrArr.join(' ')
         seo_title.value = newStrArr.join(' ')
         let dec = document.querySelector('.dec')
