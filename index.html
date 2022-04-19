@@ -20,11 +20,29 @@
   }
 
   table {
-    width: 500px;
+    text-align: center;
   }
 
   .footnote {
     width: 500px;
+  }
+
+  textEditor table thead th {
+    font-weight: 900;
+  }
+
+  textEditor table {
+    border: solid 1px black;
+  }
+
+  textEditor table tr {
+    background: wheat;
+    color: black;
+    border-bottom: solid 1px black;
+  }
+
+  textEditor tr:last-child table tr {
+    border-bottom: solid 1px white;
   }
 </style>
 
@@ -75,19 +93,39 @@
       class="img new"
       type="text"
     > <span>Ex: nordson-efd-performus-x-dispenser</span></div>
-  <br><br>
-  <h1 class="dec">tests</h1>
-  <br><br>
   <h3>style="width:500px"</h3>
   <br>
 
-  <div>
-    &lt;style type="text/css">.textEditor td { border: none; border-bottom: solid 1px black; padding: 7px 0px; } table ,
-    .footnote { width: 550px; } tr td:first-child {width: 250px; font-weight:900} table table td { border: none;
-    border-bottom: solid 1px
-    white !important; padding: 0px 0px !important }
-    &lt;/style&gt;
-  </div>
+  <!-- 有影片的那個上架 -->
+  <textarea
+    name=""
+    id="textArea"
+    cols="30"
+    rows="10"
+  >&lt;style type="text/css">.textEditor table {min-width: 500px; text-align: center;} .textEditor img { max-width: 600px; } .textEditor th { background: white; color: black; border: none; border-bottom: solid 2px black} .textEditor td { border: none; border-bottom: solid 1px black }
+  &lt;/style&gt;</textarea>
+
+  <!-- <textarea
+    name=""
+    id="textArea"
+    cols="30"
+    rows="10"
+  >    &lt;style type="text/css">.textEditor table {border: none; max-width: 600px} .textEditor td { border: none; border-bottom: solid 1px black; padding: 7px 0px; width: 50% } .textEditor img { max-width: 600px; } .textEditor tr:first-child td {border-bottom: solid 2px black; font-weight: 900} table ~ table { margin: 10px 0px } 
+  &lt;/style&gt;</textarea> -->
+
+
+  <!-- <textarea
+    name=""
+    id="textArea"
+    cols="30"
+    rows="10"
+  >    &lt;style type="text/css">.textEditor td { border: none; border-bottom: solid 1px black; padding: 7px 0px; } table ,
+  .footnote { width: 550px; } tr td:first-child {width: 250px; font-weight:900} table table td { border: none;
+  border-bottom: solid 1px
+  white !important; padding: 0px 0px !important }
+  &lt;/style&gt;</textarea> -->
+  <button onclick="copyStyleBoard()">Copy</button>
+
   <br><br><br>
   <div>
     下面兩個工具可以把pdf檔案的頁面轉換word
@@ -174,6 +212,14 @@
 
 
     })
+
+    function copyStyleBoard() {
+
+      var content = document.getElementById('textArea');
+
+      content.select();
+      document.execCommand('copy');
+    }
   </script>
 
 </body>
