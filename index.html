@@ -93,7 +93,7 @@
       class="img new"
       type="text"
     > <span>Ex: nordson-efd-performus-x-dispenser</span></div>
-  <h3>Hasco</h3>
+  <h3>Haso</h3>
   <br>
 
   <!-- 有影片的那個上架 -->
@@ -166,7 +166,7 @@
       if (e.target.classList.contains('transform')) {
         let newKeyWord = localStorage.getItem('keyWord') + ' '
 
-        let str = newKeyWord + transform_input.value
+        let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + transform_input.value
         link.value = str.replaceAll(' ', '-').toLowerCase()
         img.value = str.replaceAll(' ', '-').toLowerCase()
         seo_describe.value = str
