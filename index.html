@@ -166,7 +166,7 @@
       if (e.target.classList.contains('transform')) {
         let newKeyWord = localStorage.getItem('keyWord') + ' '
 
-        let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + transform_input.value
+        let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + transform_input.value.replaceAll('/', ' ')
         link.value = str.replaceAll(' ', '-').toLowerCase()
         img.value = str.replaceAll(' ', '-').toLowerCase()
         seo_describe.value = str
