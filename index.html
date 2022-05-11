@@ -88,17 +88,24 @@
     > <span>Ex:
       nordson,efd,performus,x,dispenser,smt,pcb,assembly</span>
   </div>
+  <hr>
   <div>圖片名字：<input
       class="img new"
       type="text"
     > <span>Ex: nordson-efd-performus-x-dispenser</span></div>
-  <h3>Hasco</h3>
+  <!-- <h3>Hasco</h3> -->
+  <input
+    type="text"
+    class="new"
+    value="Hasco"
+  >
+  <br>
   <textarea
     name=""
     id="textArea"
     cols="30"
     rows="4"
-  >&lt;style type="text/css">.textEditor table {min-width: 500px; text-align: center;} .textEditor img { max-width: 600px; } .textEditor th { background: white; color: black; border: none; border-bottom: solid 2px black} .textEditor td { border: none; border-bottom: solid 1px black } .textEditor svg {display: none; } .textEditor .inactive { max-width: 600px; text-align: justify; }
+  >&lt;style type="text/css">.textEditor table {width: 100%; max-width: 650px} .textEditor img { max-width: 600px; } .textEditor th { background: white; color: black; border: none; font-weight: 700; border-bottom: solid 1px black; text-align: left; width: 250px} .textEditor td { border: none; border-bottom: solid 1px black }
   &lt;/style&gt;</textarea>
 
 
@@ -165,7 +172,8 @@
       if (e.target.classList.contains('transform')) {
         let newKeyWord = localStorage.getItem('keyWord') + ' '
 
-        let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + transform_input.value.replaceAll('/', ' ')
+        let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + 'OMRON ' + transform_input.value.replaceAll(
+          '/', ' ')
         link.value = str.replaceAll(' ', '-').toLowerCase()
         img.value = str.replaceAll(' ', '-').toLowerCase()
         seo_describe.value = str
@@ -192,7 +200,7 @@
 
 
         // title.value = newStrArr.join(' ')
-        title.value = document.querySelector('.keyWord').value
+        title.value = document.querySelector('.keyWord').value + ' OMRON ' + transform_input.value
         type.value = newStrArr.join(' ')
         seo_title.value = newStrArr.join(' ')
         let dec = document.querySelector('.dec')
