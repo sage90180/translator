@@ -12,106 +12,99 @@
     content="width=device-width, initial-scale=1.0"
   >
   <title>Document</title>
+  <link
+    rel="stylesheet"
+    href="css/main.css"
+  >
 </head>
 
+<style>
+
+</style>
+
 <body>
-
-  <!-- <style>
-    .textEditor td {
-      border: none;
-      border-bottom: solid 1px black;
-      padding: 7px;
-    }
-
-    .textEditor th {
-      border: none;
-      border-bottom: solid 2px black;
-      padding: 7px;
-      background-color: white;
-    }
-  </style> -->
-  <style>
-    table {
-      /* border: solid 1px black; */
-      border-spacing: 0px;
-    }
-
-    td {
-      border: none;
-      border-bottom: solid 1px black;
-      padding: 7px;
-    }
-
-    th {
-      border: none;
-      border-bottom: solid 2px black;
-      /* border-top: solid 1px black; */
-      padding: 7px;
-      background-color: #efefef;
-    }
-
-    /* 
-    tr:first-child td {
-      border-bottom: solid 2px rgba(255, 255, 255, 0);
-    } */
-
-    /* tr:nth-child(2) td {
-      border-top: solid 2px black;
-    } */
-    tr:first-child td {
-      border-top: solid 1px black;
-    }
-  </style>
-
-  <script>
-    document.querySelector('table').style.borderStyle = 'none'
-  </script>
-
-  <table style="width:100%;">
-    <thead>
-      <tr>
-        <th>PART NO</th>
-        <th>A</th>
-        <th>C</th>
-        <th>T<br />
-          P.C.B.<br />
-          THICKNESS</span></th>
-        <th>
-          PACKAGE
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="text-align: center;">LSC-3A</td>
-        <td style="text-align: center;">3.8</td>
-        <td style="text-align: center;">&Oslash;4.8~5.0</td>
-        <td style="text-align: center;">2.1</td>
-        <td style="text-align: center;">1000</td>
-      </tr>
-      <tr>
-        <td style="text-align: center;">LSC-3C</td>
-        <td style="text-align: center;">3.7</td>
-        <td style="text-align: center;">&Oslash;4.0</td>
-        <td style="text-align: center;">2.1</td>
-        <td style="text-align: center;">1000</td>
-      </tr>
-      <tr>
-        <td style="text-align: center;">LSC-3C</td>
-        <td style="text-align: center;">3.7</td>
-        <td style="text-align: center;">&Oslash;4.0</td>
-        <td style="text-align: center;">2.1</td>
-        <td style="text-align: center;">1000</td>
-      </tr>
-      <tr>
-        <td style="text-align: center;">LSC-3C</td>
-        <td style="text-align: center;">3.7</td>
-        <td style="text-align: center;">&Oslash;4.0</td>
-        <td style="text-align: center;">2.1</td>
-        <td style="text-align: center;">1000</td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="content">
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Primary brand</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">SICK </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Main function</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">Safety laser scanner </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Product series / family name</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">S3000 </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Sub-range name</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">Sensor heads </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Sensing distance</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">5.5m (protective field range) </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Functions</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">Intrinsically-safe (PLd SIL2 SILCL2 Cat3 type 3) Safety laser
+        scanner (class 1) - max. 4 simultaneously monitored protective fields <br>Integrated configuration memory
+        <br>External device monitoring (EDM) <br>Safe SICK device communication via EFI </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Field of view</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">190° </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Light Color</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">Pulsed laser diode </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Wavelength</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">905 nm</div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Response time</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">60ms / 0.06 s</div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Degree of protection</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">IP65 </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Ambient air temperature for operation</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">-10...+50 °C</div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">eClass code</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">(ECl@ss 5.0) 27272705 <br>(ECl@ss 5.1.4) 27272705 <br>(ECl@ss 6.0)
+        27272705 <br>(ECl@ss 6.2) 27272705 <br>(ECl@ss 7.0) 27272705 <br>(ECl@ss 8.0) 27272705 <br>(ECl@ss 8.1) 27272705
+        <br>(ECl@ss 9.0) 27272705 </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">ETIM code</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">(ETIM 5.0) EC002550 <br>(ETIM 6.0) EC002550 </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">UNSPSC code</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">(UNSPSC 16.0901) 39121528 </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Compliant with standard(s)</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">IEC 61496 <br>IEC 61508 <br>EN 62061 <br>EN ISO 13849 </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Class</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">Class II </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Mechanical resistance</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">Shock resistance <br>Vibration resistance </div>
+    </div>
+    <div class="row attr">
+      <div class="col-md-3 name col-xs-6 col-sm-4">Manufacturer product status</div>
+      <div class="col-md-9 value col-xs-6 col-sm-4">Commercialized </div>
+    </div>
+  </div>
 
 </body>
 

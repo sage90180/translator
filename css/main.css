@@ -1,0 +1,21 @@
+.content {
+  max-width: 650px;
+}
+
+.content .row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-bottom: solid 1px black;
+  padding: 3px;
+}
+
+.content .row .name {
+  max-width: 250px;
+  min-width: 250px;
+}
+
+.content .row .value {
+  font-weight: 900;
+}
+/*# sourceMappingURL=main.css.map */
