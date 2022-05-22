@@ -11,7 +11,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
-  <title>OMRON 翻譯蒟落</title>
+  <title>KEYENCE 翻譯蒟落</title>
 </head>
 <style>
   input {
@@ -56,11 +56,11 @@
   <a href="keyence.html">
     KEYENCE
   </a>
-  <h2>OMRON 翻譯蒟落</h2>
+  <h2>KEYENCE 翻譯蒟落</h2>
   <a
-    href="https://docs.google.com/spreadsheets/d/1YX_Ok5eaN7iCN8ODxYikx_dqLF8-jhoU7KO_hro3exY/edit#gid=0"
+    href="https://docs.google.com/spreadsheets/d/1hOPvrR3TNnnrJIoTJoRZLeqE8CsxwKlkyV06hvbi5sM/edit#gid=0"
     target="_blank"
-  >OMRON
+  >KEYENCE
     EXCEL統計</a>
   <br> <br>
   <div>
@@ -113,7 +113,7 @@
   <input
     type="text"
     class="new"
-    value="omron"
+    value="Specifications"
   >
   <br>
   <textarea
@@ -121,23 +121,7 @@
     id="textArea"
     cols="30"
     rows="4"
-  >&lt;style type="text/css">.textEditor table {width: 100%; max-width: 650px} .textEditor img { max-width: 600px; } .textEditor th { background: white; color: black; border: none; font-weight: 700; border-bottom: solid 1px black; text-align: left; width: 250px} .textEditor td { border: none; border-bottom: solid 1px black }
-  &lt;/style&gt;</textarea>
-
-  <ul>
-    <li>Actuator：Panel mount roller plunger</li>
-    <li>Contact form：SPDT</li>
-    <li>Terminal：Solder terminal</li>
-    <li>Rated current：15 A</li>
-    <li>Degree of protection：IP00</li>
-  </ul>
-
-
-  <h4>Ratings / Performance</h4>
-  <h4>Mounting hole dimensions</h4>
-  <h4>Terminals</h4>
-  <h4>Applicable load diagram</h4>
-
+  >&lt;style type="text/css">.textEditor table {width:100%; max-width: 650px;} table tr {border-bottom: solid 1px black !important} table tr td { border: none !important; font-weight: 900; } table tr td:last-child { font-weight: 400; width: 50%; } &lt;/style&gt;</textarea>
 
   <!-- 有影片的那個上架 -->
   <!-- <textarea
@@ -201,12 +185,13 @@
       if (e.target.classList.contains('transform')) {
         let newKeyWord = localStorage.getItem('keyWord') + ' '
 
-        let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + 'OMRON ' + transform_input.value.replaceAll(
-          '/', ' ')
-        link.value = 'omron-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
-        img.value = str.replaceAll(' ', '-').toLowerCase()
+        let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + 'Keyence ' + transform_input.value
+          .replaceAll(
+            '/', ' ')
+        link.value = 'keyence-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
+        img.value = img.value = str.replaceAll(' ', '-').toLowerCase()
         seo_describe.value = str
-        seo_key.value = str.replaceAll(' ', ',').toLowerCase()
+        seo_key.value = str.replaceAll(' ', ',').toLowerCase().replaceAll('/', ',')
 
         let strArr = str.split(' ')
         let newStrArr = []
@@ -229,8 +214,8 @@
 
 
         // title.value = newStrArr.join(' ')
-        title.value = document.querySelector('.keyWord').value + ' OMRON ' + transform_input.value
-        type.value = transform_input.value
+        title.value = document.querySelector('.keyWord').value + ' Keyence ' + transform_input.value
+        type.value = 'Keyence ' + transform_input.value
         seo_title.value = newStrArr.join(' ')
         let dec = document.querySelector('.dec')
         dec.innerHTML = newStrArr.join(' ')

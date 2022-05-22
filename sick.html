@@ -53,6 +53,9 @@
   <a href="index.html">
     OMRON
   </a>
+  <a href="keyence.html">
+    KEYENCE
+  </a>
   <h2>SICK 翻譯蒟落</h2>
   <a
     href="https://docs.google.com/spreadsheets/d/1zt8N43xJSkrO8QKrkT1SMpzI0HwS6_-Wk2LHRgiDplk/edit?usp=sharing"
@@ -68,7 +71,7 @@
     >
     <button class="save">儲存</button>
   </div>
-
+  型號
   <input
     class="transform_input"
     type="text"
@@ -110,7 +113,7 @@
   <input
     type="text"
     class="new"
-    value="Hasco"
+    value="SICK"
   >
   <br>
   <textarea
@@ -185,10 +188,10 @@
 
         let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + 'SICK ' + transform_input.value.replaceAll(
           '/', ' ')
-        link.value = str.replaceAll(' ', '-').toLowerCase()
-        img.value = str.replaceAll(' ', '-').toLowerCase()
+        link.value = 'sick-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
+        img.value = 'sick-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
         seo_describe.value = str
-        seo_key.value = str.replaceAll(' ', ',').toLowerCase()
+        seo_key.value = str.replaceAll(' ', ',').toLowerCase().replaceAll('/', ',')
 
         let strArr = str.split(' ')
         let newStrArr = []
@@ -211,8 +214,8 @@
 
 
         // title.value = newStrArr.join(' ')
-        title.value = document.querySelector('.keyWord').value + ' SICK ' + transform_input.value
-        type.value = newStrArr.join(' ')
+        title.value = document.querySelector('.keyWord').value
+        type.value = transform_input.value
         seo_title.value = newStrArr.join(' ')
         let dec = document.querySelector('.dec')
         dec.innerHTML = newStrArr.join(' ')
