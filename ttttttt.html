@@ -1,0 +1,1512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body><div id="waiting" style="position:absolute; left:0px; top:200px; width:100%; height:80px; z-index:999999;  display: none;"><table width="100%" border="0" cellspacing="0" cellpadding="0"><tbody><tr><td align="center"><img src="http://best18.ito.tw/plastlist/public/js/wait.gif" width="300" height="80"></td></tr></tbody></table></div><div id="waiting_type" style="display: none;" onclick="close_layer_detail()"><img src="http://best18.ito.tw/plastlist/public/js/wait.gif" width="300" height="80"></div><span id="iframe_string"></span>
+  <div class="m_header b-box"><!--m_header-->
+    <a class="toggleMenu"><i class="fa fa-bars"></i></a>
+      <strong>愛貝斯網路後台管理系統</strong>
+  </div><!--m_header end-->
+  
+  <div class="mask"></div>
+  
+  <div class="outerWrap b-box"><!--outerWrap-->
+      <div class="sideMenu"><!--sideMenu-->
+          <h1 class="clearfix"><strong>愛貝斯網路後台管理系統</strong></h1>
+              <div class="menuBox b-box"><!--menuBox-->
+              <ul class="menu"><!--menu-->
+                          <li id="">
+                    <a href="../author_list/index.php"><i class="fa fa-key"></i><b>權限管理</b></a>
+                            </li>
+                                          <li id="menu_basic_list">
+                    <a href="../basic_list/index.php"><i class="fa fa-cog"></i><b>基本資料</b></a>
+                            </li>
+                                          <li id="menu_download_list" class="dropDown">
+                    <a><i class="fa fa-cloud-download"></i><b>檔案總管</b></a>
+                                <div class="submenu"><!--submenu-->
+                                    <a href="../download_list/class.php">資料類別</a>
+                                    <a href="../download_list/index.php">檔案總管</a>
+                                  </div><!--submenu end-->
+                            </li>
+                                          <li id="menu_home_hotnews_list">
+                    <a href="../home_hotnews_list/index.php"><i class="fa fa-newspaper-o"></i><b>首頁廣告彈出訊息</b></a>
+                            </li>
+                                          <li id="menu_home_privacy_list" class="dropDown">
+                    <a><i class="fa fa-bug"></i><b>首頁隱私條款</b></a>
+                                <div class="submenu"><!--submenu-->
+                                    <a href="../home_privacy_list/index.php">資料管理</a>
+                                  </div><!--submenu end-->
+                            </li>
+                                          <li id="menu_banner_list">
+                    <a href="../banner_list/index.php"><i class="fa fa-bookmark"></i><b>首頁主形象圖</b></a>
+                            </li>
+                                          <li id="menu_home_about_list" class="dropDown">
+                    <a><i class="fa fa-bug"></i><b>首頁關於我們</b></a>
+                                <div class="submenu"><!--submenu-->
+                                    <a href="../ad_list_about/index.php">圖片管理</a>
+                                    <a href="../home_about_list/index.php">資料管理</a>
+                                  </div><!--submenu end-->
+                            </li>
+                                          <li id="menu_marqueepic_list" class="dropDown">
+                    <a><i class="fa fa-newspaper-o"></i><b>首頁品牌系列</b></a>
+                                <div class="submenu"><!--submenu-->
+                                    <a href="../home_about_title_list/index.php">上方說明</a>
+                                    <a href="../marqueepic_list/index.php">資料管理</a>
+                                  </div><!--submenu end-->
+                            </li>
+                                          <li id="menu_ad_list">
+                    <a href="../ad_list/index.php"><i class="fa fa-smile-o"></i><b>首頁產品列表</b></a>
+                            </li>
+                                          <li id="menu_marqueepic_standard_list" class="dropDown">
+                    <a><i class="fa fa-newspaper-o"></i><b>首頁認證系列</b></a>
+                                <div class="submenu"><!--submenu-->
+                                    <a href="../home_about_title_standard_list/index.php">上方說明</a>
+                                    <a href="../marqueepic_standard_list/index.php">資料管理</a>
+                                  </div><!--submenu end-->
+                            </li>
+                                          <li id="menu_package_list" class="dropDown">
+                    <a><i class="fa fa-life-ring"></i><b>關於我們</b></a>
+                                <div class="submenu"><!--submenu-->
+                                    <a href="../banner_ins_list/index.php?index_item_name=package_list">廣告橫幅</a>
+                                    <a href="../package_list/index.php">資料管理</a>
+                                  </div><!--submenu end-->
+                            </li>
+                                          <li id="menu_catalog_list" class="current dropDown">
+                    <a class="open"><i class="fa fa-tint"></i><b>產品介紹</b></a>
+                                <div class="submenu" style="display: block;"><!--submenu-->
+                                    <a href="../banner_ins_list/index.php?index_item_name=catalog_list">廣告橫幅</a>
+                                    <a href="../catalog_list/class.php">類別管理</a>
+                                    <a href="../catalog_list/index.php" class="current">資料管理</a>
+                                    <a href="../catalog_list/mail_setting.php">E-mail分享管理</a>
+                                  </div><!--submenu end-->
+                            </li>
+                                          <li id="menu_inquiry_list" class="dropDown">
+                    <a><i class="fa fa-edit"></i><b>詢問單管理</b><strong id="count_inquiry_list">4</strong></a>
+                                <div class="submenu"><!--submenu-->
+                                    <a href="../banner_ins_list/index.php?index_item_name=inquiry_list">廣告橫幅</a>
+                                    <a href="../inquiry_list/class.php">問題分類</a>
+                                    <a href="../inquiry_list/index.php">資料列表</a>
+                                    <a href="../inquiry_list/setting.php">單元設定</a>
+                                    <a href="../inquiry_list/export.php">資料匯出</a>
+                                  </div><!--submenu end-->
+                            </li>
+                                          <li id="menu_page_contact_list" class="dropDown">
+                    <a><i class="fa fa-at"></i><b>聯絡我們</b><strong id="count_page_contact_list">6</strong></a>
+                                <div class="submenu"><!--submenu-->
+                                    <a href="../banner_ins_list/index.php?index_item_name=page_contact_list">廣告橫幅</a>
+                                    <a href="../page_contact_list/class.php">洽詢主題</a>
+                                    <a href="../page_contact_list/index.php">資料管理</a>
+                                    <a href="../page_contact_list/setting.php">單元設定</a>
+                                    <a href="../page_contact_list/export.php">資料匯出</a>
+                                  </div><!--submenu end-->
+                            </li>
+                                          <li id="menu_contact_list" class="dropDown">
+                    <a><i class="fa fa-at"></i><b>訪客留言</b><strong id="count_contact_list">7</strong></a>
+                                <div class="submenu"><!--submenu-->
+                                    <a href="../contact_list/index.php">資料管理</a>
+                                    <a href="../contact_list/setting.php">單元設定</a>
+                                    <a href="../contact_list/export.php">資料匯出</a>
+                                  </div><!--submenu end-->
+                            </li>
+                                                      </ul><!--menu end-->
+          </div><!--menuBox end-->
+      </div><!--sideMenu end-->
+  <script>
+  $(function(){
+    //jQuery(".menuBox").animate({scrollTop:$(".menuBox #menu_catalog_list").offset().top-1 }, 1000);
+    //$("#menu_catalog_list").insertBefore($(".menuBox .menu li").eq(0));
+  });
+  </script>
+    <script>
+          $('#count_inquiry_list').html('4')
+                      $('#count_page_contact_list').html('6')
+                      $('#count_contact_list').html('7')
+          </script>
+          <script>
+      //menu current
+      $(function(){
+          menuCurrent('index','en_catalog_list');
+      });
+  </script>
+  <!--====主區塊====-->
+  <script>
+      //解決hash跳到form表單的問題
+      var tempSpan = document.createElement('span');
+      var urlHash  = location.hash.replace('#','');
+      if(urlHash.length == 0) urlHash = 'lang_en';
+      document.body.prepend(tempSpan);
+      tempSpan.id = urlHash;
+      $(function(){
+          if($('div.language.tab').length != null && $('div#'+urlHash).length > 0)
+              $('div#'+urlHash).addClass('edit_now');
+      });
+      $(window).load(function(){
+          tempSpan.remove();
+      });
+  </script>
+      <div class="mainArea b-box"><!--mainArea-->
+          <div class="mainContent"><!--mainContent-->
+              <div class="topBox"><!--topBox-->
+                  <div class="wrap b-box clearfix"><!--wrap-->
+                      <div class="cusTitle">盛鐽科技股份有限公司</div>
+                      <ul class="other clearfix"><!--other-->
+                                                  <li>
+                              <a href="http://best18.ito.tw/plastlist/manage/author_list/index.php">帳號：Sage ( Sage )</a>
+                          </li>
+                          <li style="display: none;"><a href="../item_set_list/"><i class="fa fa-magic"></i></a></li>
+                          <li><a href="../delete_list/"><i class="fa fa-table"></i></a></li>
+                          <li><a href="../record_list/"><i class="fa fa-bar-chart"></i></a></li>
+                          <li><a onclick="location.replace('../logout.php');"><i class="fa fa-power-off"></i></a></li>
+                      </ul><!--other end-->
+                  </div><!--wrap end-->
+              </div><!--topBox end-->
+              
+              <div class="breadBox"><!--breadBox-->
+                  <div class="wrap b-box clearfix">
+                      <h2 class="breadTxt">產品介紹</h2>
+                      <ul class="bread"><!--bread-->
+                          <li><i class="fa fa-home"></i></li>
+                          <li class="breadTxt">產品介紹</li>
+                      <li>資料管理</li></ul><!--bread end-->
+                  </div><!--wrap end-->
+              </div><!--breadBox end-->
+              
+        <script>
+          //bread Txt
+                  $(function(){
+                      var sectionName = $('ul.menu').find('li.current').children('a').find('b').text(),
+                  subName = $('ul.menu').find('li.current').find('.submenu').find('.current').text();
+                if(sectionName!="") $('.breadTxt').text(sectionName);
+            if(subName!="") $('ul.bread').append('<li>'+subName+'</li>');
+                  });
+              </script><div class="contentBox"><!--contentBox-->
+      <div class="wrap b-box"><!--wrap-->
+          <div class="titleBox clearfix"><!--titleBox-->
+            <h3>資料新增/修改</h3>
+                      </div><!--titleBox end-->
+          <!---編修/換頁/確認--->
+          <div class="control clearfix"><!--control-->
+              <ul class="mod clearfix">
+                  <li><a class="fa fa-save" onclick="submit_btn(0)"></a></li>
+                  <li><a class="fa fa-arrow-left" onclick=""></a></li>
+              </ul>
+              <ul class="mod clearfix" style="margin-left: 15px;">
+                  <li><a class="fa fa-eye preview_tag" onclick="submit_btn(1)"></a></li>
+                              </ul>
+          </div><!--control end--> 
+          <script>
+          function submit_btn(type){
+            var errormsg=chk_field_fun('.edit_now');
+            if(errormsg!=""){
+              errorDialog(errormsg, '');
+              return false;
+            }
+            
+            update_files_title_submit();
+              if(type=="0"){
+                  wirte_iframe();
+                  $(".edit_now #pop_show").val("0");
+              }else{
+                  $(".edit_now #pop_show").val("1");
+              }
+            $('.edit_now form').prop('action','act.php');
+            $('.edit_now form').prop('target','rundata_action');
+            $('.edit_now form').submit();
+          }
+  
+          //複製到其他語系用
+          function copyToOtherLang(_formId, _selectLang){
+              if(_formId == null || _selectLang == null){
+                  return false;
+              }
+              jq_post_noloading('act.php','act=11&index_id='+_formId+'&index_lang='+_selectLang,'iframe_string');
+          }
+          </script>
+  
+                  <div id="lang_en" class="formTable edit_form edit_now">
+          <form method="post" enctype="multipart/form-data" name="push_data" id="push_data"><input name="files_unqid_check" type="hidden" value="enL_catalog16533223085958060">
+              <input name="index_id" type="hidden" id="index_id" value="2174">
+              <input name="act" type="hidden" id="act" value="2">
+              <input name="pop_show" type="hidden" id="pop_show" value="0">
+              <input name="data_m_lang" type="hidden" id="data_m_lang" value="en">
+              <input name="data_m_group" type="hidden" id="data_m_group" value="2168">
+  
+              <div class="row clearfix"><!--row-->
+                  <label class="col-1">開啟狀態：</label>
+                  <div class="col-11 clearfix"><!--right-->
+                    <div class="btn_trigger"><input name="data_open" type="checkbox" class="status" id="data_open" value="1"><a class="trigger off"></a></div>
+                                      </div> <!--right end-->
+              </div><!--row end-->
+  
+              <div class="row clearfix"><!--row-->
+                  <label class="col-1">標題：</label>
+                  <div class="col-11 clearfix"><!--right-->
+                      <input name="data_title" type="text" id="data_title" value="testesttesttesttestt" data-fieldtype="text" data-enter="1">
+                  </div> <!--right end-->
+              </div><!--row end--> 
+  
+              <div class="row clearfix"><!--row-->
+                  <label class="col-1">自訂網址：</label>
+                  <div class="col-11 clearfix"><!--right-->
+                      <input name="data_blink" type="text" id="data_blink" value="te-stt-esttesttes-t" data-fieldtype="blink">
+                      <p class="note">自訂網址不可重複，建議使用英文字，且使用-分隔單字，不可使用特殊字元如 ! * ' " ( ) ; : @ &amp; = $ , . \ / | ^ ? % # [ ]</p>
+                  </div> <!--right end-->
+              </div><!--row end--> 
+  
+              <div class="row clearfix"><!--row-->
+                  <label class="col-1">型號：</label>
+                  <div class="col-11 clearfix"><!--right-->
+                      <input name="data_no" type="text" id="data_no" value="tetesttestst" data-fieldtype="text" data-enter="1">
+                  </div> <!--right end-->
+              </div><!--row end--> 
+  
+              <div class="row clearfix"><!--row-->
+                  <label class="col-1">價格：</label>
+                  <div class="col-11 clearfix"><!--right-->
+                      $<input name="data_price" type="text" id="data_price" value="" data-fieldtype="text" style="width: 80px;margin-left: 5px;">
+                  </div> <!--right end-->
+              </div><!--row end--> 
+  
+        <div class="row clearfix"><!--row-->
+                  <label class="col-1">SEO設定：</label>
+                  <div class="col-11 clearfix"><!--right-->
+                      <a class="button btn_green" style="display:inline-block;" onclick="$(this).next().slideToggle();">開關選項</a>
+                      <ul class="block" style="margin-top: 10px;">
+                          <li class="clearfix"><div class="subFormTitle">SEO標題：</div><input type="text" name="data_meta_title" id="data_meta_title" value="tetestst" placeholder="請輸入SEO標題"></li>      
+                                                
+                          <li class="clearfix"><div class="subFormTitle">SEO描述語：</div><textarea name="data_meta_description" id="data_meta_description" placeholder="請輸入SEO描述語">tetesttestst</textarea></li>
+  
+                          <li class="clearfix"><div class="subFormTitle">SEO關鍵字：</div><input type="text" name="data_meta_keyword" id="data_meta_keyword" value="tetesttestst" placeholder="請輸入SEO關鍵字，可用,隔開"></li>
+  
+                          <li class="clearfix">
+                <div class="subFormTitle">SEO其他設定：</div>
+                <textarea name="data_meta_other" id="data_meta_other" placeholder="請輸入其他SEO相關語法"></textarea>
+                <p class="note">此區塊輸入錯誤將導致頁面程式無法執行</p>
+              </li>
+                      </ul>
+                  </div> 
+              </div><!--row end-->
+  
+                
+              <div class="row clearfix"><!--row-->
+                  <label class="col-1">對應類別：</label>
+                  <div class="col-11 clearfix"><!--right-->
+                      <ul class="inline">
+                        <li>
+                              <select name="data_m1_id" class="Select2Js select2-hidden-accessible" onchange="call_category('lang_en',this.value);" tabindex="-1" aria-hidden="true" data-select2-id="27">
+                                  <option value="0" selected="" data-select2-id="29">請選擇主類別</option>
+                                                                  <option value="1">Tape&amp;Reel</option>
+                                                                  <option value="2">PCB Assembly</option>
+                                                                  <option value="3">Automation&amp; Facility</option>
+                                                                  <option value="4">Metal&amp;Plastics</option>
+                                                              </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="28" style="width: 154px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-data_m1_id-y3-container"><span class="select2-selection__rendered" id="select2-data_m1_id-y3-container" role="textbox" aria-readonly="true" title="請選擇主類別">請選擇主類別</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+                          </li>
+                                                  <li id="category_m2_code" onchange="call_categoryLv3('lang_en',getSelectValue('data_m1_id'),getSelectValue('data_m2_id'), 0);">        <select name="data_m2_id" class="Select2Js select2-hidden-accessible" tabindex="-1" aria-hidden="true" data-select2-id="30">
+              <option value="0" selected="" data-select2-id="32">請選擇第二層類別</option>
+          </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="31" style="width: 139px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-data_m2_id-sz-container"><span class="select2-selection__rendered" id="select2-data_m2_id-sz-container" role="textbox" aria-readonly="true" title="請選擇第二層類別">請選擇第二層類別</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+              <script>
+          $('.Select2Js').select2();
+      </script>
+  </li>
+                                                                          <li id="category_m3_code">        <select name="data_m3_id" class="Select2Js select2-hidden-accessible" data-select2-id="33" tabindex="-1" aria-hidden="true">
+              <option value="0" selected="" data-select2-id="35">請選擇第三層類別</option>
+          </select><span class="select2 select2-container select2-container--default" dir="ltr" data-select2-id="34" style="width: 139px;"><span class="selection"><span class="select2-selection select2-selection--single" role="combobox" aria-haspopup="true" aria-expanded="false" tabindex="0" aria-disabled="false" aria-labelledby="select2-data_m3_id-0b-container"><span class="select2-selection__rendered" id="select2-data_m3_id-0b-container" role="textbox" aria-readonly="true" title="請選擇第三層類別">請選擇第三層類別</span><span class="select2-selection__arrow" role="presentation"><b role="presentation"></b></span></span></span><span class="dropdown-wrapper" aria-hidden="true"></span></span>
+              <script>
+          $('.Select2Js').select2();
+      </script>
+  </li>
+                                            </ul>
+                  </div> <!--right end-->
+              </div><!--row end-->
+  
+                              <script>
+                      $(function(){
+                        call_category('lang_en','0','0');
+                          call_categoryLv3('lang_en','0','0','0');
+                      });
+                  </script>
+              
+                          
+                      <div class="row clearfix">
+              <label class="col-1">列表圖：</label>
+              <div class="col-11 clearfix">
+                  <ul class="fileUpload clearfix">
+                      <input type="hidden" id="cropperjs_org_pic_0" name="cropperjs_org_pic_0" value="http://best18.ito.tw/plastlist/upload/catalog_list_pic/sick-t4000-dna10p-6012145.png">
+                      <li class="cropperjs_img_css_0">
+                          <a href="http://best18.ito.tw/plastlist/upload/catalog_list_pic/sick-t4000-dna10p-6012145.png" class="openpic" id="cropperjs_img_href_0">
+                              <img id="cropperjs_img_0" src="http://best18.ito.tw/plastlist/upload/catalog_list_pic/sick-t4000-dna10p-6012145.png" width="90" height="90">
+                          </a>
+                      </li>
+  
+                      
+                                          <li>
+                          <a class="button color_blue openlayer" data-fancybox-type="iframe" href="../lib/cropperjs_v2/index.php?type=0&amp;getattr_id=0">管理圖片</a>
+                          <a class="button color_red cropperjs_img_css_0" onclick="var editTable = $('.edit_now');var editTableClass = '';if(editTable.length == 1) editTableClass = '.edit_now ';$(editTableClass+'#cropperjs_img_href_0').attr('href','http://best18.ito.tw/plastlist/upload/catalog_list_pic/sick-t4000-dna10p-6012145.png'),$(editTableClass+'#cropperjs_img_0').attr('src','http://best18.ito.tw/plastlist/upload/catalog_list_pic/sick-t4000-dna10p-6012145.png'),$(editTableClass+'#data_list_pic').val('');$(this).hide(); $(editTableClass+'.cropperjs_img_del_btn_0').show();" style="display:none">重設圖片</a>
+                          <input type="hidden" name="data_list_pic" id="data_list_pic" value="">
+                          <input type="hidden" name="data_list_pic_orgFileName" id="data_list_pic_orgFileName" value="">
+                      </li>
+                                      </ul>
+                  <ul class="preview_item"></ul>
+                  <input type="hidden" name="copy_data_list_pic" id="copy_data_list_pic" value="0">
+                  <p class="size">
+                      [圖片尺寸] 寬度:400 高度:360 ( 精準裁切 )                </p>
+                              </div>
+          </div>
+  
+              <div class="row clearfix hidden"><!--row-->
+                  <label class="col-1">列表簡述：</label>
+                  <div class="col-11 clearfix"><!--right-->
+              <textarea name="data_introduction" rows="10" id="data_introduction"></textarea>
+                  </div> <!--right end-->
+              </div><!--row end-->
+  
+              <div class="row clearfix"><!--row-->
+                  <label class="col-1">連結方式：</label>
+                  <div class="col-11 clearfix"><!--right-->
+            <div class="radioset">
+                          <label class="active">內頁顯示<input name="data_showtype" type="radio" value="0" checked="" onclick="display_type_fun(this);"></label>
+                          <label>外部連結<input name="data_showtype" type="radio" value="1" onclick="display_type_fun(this);"></label>
+                          <label>影音<input name="data_showtype" type="radio" value="2" onclick="display_type_fun(this);"></label>
+                          <label>多圖相簿<input name="data_showtype" type="radio" value="3" onclick="display_type_fun(this);"></label>
+                          <label>無<input name="data_showtype" type="radio" value="4" onclick="display_type_fun(this);"></label>
+                      </div>
+                  </div> <!--right end-->
+              </div>
+              <script>
+                  $(function(){
+                    var call_data=$(".formTable#lang_en .radioset input[name=data_showtype]:radio:checked:enabled");
+                    display_type_fun(call_data);
+                  });
+              </script>
+  
+              <div class="row clearfix url_tag" style="display: none;"><!--row-->
+                  <label class="col-1">外部連結：</label>
+                  <div class="col-11 clearfix"><!--right-->
+                      <input name="data_url" type="text" id="data_url" value="">
+                      <p>請輸入包含http://或https://開頭的完整網址</p>
+                  </div> <!--right end-->
+              </div><!--row end-->
+  
+              <div class="row clearfix video_tag" style="display: none;"><!--row-->
+                  <label class="col-1">影音連結(Youtube)：</label>
+                  <div class="col-11 clearfix"><!--right-->
+                      <textarea name="data_av" rows="3" id="data_av"></textarea>
+                      <p>請輸入包含http://開頭的完整Youtube影片網址</p>
+                  </div> <!--right end-->
+              </div><!--row end-->
+  
+              <div class="row clearfix exp_tag">
+                  <label class="col-1">內頁簡述：</label>
+                  <div class="col-11 clearfix">
+              <textarea name="data_spec" rows="5" id="data_spec_en" class="ckeditor" style="visibility: hidden; display: none;"></textarea><div id="cke_data_spec_en" class="cke_1 cke cke_reset cke_chrome cke_editor_data_spec_en cke_ltr cke_browser_webkit" dir="ltr" lang="zh" role="application" aria-labelledby="cke_data_spec_en_arialbl"><span id="cke_data_spec_en_arialbl" class="cke_voice_label">RTF 編輯器, data_spec_en</span><div class="cke_inner cke_reset" role="presentation"><span id="cke_1_top" class="cke_top cke_reset_all" role="presentation" style="height: auto; user-select: none;"><span id="cke_20" class="cke_voice_label">編輯器工具列</span><span id="cke_1_toolbox" class="cke_toolbox" role="group" aria-labelledby="cke_20" onmousedown="return false;"><span id="cke_23" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_24" class="cke_button cke_button__newpage cke_button_off" href="javascript:void('新增網頁')" title="新增網頁" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_24_label" aria-describedby="cke_24_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(2,event);" onfocus="return CKEDITOR.tools.callFunction(3,event);" onclick="CKEDITOR.tools.callFunction(4,this);return false;"><span class="cke_button_icon cke_button__newpage_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1464px;background-size:auto;">&nbsp;</span><span id="cke_24_label" class="cke_button_label cke_button__newpage_label" aria-hidden="false">新增網頁</span><span id="cke_24_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_25" class="cke_button cke_button__undo cke_button_off" href="javascript:void('復原')" title="復原 (⌘+Z)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_25_label" aria-describedby="cke_25_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(5,event);" onfocus="return CKEDITOR.tools.callFunction(6,event);" onclick="CKEDITOR.tools.callFunction(7,this);return false;"><span class="cke_button_icon cke_button__undo_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -2016px;background-size:auto;">&nbsp;</span><span id="cke_25_label" class="cke_button_label cke_button__undo_label" aria-hidden="false">復原</span><span id="cke_25_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+Z</span></a><a id="cke_26" class="cke_button cke_button__redo cke_button_disabled " href="javascript:void('取消復原')" title="取消復原 (⌘+Y)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_26_label" aria-describedby="cke_26_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(8,event);" onfocus="return CKEDITOR.tools.callFunction(9,event);" onclick="CKEDITOR.tools.callFunction(10,this);return false;"><span class="cke_button_icon cke_button__redo_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1968px;background-size:auto;">&nbsp;</span><span id="cke_26_label" class="cke_button_label cke_button__redo_label" aria-hidden="false">取消復原</span><span id="cke_26_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+Y</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_27" class="cke_button cke_button__find cke_button_off" href="javascript:void('尋找')" title="尋找" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_27_label" aria-describedby="cke_27_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(11,event);" onfocus="return CKEDITOR.tools.callFunction(12,event);" onclick="CKEDITOR.tools.callFunction(13,this);return false;"><span class="cke_button_icon cke_button__find_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -552px;background-size:auto;">&nbsp;</span><span id="cke_27_label" class="cke_button_label cke_button__find_label" aria-hidden="false">尋找</span><span id="cke_27_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_28" class="cke_button cke_button__replace cke_button_off" href="javascript:void('取代')" title="取代" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_28_label" aria-describedby="cke_28_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(14,event);" onfocus="return CKEDITOR.tools.callFunction(15,event);" onclick="CKEDITOR.tools.callFunction(16,this);return false;"><span class="cke_button_icon cke_button__replace_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -576px;background-size:auto;">&nbsp;</span><span id="cke_28_label" class="cke_button_label cke_button__replace_label" aria-hidden="false">取代</span><span id="cke_28_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_29" class="cke_button cke_button__selectall cke_button_off" href="javascript:void('全選')" title="全選" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_29_label" aria-describedby="cke_29_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(17,event);" onfocus="return CKEDITOR.tools.callFunction(18,event);" onclick="CKEDITOR.tools.callFunction(19,this);return false;"><span class="cke_button_icon cke_button__selectall_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1752px;background-size:auto;">&nbsp;</span><span id="cke_29_label" class="cke_button_label cke_button__selectall_label" aria-hidden="false">全選</span><span id="cke_29_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_30" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_31" class="cke_button cke_button__bold cke_button_off" href="javascript:void('粗體')" title="粗體 (⌘+B)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_31_label" aria-describedby="cke_31_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(20,event);" onfocus="return CKEDITOR.tools.callFunction(21,event);" onclick="CKEDITOR.tools.callFunction(22,this);return false;"><span class="cke_button_icon cke_button__bold_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -24px;background-size:auto;">&nbsp;</span><span id="cke_31_label" class="cke_button_label cke_button__bold_label" aria-hidden="false">粗體</span><span id="cke_31_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+B</span></a><a id="cke_32" class="cke_button cke_button__italic cke_button_off" href="javascript:void('斜體')" title="斜體 (⌘+I)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_32_label" aria-describedby="cke_32_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(23,event);" onfocus="return CKEDITOR.tools.callFunction(24,event);" onclick="CKEDITOR.tools.callFunction(25,this);return false;"><span class="cke_button_icon cke_button__italic_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -48px;background-size:auto;">&nbsp;</span><span id="cke_32_label" class="cke_button_label cke_button__italic_label" aria-hidden="false">斜體</span><span id="cke_32_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+I</span></a><a id="cke_33" class="cke_button cke_button__underline cke_button_off" href="javascript:void('底線')" title="底線 (⌘+U)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_33_label" aria-describedby="cke_33_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(26,event);" onfocus="return CKEDITOR.tools.callFunction(27,event);" onclick="CKEDITOR.tools.callFunction(28,this);return false;"><span class="cke_button_icon cke_button__underline_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -144px;background-size:auto;">&nbsp;</span><span id="cke_33_label" class="cke_button_label cke_button__underline_label" aria-hidden="false">底線</span><span id="cke_33_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+U</span></a><a id="cke_34" class="cke_button cke_button__strike cke_button_off" href="javascript:void('刪除線')" title="刪除線" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_34_label" aria-describedby="cke_34_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(29,event);" onfocus="return CKEDITOR.tools.callFunction(30,event);" onclick="CKEDITOR.tools.callFunction(31,this);return false;"><span class="cke_button_icon cke_button__strike_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -72px;background-size:auto;">&nbsp;</span><span id="cke_34_label" class="cke_button_label cke_button__strike_label" aria-hidden="false">刪除線</span><span id="cke_34_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_separator" role="separator"></span><span id="cke_21" class="cke_combo cke_combo__fontsize cke_combo_off" role="presentation"><span id="cke_21_label" class="cke_combo_label">大小</span><a class="cke_combo_button" title="字型大小" tabindex="-1" href="javascript:void('字型大小')" hidefocus="true" role="button" aria-labelledby="cke_21_label" aria-haspopup="listbox" onkeydown="return CKEDITOR.tools.callFunction(33,event,this);" onfocus="return CKEDITOR.tools.callFunction(34,event);" onclick="CKEDITOR.tools.callFunction(32,this);return false;"><span id="cke_21_text" class="cke_combo_text cke_combo_inlinelabel">大小</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span class="cke_toolgroup" role="presentation"><a id="cke_35" class="cke_button cke_button__textcolor cke_button_off cke_button_expandable" href="javascript:void('文字顏色')" title="文字顏色" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_35_label" aria-describedby="cke_35_description" aria-haspopup="listbox" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(35,event);" onfocus="return CKEDITOR.tools.callFunction(36,event);" onclick="CKEDITOR.tools.callFunction(37,this);return false;" aria-expanded="false"><span class="cke_button_icon cke_button__textcolor_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -408px;background-size:auto;">&nbsp;</span><span id="cke_35_label" class="cke_button_label cke_button__textcolor_label" aria-hidden="false">文字顏色</span><span id="cke_35_description" class="cke_button_label" aria-hidden="false"></span><span class="cke_button_arrow"></span></a><a id="cke_36" class="cke_button cke_button__specialchar cke_button_off" href="javascript:void('插入特殊字元')" title="插入特殊字元" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_36_label" aria-describedby="cke_36_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(38,event);" onfocus="return CKEDITOR.tools.callFunction(39,event);" onclick="CKEDITOR.tools.callFunction(40,this);return false;"><span class="cke_button_icon cke_button__specialchar_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1872px;background-size:auto;">&nbsp;</span><span id="cke_36_label" class="cke_button_label cke_button__specialchar_label" aria-hidden="false">插入特殊字元</span><span id="cke_36_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_37" class="cke_button cke_button__table cke_button_off" href="javascript:void('表格')" title="表格" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_37_label" aria-describedby="cke_37_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(41,event);" onfocus="return CKEDITOR.tools.callFunction(42,event);" onclick="CKEDITOR.tools.callFunction(43,this);return false;"><span class="cke_button_icon cke_button__table_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1920px;background-size:auto;">&nbsp;</span><span id="cke_37_label" class="cke_button_label cke_button__table_label" aria-hidden="false">表格</span><span id="cke_37_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_38" class="cke_button cke_button__horizontalrule cke_button_off" href="javascript:void('插入水平線')" title="插入水平線" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_38_label" aria-describedby="cke_38_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(44,event);" onfocus="return CKEDITOR.tools.callFunction(45,event);" onclick="CKEDITOR.tools.callFunction(46,this);return false;"><span class="cke_button_icon cke_button__horizontalrule_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -912px;background-size:auto;">&nbsp;</span><span id="cke_38_label" class="cke_button_label cke_button__horizontalrule_label" aria-hidden="false">插入水平線</span><span id="cke_38_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_39" class="cke_button cke_button__creatediv cke_button_off" href="javascript:void('建立 Div 容器')" title="建立 Div 容器" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_39_label" aria-describedby="cke_39_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(47,event);" onfocus="return CKEDITOR.tools.callFunction(48,event);" onclick="CKEDITOR.tools.callFunction(49,this);return false;"><span class="cke_button_icon cke_button__creatediv_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -504px;background-size:auto;">&nbsp;</span><span id="cke_39_label" class="cke_button_label cke_button__creatediv_label" aria-hidden="false">建立 Div 容器</span><span id="cke_39_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_40" class="cke_button cke_button__iframe cke_button_off" href="javascript:void('IFrame')" title="IFrame" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_40_label" aria-describedby="cke_40_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(50,event);" onfocus="return CKEDITOR.tools.callFunction(51,event);" onclick="CKEDITOR.tools.callFunction(52,this);return false;"><span class="cke_button_icon cke_button__iframe_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -936px;background-size:auto;">&nbsp;</span><span id="cke_40_label" class="cke_button_label cke_button__iframe_label" aria-hidden="false">IFrame</span><span id="cke_40_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_41" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_42" class="cke_button cke_button__bulletedlist cke_button_off" href="javascript:void('插入/移除項目符號清單')" title="插入/移除項目符號清單" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_42_label" aria-describedby="cke_42_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(53,event);" onfocus="return CKEDITOR.tools.callFunction(54,event);" onclick="CKEDITOR.tools.callFunction(55,this);return false;"><span class="cke_button_icon cke_button__bulletedlist_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1344px;background-size:auto;">&nbsp;</span><span id="cke_42_label" class="cke_button_label cke_button__bulletedlist_label" aria-hidden="false">插入/移除項目符號清單</span><span id="cke_42_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_43" class="cke_button cke_button__numberedlist cke_button_off" href="javascript:void('插入/移除編號清單清單')" title="插入/移除編號清單清單" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_43_label" aria-describedby="cke_43_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(56,event);" onfocus="return CKEDITOR.tools.callFunction(57,event);" onclick="CKEDITOR.tools.callFunction(58,this);return false;"><span class="cke_button_icon cke_button__numberedlist_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1392px;background-size:auto;">&nbsp;</span><span id="cke_43_label" class="cke_button_label cke_button__numberedlist_label" aria-hidden="false">插入/移除編號清單清單</span><span id="cke_43_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_44" class="cke_button cke_button__justifycenter cke_button_off" href="javascript:void('置中對齊')" title="置中對齊" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_44_label" aria-describedby="cke_44_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(59,event);" onfocus="return CKEDITOR.tools.callFunction(60,event);" onclick="CKEDITOR.tools.callFunction(61,this);return false;"><span class="cke_button_icon cke_button__justifycenter_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1128px;background-size:auto;">&nbsp;</span><span id="cke_44_label" class="cke_button_label cke_button__justifycenter_label" aria-hidden="false">置中對齊</span><span id="cke_44_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_45" class="cke_button cke_button__justifyright cke_button_off" href="javascript:void('靠右對齊')" title="靠右對齊" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_45_label" aria-describedby="cke_45_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(62,event);" onfocus="return CKEDITOR.tools.callFunction(63,event);" onclick="CKEDITOR.tools.callFunction(64,this);return false;"><span class="cke_button_icon cke_button__justifyright_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1176px;background-size:auto;">&nbsp;</span><span id="cke_45_label" class="cke_button_label cke_button__justifyright_label" aria-hidden="false">靠右對齊</span><span id="cke_45_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_46" class="cke_button cke_button__justifyleft cke_button_off" href="javascript:void('靠左對齊')" title="靠左對齊" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_46_label" aria-describedby="cke_46_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(65,event);" onfocus="return CKEDITOR.tools.callFunction(66,event);" onclick="CKEDITOR.tools.callFunction(67,this);return false;"><span class="cke_button_icon cke_button__justifyleft_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1152px;background-size:auto;">&nbsp;</span><span id="cke_46_label" class="cke_button_label cke_button__justifyleft_label" aria-hidden="false">靠左對齊</span><span id="cke_46_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_47" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span id="cke_22" class="cke_combo cke_combo__styles cke_combo_off" role="presentation"><span id="cke_22_label" class="cke_combo_label">樣式</span><a class="cke_combo_button" title="格式化樣式" tabindex="-1" href="javascript:void('格式化樣式')" hidefocus="true" role="button" aria-labelledby="cke_22_label" aria-haspopup="listbox" onkeydown="return CKEDITOR.tools.callFunction(69,event,this);" onfocus="return CKEDITOR.tools.callFunction(70,event);" onclick="CKEDITOR.tools.callFunction(68,this);return false;"><span id="cke_22_text" class="cke_combo_text cke_combo_inlinelabel">樣式</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span class="cke_toolgroup" role="presentation"><a id="cke_48" class="cke_button cke_button__removeformat cke_button_off" href="javascript:void('移除格式')" title="移除格式" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_48_label" aria-describedby="cke_48_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(71,event);" onfocus="return CKEDITOR.tools.callFunction(72,event);" onclick="CKEDITOR.tools.callFunction(73,this);return false;"><span class="cke_button_icon cke_button__removeformat_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1704px;background-size:auto;">&nbsp;</span><span id="cke_48_label" class="cke_button_label cke_button__removeformat_label" aria-hidden="false">移除格式</span><span id="cke_48_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_49" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_50" class="cke_button cke_button__link cke_button_off" href="javascript:void('連結')" title="連結 (⌘+K)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_50_label" aria-describedby="cke_50_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(74,event);" onfocus="return CKEDITOR.tools.callFunction(75,event);" onclick="CKEDITOR.tools.callFunction(76,this);return false;"><span class="cke_button_icon cke_button__link_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1272px;background-size:auto;">&nbsp;</span><span id="cke_50_label" class="cke_button_label cke_button__link_label" aria-hidden="false">連結</span><span id="cke_50_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+K</span></a><a id="cke_51" class="cke_button cke_button__unlink cke_button_disabled " href="javascript:void('取消連結')" title="取消連結" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_51_label" aria-describedby="cke_51_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(77,event);" onfocus="return CKEDITOR.tools.callFunction(78,event);" onclick="CKEDITOR.tools.callFunction(79,this);return false;"><span class="cke_button_icon cke_button__unlink_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1296px;background-size:auto;">&nbsp;</span><span id="cke_51_label" class="cke_button_label cke_button__unlink_label" aria-hidden="false">取消連結</span><span id="cke_51_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_52" class="cke_button cke_button__subscript cke_button_off" href="javascript:void('下標')" title="下標" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_52_label" aria-describedby="cke_52_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(80,event);" onfocus="return CKEDITOR.tools.callFunction(81,event);" onclick="CKEDITOR.tools.callFunction(82,this);return false;"><span class="cke_button_icon cke_button__subscript_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -96px;background-size:auto;">&nbsp;</span><span id="cke_52_label" class="cke_button_label cke_button__subscript_label" aria-hidden="false">下標</span><span id="cke_52_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_53" class="cke_button cke_button__superscript cke_button_off" href="javascript:void('上標')" title="上標" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_53_label" aria-describedby="cke_53_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(83,event);" onfocus="return CKEDITOR.tools.callFunction(84,event);" onclick="CKEDITOR.tools.callFunction(85,this);return false;"><span class="cke_button_icon cke_button__superscript_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -120px;background-size:auto;">&nbsp;</span><span id="cke_53_label" class="cke_button_label cke_button__superscript_label" aria-hidden="false">上標</span><span id="cke_53_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_54" class="cke_button cke_button__anchor cke_button_off" href="javascript:void('錨點')" title="錨點" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_54_label" aria-describedby="cke_54_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(86,event);" onfocus="return CKEDITOR.tools.callFunction(87,event);" onclick="CKEDITOR.tools.callFunction(88,this);return false;"><span class="cke_button_icon cke_button__anchor_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1248px;background-size:auto;">&nbsp;</span><span id="cke_54_label" class="cke_button_label cke_button__anchor_label" aria-hidden="false">錨點</span><span id="cke_54_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_55" class="cke_button cke_button__image cke_button_off" href="javascript:void('圖像')" title="圖像" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_55_label" aria-describedby="cke_55_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(89,event);" onfocus="return CKEDITOR.tools.callFunction(90,event);" onclick="CKEDITOR.tools.callFunction(91,this);return false;"><span class="cke_button_icon cke_button__image_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -960px;background-size:auto;">&nbsp;</span><span id="cke_55_label" class="cke_button_label cke_button__image_label" aria-hidden="false">圖像</span><span id="cke_55_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_56" class="cke_button cke_button__maximize cke_button_off" href="javascript:void('最大化')" title="最大化" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_56_label" aria-describedby="cke_56_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(92,event);" onfocus="return CKEDITOR.tools.callFunction(93,event);" onclick="CKEDITOR.tools.callFunction(94,this);return false;"><span class="cke_button_icon cke_button__maximize_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1416px;background-size:auto;">&nbsp;</span><span id="cke_56_label" class="cke_button_label cke_button__maximize_label" aria-hidden="false">最大化</span><span id="cke_56_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_57" class="cke_button cke_button__source cke_button_off" href="javascript:void('原始碼')" title="原始碼" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_57_label" aria-describedby="cke_57_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(95,event);" onfocus="return CKEDITOR.tools.callFunction(96,event);" onclick="CKEDITOR.tools.callFunction(97,this);return false;"><span class="cke_button_icon cke_button__source_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1848px;background-size:auto;">&nbsp;</span><span id="cke_57_label" class="cke_button_label cke_button__source_label" aria-hidden="false">原始碼</span><span id="cke_57_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_58" class="cke_button cke_button__showblocks cke_button_off" href="javascript:void('顯示區塊')" title="顯示區塊" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_58_label" aria-describedby="cke_58_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(98,event);" onfocus="return CKEDITOR.tools.callFunction(99,event);" onclick="CKEDITOR.tools.callFunction(100,this);return false;"><span class="cke_button_icon cke_button__showblocks_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1800px;background-size:auto;">&nbsp;</span><span id="cke_58_label" class="cke_button_label cke_button__showblocks_label" aria-hidden="false">顯示區塊</span><span id="cke_58_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span></span></span><div id="cke_1_contents" class="cke_contents cke_reset" role="presentation" style="height: 350px;"><span id="cke_63" class="cke_voice_label">按下 ALT 0 取得說明。</span><iframe src="" frameborder="0" class="cke_wysiwyg_frame cke_reset" style="width: 100%; height: 100%;" title="RTF 編輯器, data_spec_en" aria-describedby="cke_63" tabindex="0" allowtransparency="true"></iframe></div><span id="cke_1_bottom" class="cke_bottom cke_reset_all" role="presentation" style="user-select: none;"><span id="cke_1_resizer" class="cke_resizer cke_resizer_vertical cke_resizer_ltr" title="調整大小" onmousedown="CKEDITOR.tools.callFunction(0, event)">◢</span><span id="cke_1_path_label" class="cke_voice_label">元件路徑</span><span id="cke_1_path" class="cke_path" role="group" aria-labelledby="cke_1_path_label"><a id="cke_elementspath_19_0" href="javascript:void('body')" tabindex="-1" class="cke_path_item" title="body 個元件" hidefocus="true" onkeydown="return CKEDITOR.tools.callFunction(102,0, event );" onclick="CKEDITOR.tools.callFunction(101,0); return false;" role="button" aria-label="body 個元件">body</a><span class="cke_path_empty">&nbsp;</span></span></span></div></div>
+                  </div>
+              </div>
+  
+              <div class="row clearfix exp_tag"><!--row-->
+                  <label class="col-1">詳細說明：</label>
+                  <div class="col-11 clearfix"><!--right-->
+              <textarea name="data_exp" rows="10" id="data_exp_en" class="ckeditor" style="visibility: hidden; display: none;"></textarea><div id="cke_data_exp_en" class="cke_2 cke cke_reset cke_chrome cke_editor_data_exp_en cke_ltr cke_browser_webkit" dir="ltr" lang="zh" role="application" aria-labelledby="cke_data_exp_en_arialbl"><span id="cke_data_exp_en_arialbl" class="cke_voice_label">RTF 編輯器, data_exp_en</span><div class="cke_inner cke_reset" role="presentation"><span id="cke_2_top" class="cke_top cke_reset_all" role="presentation" style="height: auto; user-select: none;"><span id="cke_75" class="cke_voice_label">編輯器工具列</span><span id="cke_2_toolbox" class="cke_toolbox" role="group" aria-labelledby="cke_75" onmousedown="return false;"><span id="cke_78" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_79" class="cke_button cke_button__newpage cke_button_off" href="javascript:void('新增網頁')" title="新增網頁" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_79_label" aria-describedby="cke_79_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(106,event);" onfocus="return CKEDITOR.tools.callFunction(107,event);" onclick="CKEDITOR.tools.callFunction(108,this);return false;"><span class="cke_button_icon cke_button__newpage_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1464px;background-size:auto;">&nbsp;</span><span id="cke_79_label" class="cke_button_label cke_button__newpage_label" aria-hidden="false">新增網頁</span><span id="cke_79_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_80" class="cke_button cke_button__undo cke_button_disabled " href="javascript:void('復原')" title="復原 (⌘+Z)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_80_label" aria-describedby="cke_80_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(109,event);" onfocus="return CKEDITOR.tools.callFunction(110,event);" onclick="CKEDITOR.tools.callFunction(111,this);return false;"><span class="cke_button_icon cke_button__undo_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -2016px;background-size:auto;">&nbsp;</span><span id="cke_80_label" class="cke_button_label cke_button__undo_label" aria-hidden="false">復原</span><span id="cke_80_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+Z</span></a><a id="cke_81" class="cke_button cke_button__redo cke_button_disabled " href="javascript:void('取消復原')" title="取消復原 (⌘+Y)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_81_label" aria-describedby="cke_81_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(112,event);" onfocus="return CKEDITOR.tools.callFunction(113,event);" onclick="CKEDITOR.tools.callFunction(114,this);return false;"><span class="cke_button_icon cke_button__redo_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1968px;background-size:auto;">&nbsp;</span><span id="cke_81_label" class="cke_button_label cke_button__redo_label" aria-hidden="false">取消復原</span><span id="cke_81_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+Y</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_82" class="cke_button cke_button__find cke_button_off" href="javascript:void('尋找')" title="尋找" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_82_label" aria-describedby="cke_82_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(115,event);" onfocus="return CKEDITOR.tools.callFunction(116,event);" onclick="CKEDITOR.tools.callFunction(117,this);return false;"><span class="cke_button_icon cke_button__find_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -552px;background-size:auto;">&nbsp;</span><span id="cke_82_label" class="cke_button_label cke_button__find_label" aria-hidden="false">尋找</span><span id="cke_82_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_83" class="cke_button cke_button__replace cke_button_off" href="javascript:void('取代')" title="取代" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_83_label" aria-describedby="cke_83_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(118,event);" onfocus="return CKEDITOR.tools.callFunction(119,event);" onclick="CKEDITOR.tools.callFunction(120,this);return false;"><span class="cke_button_icon cke_button__replace_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -576px;background-size:auto;">&nbsp;</span><span id="cke_83_label" class="cke_button_label cke_button__replace_label" aria-hidden="false">取代</span><span id="cke_83_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_84" class="cke_button cke_button__selectall cke_button_off" href="javascript:void('全選')" title="全選" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_84_label" aria-describedby="cke_84_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(121,event);" onfocus="return CKEDITOR.tools.callFunction(122,event);" onclick="CKEDITOR.tools.callFunction(123,this);return false;"><span class="cke_button_icon cke_button__selectall_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1752px;background-size:auto;">&nbsp;</span><span id="cke_84_label" class="cke_button_label cke_button__selectall_label" aria-hidden="false">全選</span><span id="cke_84_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_85" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_86" class="cke_button cke_button__bold cke_button_off" href="javascript:void('粗體')" title="粗體 (⌘+B)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_86_label" aria-describedby="cke_86_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(124,event);" onfocus="return CKEDITOR.tools.callFunction(125,event);" onclick="CKEDITOR.tools.callFunction(126,this);return false;"><span class="cke_button_icon cke_button__bold_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -24px;background-size:auto;">&nbsp;</span><span id="cke_86_label" class="cke_button_label cke_button__bold_label" aria-hidden="false">粗體</span><span id="cke_86_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+B</span></a><a id="cke_87" class="cke_button cke_button__italic cke_button_off" href="javascript:void('斜體')" title="斜體 (⌘+I)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_87_label" aria-describedby="cke_87_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(127,event);" onfocus="return CKEDITOR.tools.callFunction(128,event);" onclick="CKEDITOR.tools.callFunction(129,this);return false;"><span class="cke_button_icon cke_button__italic_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -48px;background-size:auto;">&nbsp;</span><span id="cke_87_label" class="cke_button_label cke_button__italic_label" aria-hidden="false">斜體</span><span id="cke_87_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+I</span></a><a id="cke_88" class="cke_button cke_button__underline cke_button_off" href="javascript:void('底線')" title="底線 (⌘+U)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_88_label" aria-describedby="cke_88_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(130,event);" onfocus="return CKEDITOR.tools.callFunction(131,event);" onclick="CKEDITOR.tools.callFunction(132,this);return false;"><span class="cke_button_icon cke_button__underline_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -144px;background-size:auto;">&nbsp;</span><span id="cke_88_label" class="cke_button_label cke_button__underline_label" aria-hidden="false">底線</span><span id="cke_88_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+U</span></a><a id="cke_89" class="cke_button cke_button__strike cke_button_off" href="javascript:void('刪除線')" title="刪除線" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_89_label" aria-describedby="cke_89_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(133,event);" onfocus="return CKEDITOR.tools.callFunction(134,event);" onclick="CKEDITOR.tools.callFunction(135,this);return false;"><span class="cke_button_icon cke_button__strike_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -72px;background-size:auto;">&nbsp;</span><span id="cke_89_label" class="cke_button_label cke_button__strike_label" aria-hidden="false">刪除線</span><span id="cke_89_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_separator" role="separator"></span><span id="cke_76" class="cke_combo cke_combo__fontsize cke_combo_off" role="presentation"><span id="cke_76_label" class="cke_combo_label">大小</span><a class="cke_combo_button" title="字型大小" tabindex="-1" href="javascript:void('字型大小')" hidefocus="true" role="button" aria-labelledby="cke_76_label" aria-haspopup="listbox" onkeydown="return CKEDITOR.tools.callFunction(137,event,this);" onfocus="return CKEDITOR.tools.callFunction(138,event);" onclick="CKEDITOR.tools.callFunction(136,this);return false;"><span id="cke_76_text" class="cke_combo_text cke_combo_inlinelabel">大小</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span class="cke_toolgroup" role="presentation"><a id="cke_90" class="cke_button cke_button__textcolor cke_button_off cke_button_expandable" href="javascript:void('文字顏色')" title="文字顏色" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_90_label" aria-describedby="cke_90_description" aria-haspopup="listbox" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(139,event);" onfocus="return CKEDITOR.tools.callFunction(140,event);" onclick="CKEDITOR.tools.callFunction(141,this);return false;" aria-expanded="false"><span class="cke_button_icon cke_button__textcolor_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -408px;background-size:auto;">&nbsp;</span><span id="cke_90_label" class="cke_button_label cke_button__textcolor_label" aria-hidden="false">文字顏色</span><span id="cke_90_description" class="cke_button_label" aria-hidden="false"></span><span class="cke_button_arrow"></span></a><a id="cke_91" class="cke_button cke_button__specialchar cke_button_off" href="javascript:void('插入特殊字元')" title="插入特殊字元" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_91_label" aria-describedby="cke_91_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(142,event);" onfocus="return CKEDITOR.tools.callFunction(143,event);" onclick="CKEDITOR.tools.callFunction(144,this);return false;"><span class="cke_button_icon cke_button__specialchar_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1872px;background-size:auto;">&nbsp;</span><span id="cke_91_label" class="cke_button_label cke_button__specialchar_label" aria-hidden="false">插入特殊字元</span><span id="cke_91_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_92" class="cke_button cke_button__table cke_button_off" href="javascript:void('表格')" title="表格" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_92_label" aria-describedby="cke_92_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(145,event);" onfocus="return CKEDITOR.tools.callFunction(146,event);" onclick="CKEDITOR.tools.callFunction(147,this);return false;"><span class="cke_button_icon cke_button__table_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1920px;background-size:auto;">&nbsp;</span><span id="cke_92_label" class="cke_button_label cke_button__table_label" aria-hidden="false">表格</span><span id="cke_92_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_93" class="cke_button cke_button__horizontalrule cke_button_off" href="javascript:void('插入水平線')" title="插入水平線" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_93_label" aria-describedby="cke_93_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(148,event);" onfocus="return CKEDITOR.tools.callFunction(149,event);" onclick="CKEDITOR.tools.callFunction(150,this);return false;"><span class="cke_button_icon cke_button__horizontalrule_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -912px;background-size:auto;">&nbsp;</span><span id="cke_93_label" class="cke_button_label cke_button__horizontalrule_label" aria-hidden="false">插入水平線</span><span id="cke_93_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_94" class="cke_button cke_button__creatediv cke_button_off" href="javascript:void('建立 Div 容器')" title="建立 Div 容器" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_94_label" aria-describedby="cke_94_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(151,event);" onfocus="return CKEDITOR.tools.callFunction(152,event);" onclick="CKEDITOR.tools.callFunction(153,this);return false;"><span class="cke_button_icon cke_button__creatediv_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -504px;background-size:auto;">&nbsp;</span><span id="cke_94_label" class="cke_button_label cke_button__creatediv_label" aria-hidden="false">建立 Div 容器</span><span id="cke_94_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_95" class="cke_button cke_button__iframe cke_button_off" href="javascript:void('IFrame')" title="IFrame" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_95_label" aria-describedby="cke_95_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(154,event);" onfocus="return CKEDITOR.tools.callFunction(155,event);" onclick="CKEDITOR.tools.callFunction(156,this);return false;"><span class="cke_button_icon cke_button__iframe_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -936px;background-size:auto;">&nbsp;</span><span id="cke_95_label" class="cke_button_label cke_button__iframe_label" aria-hidden="false">IFrame</span><span id="cke_95_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_96" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_97" class="cke_button cke_button__bulletedlist cke_button_off" href="javascript:void('插入/移除項目符號清單')" title="插入/移除項目符號清單" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_97_label" aria-describedby="cke_97_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(157,event);" onfocus="return CKEDITOR.tools.callFunction(158,event);" onclick="CKEDITOR.tools.callFunction(159,this);return false;"><span class="cke_button_icon cke_button__bulletedlist_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1344px;background-size:auto;">&nbsp;</span><span id="cke_97_label" class="cke_button_label cke_button__bulletedlist_label" aria-hidden="false">插入/移除項目符號清單</span><span id="cke_97_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_98" class="cke_button cke_button__numberedlist cke_button_off" href="javascript:void('插入/移除編號清單清單')" title="插入/移除編號清單清單" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_98_label" aria-describedby="cke_98_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(160,event);" onfocus="return CKEDITOR.tools.callFunction(161,event);" onclick="CKEDITOR.tools.callFunction(162,this);return false;"><span class="cke_button_icon cke_button__numberedlist_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1392px;background-size:auto;">&nbsp;</span><span id="cke_98_label" class="cke_button_label cke_button__numberedlist_label" aria-hidden="false">插入/移除編號清單清單</span><span id="cke_98_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_99" class="cke_button cke_button__justifycenter cke_button_off" href="javascript:void('置中對齊')" title="置中對齊" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_99_label" aria-describedby="cke_99_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(163,event);" onfocus="return CKEDITOR.tools.callFunction(164,event);" onclick="CKEDITOR.tools.callFunction(165,this);return false;"><span class="cke_button_icon cke_button__justifycenter_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1128px;background-size:auto;">&nbsp;</span><span id="cke_99_label" class="cke_button_label cke_button__justifycenter_label" aria-hidden="false">置中對齊</span><span id="cke_99_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_100" class="cke_button cke_button__justifyright cke_button_off" href="javascript:void('靠右對齊')" title="靠右對齊" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_100_label" aria-describedby="cke_100_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(166,event);" onfocus="return CKEDITOR.tools.callFunction(167,event);" onclick="CKEDITOR.tools.callFunction(168,this);return false;"><span class="cke_button_icon cke_button__justifyright_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1176px;background-size:auto;">&nbsp;</span><span id="cke_100_label" class="cke_button_label cke_button__justifyright_label" aria-hidden="false">靠右對齊</span><span id="cke_100_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_101" class="cke_button cke_button__justifyleft cke_button_off" href="javascript:void('靠左對齊')" title="靠左對齊" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_101_label" aria-describedby="cke_101_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(169,event);" onfocus="return CKEDITOR.tools.callFunction(170,event);" onclick="CKEDITOR.tools.callFunction(171,this);return false;"><span class="cke_button_icon cke_button__justifyleft_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1152px;background-size:auto;">&nbsp;</span><span id="cke_101_label" class="cke_button_label cke_button__justifyleft_label" aria-hidden="false">靠左對齊</span><span id="cke_101_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_102" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span id="cke_77" class="cke_combo cke_combo__styles cke_combo_off" role="presentation"><span id="cke_77_label" class="cke_combo_label">樣式</span><a class="cke_combo_button" title="格式化樣式" tabindex="-1" href="javascript:void('格式化樣式')" hidefocus="true" role="button" aria-labelledby="cke_77_label" aria-haspopup="listbox" onkeydown="return CKEDITOR.tools.callFunction(173,event,this);" onfocus="return CKEDITOR.tools.callFunction(174,event);" onclick="CKEDITOR.tools.callFunction(172,this);return false;"><span id="cke_77_text" class="cke_combo_text cke_combo_inlinelabel">樣式</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span class="cke_toolgroup" role="presentation"><a id="cke_103" class="cke_button cke_button__removeformat cke_button_off" href="javascript:void('移除格式')" title="移除格式" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_103_label" aria-describedby="cke_103_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(175,event);" onfocus="return CKEDITOR.tools.callFunction(176,event);" onclick="CKEDITOR.tools.callFunction(177,this);return false;"><span class="cke_button_icon cke_button__removeformat_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1704px;background-size:auto;">&nbsp;</span><span id="cke_103_label" class="cke_button_label cke_button__removeformat_label" aria-hidden="false">移除格式</span><span id="cke_103_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_104" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_105" class="cke_button cke_button__link cke_button_off" href="javascript:void('連結')" title="連結 (⌘+K)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_105_label" aria-describedby="cke_105_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(178,event);" onfocus="return CKEDITOR.tools.callFunction(179,event);" onclick="CKEDITOR.tools.callFunction(180,this);return false;"><span class="cke_button_icon cke_button__link_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1272px;background-size:auto;">&nbsp;</span><span id="cke_105_label" class="cke_button_label cke_button__link_label" aria-hidden="false">連結</span><span id="cke_105_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+K</span></a><a id="cke_106" class="cke_button cke_button__unlink cke_button_disabled " href="javascript:void('取消連結')" title="取消連結" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_106_label" aria-describedby="cke_106_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(181,event);" onfocus="return CKEDITOR.tools.callFunction(182,event);" onclick="CKEDITOR.tools.callFunction(183,this);return false;"><span class="cke_button_icon cke_button__unlink_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1296px;background-size:auto;">&nbsp;</span><span id="cke_106_label" class="cke_button_label cke_button__unlink_label" aria-hidden="false">取消連結</span><span id="cke_106_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_107" class="cke_button cke_button__subscript cke_button_off" href="javascript:void('下標')" title="下標" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_107_label" aria-describedby="cke_107_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(184,event);" onfocus="return CKEDITOR.tools.callFunction(185,event);" onclick="CKEDITOR.tools.callFunction(186,this);return false;"><span class="cke_button_icon cke_button__subscript_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -96px;background-size:auto;">&nbsp;</span><span id="cke_107_label" class="cke_button_label cke_button__subscript_label" aria-hidden="false">下標</span><span id="cke_107_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_108" class="cke_button cke_button__superscript cke_button_off" href="javascript:void('上標')" title="上標" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_108_label" aria-describedby="cke_108_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(187,event);" onfocus="return CKEDITOR.tools.callFunction(188,event);" onclick="CKEDITOR.tools.callFunction(189,this);return false;"><span class="cke_button_icon cke_button__superscript_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -120px;background-size:auto;">&nbsp;</span><span id="cke_108_label" class="cke_button_label cke_button__superscript_label" aria-hidden="false">上標</span><span id="cke_108_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_109" class="cke_button cke_button__anchor cke_button_off" href="javascript:void('錨點')" title="錨點" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_109_label" aria-describedby="cke_109_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(190,event);" onfocus="return CKEDITOR.tools.callFunction(191,event);" onclick="CKEDITOR.tools.callFunction(192,this);return false;"><span class="cke_button_icon cke_button__anchor_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1248px;background-size:auto;">&nbsp;</span><span id="cke_109_label" class="cke_button_label cke_button__anchor_label" aria-hidden="false">錨點</span><span id="cke_109_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_110" class="cke_button cke_button__image cke_button_off" href="javascript:void('圖像')" title="圖像" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_110_label" aria-describedby="cke_110_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(193,event);" onfocus="return CKEDITOR.tools.callFunction(194,event);" onclick="CKEDITOR.tools.callFunction(195,this);return false;"><span class="cke_button_icon cke_button__image_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -960px;background-size:auto;">&nbsp;</span><span id="cke_110_label" class="cke_button_label cke_button__image_label" aria-hidden="false">圖像</span><span id="cke_110_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_111" class="cke_button cke_button__maximize cke_button_off" href="javascript:void('最大化')" title="最大化" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_111_label" aria-describedby="cke_111_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(196,event);" onfocus="return CKEDITOR.tools.callFunction(197,event);" onclick="CKEDITOR.tools.callFunction(198,this);return false;"><span class="cke_button_icon cke_button__maximize_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1416px;background-size:auto;">&nbsp;</span><span id="cke_111_label" class="cke_button_label cke_button__maximize_label" aria-hidden="false">最大化</span><span id="cke_111_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_112" class="cke_button cke_button__source cke_button_off" href="javascript:void('原始碼')" title="原始碼" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_112_label" aria-describedby="cke_112_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(199,event);" onfocus="return CKEDITOR.tools.callFunction(200,event);" onclick="CKEDITOR.tools.callFunction(201,this);return false;"><span class="cke_button_icon cke_button__source_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1848px;background-size:auto;">&nbsp;</span><span id="cke_112_label" class="cke_button_label cke_button__source_label" aria-hidden="false">原始碼</span><span id="cke_112_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_113" class="cke_button cke_button__showblocks cke_button_off" href="javascript:void('顯示區塊')" title="顯示區塊" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_113_label" aria-describedby="cke_113_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(202,event);" onfocus="return CKEDITOR.tools.callFunction(203,event);" onclick="CKEDITOR.tools.callFunction(204,this);return false;"><span class="cke_button_icon cke_button__showblocks_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1800px;background-size:auto;">&nbsp;</span><span id="cke_113_label" class="cke_button_label cke_button__showblocks_label" aria-hidden="false">顯示區塊</span><span id="cke_113_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span></span></span><div id="cke_2_contents" class="cke_contents cke_reset" role="presentation" style="height: 350px;"><span id="cke_117" class="cke_voice_label">按下 ALT 0 取得說明。</span><iframe src="" frameborder="0" class="cke_wysiwyg_frame cke_reset" style="width: 100%; height: 100%;" title="RTF 編輯器, data_exp_en" aria-describedby="cke_117" tabindex="0" allowtransparency="true"></iframe></div><span id="cke_2_bottom" class="cke_bottom cke_reset_all" role="presentation" style="user-select: none;"><span id="cke_2_resizer" class="cke_resizer cke_resizer_vertical cke_resizer_ltr" title="調整大小" onmousedown="CKEDITOR.tools.callFunction(104, event)">◢</span><span id="cke_2_path_label" class="cke_voice_label">元件路徑</span><span id="cke_2_path" class="cke_path" role="group" aria-labelledby="cke_2_path_label"><span class="cke_path_empty">&nbsp;</span></span></span></div></div><a class="button color_blue openeditorbox" data-fancybox-type="iframe" href="../lib/contentBuilder/open_editor.php?field_name=data_exp_en&amp;field_group=2168">打開編輯器</a>
+                  </div> <!--right end-->
+              </div><!--row end-->
+  
+              <div class="row clearfix exp_tag hidden" style="display: block;"><!--row-->
+                  <label class="col-1">規格/價目說明：</label>
+                  <div class="col-11 clearfix"><!--right-->
+              <textarea name="data_price_note" rows="10" id="data_price_note_en" class="ckeditor" style="visibility: hidden; display: none;"></textarea><div id="cke_data_price_note_en" class="cke_3 cke cke_reset cke_chrome cke_editor_data_price_note_en cke_ltr cke_browser_webkit" dir="ltr" lang="zh" role="application" aria-labelledby="cke_data_price_note_en_arialbl"><span id="cke_data_price_note_en_arialbl" class="cke_voice_label">RTF 編輯器, data_price_note_en</span><div class="cke_inner cke_reset" role="presentation"><span id="cke_3_top" class="cke_top cke_reset_all" role="presentation" style="height: auto; user-select: none;"><span id="cke_129" class="cke_voice_label">編輯器工具列</span><span id="cke_3_toolbox" class="cke_toolbox" role="group" aria-labelledby="cke_129" onmousedown="return false;"><span id="cke_132" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_133" class="cke_button cke_button__newpage cke_button_off" href="javascript:void('新增網頁')" title="新增網頁" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_133_label" aria-describedby="cke_133_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(210,event);" onfocus="return CKEDITOR.tools.callFunction(211,event);" onclick="CKEDITOR.tools.callFunction(212,this);return false;"><span class="cke_button_icon cke_button__newpage_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1464px;background-size:auto;">&nbsp;</span><span id="cke_133_label" class="cke_button_label cke_button__newpage_label" aria-hidden="false">新增網頁</span><span id="cke_133_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_134" class="cke_button cke_button__undo cke_button_disabled " href="javascript:void('復原')" title="復原 (⌘+Z)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_134_label" aria-describedby="cke_134_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(213,event);" onfocus="return CKEDITOR.tools.callFunction(214,event);" onclick="CKEDITOR.tools.callFunction(215,this);return false;"><span class="cke_button_icon cke_button__undo_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -2016px;background-size:auto;">&nbsp;</span><span id="cke_134_label" class="cke_button_label cke_button__undo_label" aria-hidden="false">復原</span><span id="cke_134_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+Z</span></a><a id="cke_135" class="cke_button cke_button__redo cke_button_disabled " href="javascript:void('取消復原')" title="取消復原 (⌘+Y)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_135_label" aria-describedby="cke_135_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(216,event);" onfocus="return CKEDITOR.tools.callFunction(217,event);" onclick="CKEDITOR.tools.callFunction(218,this);return false;"><span class="cke_button_icon cke_button__redo_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1968px;background-size:auto;">&nbsp;</span><span id="cke_135_label" class="cke_button_label cke_button__redo_label" aria-hidden="false">取消復原</span><span id="cke_135_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+Y</span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_136" class="cke_button cke_button__find cke_button_off" href="javascript:void('尋找')" title="尋找" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_136_label" aria-describedby="cke_136_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(219,event);" onfocus="return CKEDITOR.tools.callFunction(220,event);" onclick="CKEDITOR.tools.callFunction(221,this);return false;"><span class="cke_button_icon cke_button__find_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -552px;background-size:auto;">&nbsp;</span><span id="cke_136_label" class="cke_button_label cke_button__find_label" aria-hidden="false">尋找</span><span id="cke_136_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_137" class="cke_button cke_button__replace cke_button_off" href="javascript:void('取代')" title="取代" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_137_label" aria-describedby="cke_137_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(222,event);" onfocus="return CKEDITOR.tools.callFunction(223,event);" onclick="CKEDITOR.tools.callFunction(224,this);return false;"><span class="cke_button_icon cke_button__replace_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -576px;background-size:auto;">&nbsp;</span><span id="cke_137_label" class="cke_button_label cke_button__replace_label" aria-hidden="false">取代</span><span id="cke_137_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_138" class="cke_button cke_button__selectall cke_button_off" href="javascript:void('全選')" title="全選" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_138_label" aria-describedby="cke_138_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(225,event);" onfocus="return CKEDITOR.tools.callFunction(226,event);" onclick="CKEDITOR.tools.callFunction(227,this);return false;"><span class="cke_button_icon cke_button__selectall_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1752px;background-size:auto;">&nbsp;</span><span id="cke_138_label" class="cke_button_label cke_button__selectall_label" aria-hidden="false">全選</span><span id="cke_138_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_139" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_140" class="cke_button cke_button__bold cke_button_off" href="javascript:void('粗體')" title="粗體 (⌘+B)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_140_label" aria-describedby="cke_140_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(228,event);" onfocus="return CKEDITOR.tools.callFunction(229,event);" onclick="CKEDITOR.tools.callFunction(230,this);return false;"><span class="cke_button_icon cke_button__bold_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -24px;background-size:auto;">&nbsp;</span><span id="cke_140_label" class="cke_button_label cke_button__bold_label" aria-hidden="false">粗體</span><span id="cke_140_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+B</span></a><a id="cke_141" class="cke_button cke_button__italic cke_button_off" href="javascript:void('斜體')" title="斜體 (⌘+I)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_141_label" aria-describedby="cke_141_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(231,event);" onfocus="return CKEDITOR.tools.callFunction(232,event);" onclick="CKEDITOR.tools.callFunction(233,this);return false;"><span class="cke_button_icon cke_button__italic_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -48px;background-size:auto;">&nbsp;</span><span id="cke_141_label" class="cke_button_label cke_button__italic_label" aria-hidden="false">斜體</span><span id="cke_141_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+I</span></a><a id="cke_142" class="cke_button cke_button__underline cke_button_off" href="javascript:void('底線')" title="底線 (⌘+U)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_142_label" aria-describedby="cke_142_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(234,event);" onfocus="return CKEDITOR.tools.callFunction(235,event);" onclick="CKEDITOR.tools.callFunction(236,this);return false;"><span class="cke_button_icon cke_button__underline_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -144px;background-size:auto;">&nbsp;</span><span id="cke_142_label" class="cke_button_label cke_button__underline_label" aria-hidden="false">底線</span><span id="cke_142_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+U</span></a><a id="cke_143" class="cke_button cke_button__strike cke_button_off" href="javascript:void('刪除線')" title="刪除線" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_143_label" aria-describedby="cke_143_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(237,event);" onfocus="return CKEDITOR.tools.callFunction(238,event);" onclick="CKEDITOR.tools.callFunction(239,this);return false;"><span class="cke_button_icon cke_button__strike_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -72px;background-size:auto;">&nbsp;</span><span id="cke_143_label" class="cke_button_label cke_button__strike_label" aria-hidden="false">刪除線</span><span id="cke_143_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_separator" role="separator"></span><span id="cke_130" class="cke_combo cke_combo__fontsize cke_combo_off" role="presentation"><span id="cke_130_label" class="cke_combo_label">大小</span><a class="cke_combo_button" title="字型大小" tabindex="-1" href="javascript:void('字型大小')" hidefocus="true" role="button" aria-labelledby="cke_130_label" aria-haspopup="listbox" onkeydown="return CKEDITOR.tools.callFunction(241,event,this);" onfocus="return CKEDITOR.tools.callFunction(242,event);" onclick="CKEDITOR.tools.callFunction(240,this);return false;"><span id="cke_130_text" class="cke_combo_text cke_combo_inlinelabel">大小</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span class="cke_toolgroup" role="presentation"><a id="cke_144" class="cke_button cke_button__textcolor cke_button_off cke_button_expandable" href="javascript:void('文字顏色')" title="文字顏色" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_144_label" aria-describedby="cke_144_description" aria-haspopup="listbox" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(243,event);" onfocus="return CKEDITOR.tools.callFunction(244,event);" onclick="CKEDITOR.tools.callFunction(245,this);return false;" aria-expanded="false"><span class="cke_button_icon cke_button__textcolor_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -408px;background-size:auto;">&nbsp;</span><span id="cke_144_label" class="cke_button_label cke_button__textcolor_label" aria-hidden="false">文字顏色</span><span id="cke_144_description" class="cke_button_label" aria-hidden="false"></span><span class="cke_button_arrow"></span></a><a id="cke_145" class="cke_button cke_button__specialchar cke_button_off" href="javascript:void('插入特殊字元')" title="插入特殊字元" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_145_label" aria-describedby="cke_145_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(246,event);" onfocus="return CKEDITOR.tools.callFunction(247,event);" onclick="CKEDITOR.tools.callFunction(248,this);return false;"><span class="cke_button_icon cke_button__specialchar_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1872px;background-size:auto;">&nbsp;</span><span id="cke_145_label" class="cke_button_label cke_button__specialchar_label" aria-hidden="false">插入特殊字元</span><span id="cke_145_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_146" class="cke_button cke_button__table cke_button_off" href="javascript:void('表格')" title="表格" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_146_label" aria-describedby="cke_146_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(249,event);" onfocus="return CKEDITOR.tools.callFunction(250,event);" onclick="CKEDITOR.tools.callFunction(251,this);return false;"><span class="cke_button_icon cke_button__table_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1920px;background-size:auto;">&nbsp;</span><span id="cke_146_label" class="cke_button_label cke_button__table_label" aria-hidden="false">表格</span><span id="cke_146_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_147" class="cke_button cke_button__horizontalrule cke_button_off" href="javascript:void('插入水平線')" title="插入水平線" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_147_label" aria-describedby="cke_147_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(252,event);" onfocus="return CKEDITOR.tools.callFunction(253,event);" onclick="CKEDITOR.tools.callFunction(254,this);return false;"><span class="cke_button_icon cke_button__horizontalrule_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -912px;background-size:auto;">&nbsp;</span><span id="cke_147_label" class="cke_button_label cke_button__horizontalrule_label" aria-hidden="false">插入水平線</span><span id="cke_147_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_148" class="cke_button cke_button__creatediv cke_button_off" href="javascript:void('建立 Div 容器')" title="建立 Div 容器" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_148_label" aria-describedby="cke_148_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(255,event);" onfocus="return CKEDITOR.tools.callFunction(256,event);" onclick="CKEDITOR.tools.callFunction(257,this);return false;"><span class="cke_button_icon cke_button__creatediv_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -504px;background-size:auto;">&nbsp;</span><span id="cke_148_label" class="cke_button_label cke_button__creatediv_label" aria-hidden="false">建立 Div 容器</span><span id="cke_148_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_149" class="cke_button cke_button__iframe cke_button_off" href="javascript:void('IFrame')" title="IFrame" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_149_label" aria-describedby="cke_149_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(258,event);" onfocus="return CKEDITOR.tools.callFunction(259,event);" onclick="CKEDITOR.tools.callFunction(260,this);return false;"><span class="cke_button_icon cke_button__iframe_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -936px;background-size:auto;">&nbsp;</span><span id="cke_149_label" class="cke_button_label cke_button__iframe_label" aria-hidden="false">IFrame</span><span id="cke_149_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_150" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_151" class="cke_button cke_button__bulletedlist cke_button_off" href="javascript:void('插入/移除項目符號清單')" title="插入/移除項目符號清單" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_151_label" aria-describedby="cke_151_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(261,event);" onfocus="return CKEDITOR.tools.callFunction(262,event);" onclick="CKEDITOR.tools.callFunction(263,this);return false;"><span class="cke_button_icon cke_button__bulletedlist_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1344px;background-size:auto;">&nbsp;</span><span id="cke_151_label" class="cke_button_label cke_button__bulletedlist_label" aria-hidden="false">插入/移除項目符號清單</span><span id="cke_151_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_152" class="cke_button cke_button__numberedlist cke_button_off" href="javascript:void('插入/移除編號清單清單')" title="插入/移除編號清單清單" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_152_label" aria-describedby="cke_152_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(264,event);" onfocus="return CKEDITOR.tools.callFunction(265,event);" onclick="CKEDITOR.tools.callFunction(266,this);return false;"><span class="cke_button_icon cke_button__numberedlist_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1392px;background-size:auto;">&nbsp;</span><span id="cke_152_label" class="cke_button_label cke_button__numberedlist_label" aria-hidden="false">插入/移除編號清單清單</span><span id="cke_152_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_153" class="cke_button cke_button__justifycenter cke_button_off" href="javascript:void('置中對齊')" title="置中對齊" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_153_label" aria-describedby="cke_153_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(267,event);" onfocus="return CKEDITOR.tools.callFunction(268,event);" onclick="CKEDITOR.tools.callFunction(269,this);return false;"><span class="cke_button_icon cke_button__justifycenter_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1128px;background-size:auto;">&nbsp;</span><span id="cke_153_label" class="cke_button_label cke_button__justifycenter_label" aria-hidden="false">置中對齊</span><span id="cke_153_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_154" class="cke_button cke_button__justifyright cke_button_off" href="javascript:void('靠右對齊')" title="靠右對齊" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_154_label" aria-describedby="cke_154_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(270,event);" onfocus="return CKEDITOR.tools.callFunction(271,event);" onclick="CKEDITOR.tools.callFunction(272,this);return false;"><span class="cke_button_icon cke_button__justifyright_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1176px;background-size:auto;">&nbsp;</span><span id="cke_154_label" class="cke_button_label cke_button__justifyright_label" aria-hidden="false">靠右對齊</span><span id="cke_154_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_155" class="cke_button cke_button__justifyleft cke_button_off" href="javascript:void('靠左對齊')" title="靠左對齊" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_155_label" aria-describedby="cke_155_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(273,event);" onfocus="return CKEDITOR.tools.callFunction(274,event);" onclick="CKEDITOR.tools.callFunction(275,this);return false;"><span class="cke_button_icon cke_button__justifyleft_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1152px;background-size:auto;">&nbsp;</span><span id="cke_155_label" class="cke_button_label cke_button__justifyleft_label" aria-hidden="false">靠左對齊</span><span id="cke_155_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_156" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span id="cke_131" class="cke_combo cke_combo__styles cke_combo_off" role="presentation"><span id="cke_131_label" class="cke_combo_label">樣式</span><a class="cke_combo_button" title="格式化樣式" tabindex="-1" href="javascript:void('格式化樣式')" hidefocus="true" role="button" aria-labelledby="cke_131_label" aria-haspopup="listbox" onkeydown="return CKEDITOR.tools.callFunction(277,event,this);" onfocus="return CKEDITOR.tools.callFunction(278,event);" onclick="CKEDITOR.tools.callFunction(276,this);return false;"><span id="cke_131_text" class="cke_combo_text cke_combo_inlinelabel">樣式</span><span class="cke_combo_open"><span class="cke_combo_arrow"></span></span></a></span><span class="cke_toolgroup" role="presentation"><a id="cke_157" class="cke_button cke_button__removeformat cke_button_off" href="javascript:void('移除格式')" title="移除格式" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_157_label" aria-describedby="cke_157_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(279,event);" onfocus="return CKEDITOR.tools.callFunction(280,event);" onclick="CKEDITOR.tools.callFunction(281,this);return false;"><span class="cke_button_icon cke_button__removeformat_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1704px;background-size:auto;">&nbsp;</span><span id="cke_157_label" class="cke_button_label cke_button__removeformat_label" aria-hidden="false">移除格式</span><span id="cke_157_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span><span id="cke_158" class="cke_toolbar" role="toolbar"><span class="cke_toolbar_start"></span><span class="cke_toolgroup" role="presentation"><a id="cke_159" class="cke_button cke_button__link cke_button_off" href="javascript:void('連結')" title="連結 (⌘+K)" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_159_label" aria-describedby="cke_159_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(282,event);" onfocus="return CKEDITOR.tools.callFunction(283,event);" onclick="CKEDITOR.tools.callFunction(284,this);return false;"><span class="cke_button_icon cke_button__link_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1272px;background-size:auto;">&nbsp;</span><span id="cke_159_label" class="cke_button_label cke_button__link_label" aria-hidden="false">連結</span><span id="cke_159_description" class="cke_button_label" aria-hidden="false">鍵盤快捷鍵 Command 鍵+K</span></a><a id="cke_160" class="cke_button cke_button__unlink cke_button_disabled " href="javascript:void('取消連結')" title="取消連結" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_160_label" aria-describedby="cke_160_description" aria-haspopup="false" aria-disabled="true" onkeydown="return CKEDITOR.tools.callFunction(285,event);" onfocus="return CKEDITOR.tools.callFunction(286,event);" onclick="CKEDITOR.tools.callFunction(287,this);return false;"><span class="cke_button_icon cke_button__unlink_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1296px;background-size:auto;">&nbsp;</span><span id="cke_160_label" class="cke_button_label cke_button__unlink_label" aria-hidden="false">取消連結</span><span id="cke_160_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_161" class="cke_button cke_button__subscript cke_button_off" href="javascript:void('下標')" title="下標" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_161_label" aria-describedby="cke_161_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(288,event);" onfocus="return CKEDITOR.tools.callFunction(289,event);" onclick="CKEDITOR.tools.callFunction(290,this);return false;"><span class="cke_button_icon cke_button__subscript_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -96px;background-size:auto;">&nbsp;</span><span id="cke_161_label" class="cke_button_label cke_button__subscript_label" aria-hidden="false">下標</span><span id="cke_161_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_162" class="cke_button cke_button__superscript cke_button_off" href="javascript:void('上標')" title="上標" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_162_label" aria-describedby="cke_162_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(291,event);" onfocus="return CKEDITOR.tools.callFunction(292,event);" onclick="CKEDITOR.tools.callFunction(293,this);return false;"><span class="cke_button_icon cke_button__superscript_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -120px;background-size:auto;">&nbsp;</span><span id="cke_162_label" class="cke_button_label cke_button__superscript_label" aria-hidden="false">上標</span><span id="cke_162_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_163" class="cke_button cke_button__anchor cke_button_off" href="javascript:void('錨點')" title="錨點" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_163_label" aria-describedby="cke_163_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(294,event);" onfocus="return CKEDITOR.tools.callFunction(295,event);" onclick="CKEDITOR.tools.callFunction(296,this);return false;"><span class="cke_button_icon cke_button__anchor_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1248px;background-size:auto;">&nbsp;</span><span id="cke_163_label" class="cke_button_label cke_button__anchor_label" aria-hidden="false">錨點</span><span id="cke_163_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_164" class="cke_button cke_button__image cke_button_off" href="javascript:void('圖像')" title="圖像" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_164_label" aria-describedby="cke_164_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(297,event);" onfocus="return CKEDITOR.tools.callFunction(298,event);" onclick="CKEDITOR.tools.callFunction(299,this);return false;"><span class="cke_button_icon cke_button__image_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -960px;background-size:auto;">&nbsp;</span><span id="cke_164_label" class="cke_button_label cke_button__image_label" aria-hidden="false">圖像</span><span id="cke_164_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_165" class="cke_button cke_button__maximize cke_button_off" href="javascript:void('最大化')" title="最大化" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_165_label" aria-describedby="cke_165_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(300,event);" onfocus="return CKEDITOR.tools.callFunction(301,event);" onclick="CKEDITOR.tools.callFunction(302,this);return false;"><span class="cke_button_icon cke_button__maximize_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1416px;background-size:auto;">&nbsp;</span><span id="cke_165_label" class="cke_button_label cke_button__maximize_label" aria-hidden="false">最大化</span><span id="cke_165_description" class="cke_button_label" aria-hidden="false"></span></a><span class="cke_toolbar_separator" role="separator"></span><a id="cke_166" class="cke_button cke_button__source cke_button_off" href="javascript:void('原始碼')" title="原始碼" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_166_label" aria-describedby="cke_166_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(303,event);" onfocus="return CKEDITOR.tools.callFunction(304,event);" onclick="CKEDITOR.tools.callFunction(305,this);return false;"><span class="cke_button_icon cke_button__source_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1848px;background-size:auto;">&nbsp;</span><span id="cke_166_label" class="cke_button_label cke_button__source_label" aria-hidden="false">原始碼</span><span id="cke_166_description" class="cke_button_label" aria-hidden="false"></span></a><a id="cke_167" class="cke_button cke_button__showblocks cke_button_off" href="javascript:void('顯示區塊')" title="顯示區塊" tabindex="-1" hidefocus="true" role="button" aria-labelledby="cke_167_label" aria-describedby="cke_167_description" aria-haspopup="false" aria-disabled="false" onkeydown="return CKEDITOR.tools.callFunction(306,event);" onfocus="return CKEDITOR.tools.callFunction(307,event);" onclick="CKEDITOR.tools.callFunction(308,this);return false;"><span class="cke_button_icon cke_button__showblocks_icon" style="background-image:url('http://best18.ito.tw/plastlist/public/js/ckeditor/plugins/icons.png?t=IA8F');background-position:0 -1800px;background-size:auto;">&nbsp;</span><span id="cke_167_label" class="cke_button_label cke_button__showblocks_label" aria-hidden="false">顯示區塊</span><span id="cke_167_description" class="cke_button_label" aria-hidden="false"></span></a></span><span class="cke_toolbar_end"></span></span></span></span><div id="cke_3_contents" class="cke_contents cke_reset" role="presentation" style="height: 350px;"><span id="cke_171" class="cke_voice_label">按下 ALT 0 取得說明。</span><iframe src="" frameborder="0" class="cke_wysiwyg_frame cke_reset" title="RTF 編輯器, data_price_note_en" aria-describedby="cke_171" tabindex="0" allowtransparency="true" style="width: 100%; height: 100%;"></iframe></div><span id="cke_3_bottom" class="cke_bottom cke_reset_all" role="presentation" style="user-select: none;"><span id="cke_3_resizer" class="cke_resizer cke_resizer_vertical cke_resizer_ltr" title="調整大小" onmousedown="CKEDITOR.tools.callFunction(208, event)">◢</span><span id="cke_3_path_label" class="cke_voice_label">元件路徑</span><span id="cke_3_path" class="cke_path" role="group" aria-labelledby="cke_3_path_label"><span class="cke_path_empty">&nbsp;</span></span></span></div></div><a class="button color_blue openeditorbox" data-fancybox-type="iframe" href="../lib/contentBuilder/open_editor.php?field_name=data_price_note_en&amp;field_group=2168">打開編輯器</a>
+                  </div> <!--right end-->
+              </div><!--row end-->
+  
+          </form>
+          </div>
+                  <div class="formTable"><!-- formTable -->
+              <div class="row clearfix"><!--row-->
+              </div><!--row end-->
+              
+              <div class="row clearfix draggable multiphoto_tag ui-draggable ui-draggable-handle ui-draggable-disabled" style="position: relative;"><!--row-->
+                  <a class="toggleDrag"><i class="fa fa-arrows"></i></a>
+                  <label class="col-1">相關圖片上傳：</label>
+                  <div class="col-11 clearfix"><!--right-->
+                      <script>
+  //隨機亂數
+  function getRandom(x){
+      return Math.floor(Math.random()*x)+1;
+  };
+  
+  //生成新增圖片時的檢測值和欄位到表單內
+  var languageBtns = [];
+  if($('div[class*=edit_]').length > 0){ //有語系的單元
+      languageBtns = $("div[class*=edit_]");
+  }else if($('.contentBox form').length == 1){ //沒有分語系的單元
+      languageBtns = $(".contentBox");
+  }
+  if(languageBtns.length > 0){
+      for (var i = 0; i < languageBtns.length; i++) {
+          var formBlock = $(languageBtns[i]).find('form');
+  
+          //生成input欄位到form怎單內
+          var filesUnqidInput   = document.createElement("input");
+          filesUnqidInput.name  = "files_unqid_check";
+          filesUnqidInput.type  = "hidden";
+          filesUnqidInput.value = 'enL_catalog' + (+new Date()) + getRandom(9999);
+  
+          formBlock.prepend(filesUnqidInput);
+      }
+  }
+  
+  document.onkeydown = function(e){ 
+      if (e == null) { // ie
+          keycode = event.keyCode;
+      } else { // mozilla
+          keycode = e.which;
+      }
+      if(keycode == 27){ // close
+          //parent.$.fancybox.close();
+      } 
+  }
+  
+  function open_window(div_name,width,height){
+      if(width==''){
+          width=0;
+      }
+      if(height==''){
+          height=0;
+      }
+      $.blockUI({
+      message:$('#'+div_name),
+          css:{ 
+              cursor:'default',
+              border: '0',
+              width: width + 'px',
+              height:height+ 'px',
+              padding:'0px',
+              top:($(window).height()-height)/2 + 'px',
+              left:($(window).width()-width)/2 + 'px'
+          }
+      });     
+  }
+  
+  //將圖片加入文章
+  function add_exp(fieldname){
+      var qstr="";
+      if(fieldname==''){
+          errorDialog('請設定插入圖片的欄位。', '');
+          //alert('請設定插入圖片的欄位。');
+          return false;   
+      }
+      var data_list={};
+      if($('#list_files_html li input[id^=index_files_id_]:checkbox:checked:enabled').size()>0){
+          data_list["index_files_id"]={};
+          var t=0;
+          $('#list_files_html li input[id^=index_files_id_]:checkbox:checked:enabled').each(function(index, element) {
+              data_list["index_files_id"][t]=$(this).val();
+              t++;
+          });
+      }
+      if(Object.keys(data_list).length<=0){
+          errorDialog('必須選擇圖片1。', '');
+      }else{
+          data_list["act"]=111;
+          data_list["insertfield"]=fieldname;
+          jq_post_block('act.php',data_list,'action_script_code','files_modifly_detail');
+  
+          $('#list_files_html li input[id^=index_files_id_]').attr('checked', false);
+      }
+  }
+  
+  //刪除圖片資料
+  function del_files(){
+      var qstr="";
+      var data_list={};
+      if($('#list_files_html li input[id^=index_files_id_]:checkbox:checked:enabled').size()>0){
+          data_list["index_files_id"]={};
+          var t=0;
+          $('#list_files_html li input[id^=index_files_id_]:checkbox:checked:enabled').each(function(index, element) {
+              data_list["index_files_id"][t]=$(this).val();
+              t++;
+          });
+      }
+      if(Object.keys(data_list).length<=0){
+          errorDialog('必須選擇修改項目。', '');
+      }else{
+          if(confirm("你確定要刪除圖片資料？")){
+              data_list["act"]=105;
+              jq_post_block('act.php',data_list,'action_script_code','files_modifly_detail');
+          }
+      }
+  }
+  //修改圖片標題一併修改方式
+  function update_files_title_submit(){
+      var qstr="";
+      var data_list={};
+      if($('#list_files_html li input[id^=index_files_id_]:checkbox:checked:enabled').size()>0){
+          data_list["index_files_id"]={};
+          var t=0;
+          $('#list_files_html li input[id^=index_files_id_]:checkbox:checked:enabled').each(function(index, element) {
+              data_list["index_files_id"][t]=$(this).val();
+              data_list["data_file_title_"+$(this).val()]=$('#data_file_title_' + $(this).val()).val();
+              data_list["data_webshow_type_"+$(this).val()]=$('#data_webshow_type_' + $(this).val()).val();
+              data_list["data_file_exp_"+$(this).val()]=$('#data_file_exp_' + $(this).val()).val();
+              data_list["data_file_sort_"+$(this).val()]=$('#data_file_sort_' + $(this).val()).val();
+              t++;
+          });
+      }
+      if(Object.keys(data_list).length>0){
+          data_list["act"]=106;
+          data_list["files_unqid_check"]=$(".edit_now input[name=files_unqid_check]").val();
+          data_list["msg_pop"]=1;
+          jq_post_block('act.php',data_list,'action_script_code','files_modifly_detail');
+      }
+  }
+  //修改圖片標題
+  function update_files_title(){
+      var qstr="";
+      var data_list={};
+      if($('#list_files_html li input[id^=index_files_id_]:checkbox:checked:enabled').size()>0){
+          data_list["index_files_id"]={};
+          var t=0;
+          $('#list_files_html li input[id^=index_files_id_]:checkbox:checked:enabled').each(function(index, element) {
+              data_list["index_files_id"][t]=$(this).val();
+              data_list["data_file_title_"+$(this).val()]=$('#data_file_title_' + $(this).val()).val();
+              data_list["data_webshow_type_"+$(this).val()]=$('#data_webshow_type_' + $(this).val()).val();
+              data_list["data_file_exp_"+$(this).val()]=$('#data_file_exp_' + $(this).val()).val();
+              data_list["data_file_sort_"+$(this).val()]=$('#data_file_sort_' + $(this).val()).val();
+              t++;
+          });
+      }
+      if(Object.keys(data_list).length<=0){
+          errorDialog('必須選擇修改項目。', '');
+      }else{
+          data_list["act"]=106;
+          data_list["files_unqid_check"]=$(".edit_now input[name=files_unqid_check]").val();
+          data_list["msg_pop"]=0;
+          jq_post_block('act.php',data_list,'action_script_code','files_modifly_detail');
+      }
+  }
+  $(function(){
+      var getlang=$(".multiPhoto #lang_select").val();
+      if(getlang==undefined)getlang="";
+      $('#index_list_main_id').val($('.edit_now #index_id').val());
+      $(".multiPhoto #openMutipleFile").prop("href","act.php?act=101&files_unqid_check="+$(".edit_now input[name=files_unqid_check]").val()+"&index_id="+$('.edit_now #index_id').val()+"&index_group=2168&lang_set="+getlang);   
+  })
+  </script>
+  <input type="hidden" name="index_list_main_id" id="index_list_main_id" value="2174">
+  <input type="hidden" name="index_list_group_id" id="index_list_group_id" value="2168">
+  <div id="loading_files_icon_name" style="
+  display:none;
+  height: 35px;
+  position: absolute;
+  z-index: 999;">
+  <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
+    <tbody><tr>
+      <td bgcolor="#FFFFFF" style="color:#F00; font-size:14px">
+  <img src="../lib/multiphoto_upload/loading_type_01.gif" hspace="2" align="absmiddle" border="0">資料讀取中.......</td>
+    </tr>
+  </tbody></table>
+  </div><div class="multiPhoto"><!--mutiPhoto-->
+      <ul class="inline">
+          <li><a class="button color_blue openlayer" id="openMutipleFile" data-fancybox-type="iframe" href="act.php?act=101&amp;files_unqid_check=enL_catalog16533223085958060&amp;index_id=2174&amp;index_group=2168&amp;lang_set=">檔案</a></li>
+                  <li><a class="button color_blue" onclick="var lang = $('.edit_now #data_m_lang').val();add_exp('data_exp_'+lang);" style="display:none" rel="other_action">插入文章</a></li>
+          <script>
+                  CKEDITOR.config.extraPlugins = "imagebrowser";
+                  CKEDITOR.config.imageBrowser_listUrl = "http://best18.ito.tw/plastlist/manage/catalog_list/act.php?index_group=2168&files_unqid_check="+$(".edit_now input[name=files_unqid_check]").val()+"&act=112";
+              </script>        <li><a class="button color_blue" onclick="del_files();" rel="other_action" style="display:none">刪除</a></li>
+          <li><a class="button color_blue" id="mod_item_btn" rel="other_action" onclick="update_files_title();" style="display:none">儲存</a></li>
+                      <li>
+                  <select name="lang_select" id="lang_select">
+                      <option value="" selected="">All</option>
+                                          <option value="en">英</option>
+                                      </select>
+              </li>
+  
+              <script>
+              $(function(){
+                  $(".multiPhoto #lang_select").on("change",function(e){
+                      var lang=$(this).val();
+                      getlang(lang);
+                  });
+              })
+              function getlang(lang){
+                  if(lang==undefined)lang="";
+                  $(".multiPhoto #openMutipleFile").prop("href","act.php?act=101&files_unqid_check="+$(".edit_now input[name=files_unqid_check]").val()+"&index_id="+$('.edit_now #index_id').val()+"&index_group=2168&lang_set="+lang);  
+                  if(lang!=""){
+                      $(".photoList#list_files_html li").hide();
+                      $(".photoList#list_files_html li.lang_item_img_no,.photoList#list_files_html li.lang_item_img_"+lang).show();
+                  }else{
+                      $(".photoList#list_files_html li").show();
+                  }
+              }
+              </script>
+                  <li><a class="button" rel="other_action" onclick="$('#list_files_html li input[id^=index_files_id_]:checkbox').prop('checked',true);" style="display:none">全選</a></li>
+          <li><a class="button" rel="other_action" onclick="$('#list_files_html li input[id^=index_files_id_]:checkbox').prop('checked',false);" style="display:none">反全選</a></li>
+      </ul>
+      <input name="act_data" type="hidden" id="act_data" value="0">
+      <ul class="photoList clearfix" id="list_files_html"><script>
+  
+  
+  $("input[name='index_files_id[]']").on("click",function(e){
+    if(! $(this).prop("checked")){
+      var old_val=$(this).parent().parent().find('input[name^="data_webshow_old_type_"]').val();
+      $(this).parent().parent().find('input[name^="data_webshow_type_"]').val(old_val);
+      $(this).parent().parent().find('input[type="button"]').css({
+        "background-color":""
+      });
+      if(old_val=="1"){
+        $(this).parent().parent().find('input[type="button"]').val("縮圖顯示");
+      }else{
+        $(this).parent().parent().find('input[type="button"]').val("縮圖關閉");
+      }
+    }
+  });
+  
+  function chg_item_webshow(data){
+    if($(data).parent().find('input[name^=index_files_id]').prop('checked')){
+      //$(data).parent().find('input[name^=index_files_id]').prop('checked',false);
+    }else{
+      $(data).parent().find('input[name^=index_files_id]').prop('checked',true);
+    }
+    var call_val=$(data).parent().find('input[name^="data_webshow_type_"]').val();
+    if(call_val=="1"){
+      $(data).val("縮圖關閉");
+      $(data).parent().find('input[name^="data_webshow_type_"]').val("0");
+    }else{
+      $(data).val("縮圖顯示");
+      $(data).parent().find('input[name^="data_webshow_type_"]').val("1");
+    }
+    var call_old_val=$(data).parent().find('input[name^="data_webshow_old_type_"]').val();
+    var call_val=$(data).parent().find('input[name^="data_webshow_type_"]').val();
+    if(call_old_val==call_val){
+      $(data).css({
+        "background-color":""
+      });
+    }else{
+      $(data).css({
+        "background-color":"#FF9"
+      });
+    }
+  }
+  
+  $(".button[rel=other_action]").hide();
+  
+  </script>
+  
+  <script>
+  
+  $(".button[rel=other_action]").hide();
+  
+  $(".photoList#list_files_html li").show();
+  
+  $.unblockUI();
+  
+  </script>
+  </ul>
+  </div>
+  <script>
+      var data_list={};
+      data_list["actFileName"]='act.php';
+      data_list["act"]=103;
+      data_list["files_unqid_check"]=$(".edit_now input[name=files_unqid_check]").val();
+      data_list["index_id"]=$('.edit_now #index_id').val();
+      data_list["index_group"]=2168;
+      jq_post('act.php',data_list,'list_files_html','loading_files_icon_name');
+  </script>
+  <span id="action_script_code" style=" display:none;"></span>
+  <div id="files_modifly_detail" style="display: none; width:350px;">
+      <img src="../lib/multiphoto_upload/loading_type_01.gif" hspace="2" align="absmiddle">
+      <div style="color: #FFF; font-size: 16px; line-height:1.5; text-align: center; font-weight:bold; padding-top:10px; ">
+          正在處理資料,請勿關閉網頁!!
+      </div>
+  </div>                    <!--multiPhoto end-->
+                      <p class="size">[圖片尺寸] 寬度:1160 (等比縮減)</p>
+                  </div> <!--right end-->
+              </div><!--row end-->
+          </div><!-- formTable end -->
+  
+          <script>
+              function display_type_fun(data){
+                  $(data).parent().parent().find('label').removeClass('active');
+                  $(data).parent().select('label').addClass('active');
+                  var lang_area = $(data).closest('div[class*=edit_]');
+                  switch($(data).val()){
+                      case "0":
+                          $(lang_area).find(".url_tag").hide();
+                          $(lang_area).find(".video_tag").hide();
+                          $(lang_area).find(".exp_tag").show();
+                          $(lang_area).find(".multiphoto_tag").show();
+                          break;
+                      case "1":
+                          $(lang_area).find(".url_tag").show();
+                          $(lang_area).find(".video_tag").hide();
+                          $(lang_area).find(".exp_tag").hide();
+                          $(lang_area).find(".multiphoto_tag").hide();
+                          break;
+                      case "2":
+                          $(lang_area).find(".url_tag").hide();
+                          $(lang_area).find(".video_tag").show();
+                          $(lang_area).find(".exp_tag").hide();
+                          $(lang_area).find(".multiphoto_tag").hide();
+                          break;
+                      case "3":
+                          $(lang_area).find(".url_tag").hide();
+                          $(lang_area).find(".video_tag").hide();
+                          $(lang_area).find(".exp_tag").hide();
+                          $(lang_area).find(".multiphoto_tag").show();
+                          break;
+                      case "4":
+                          $(lang_area).find(".url_tag").hide();
+                          $(lang_area).find(".video_tag").hide();
+                          $(lang_area).find(".exp_tag").hide();
+                          $(lang_area).find(".multiphoto_tag").hide();
+                          break;
+                      default:
+                          $(lang_area).find(".url_tag").hide();
+                          $(lang_area).find(".video_tag").hide();
+                          $(lang_area).find(".exp_tag").show();
+                          $(lang_area).find(".multiphoto_tag").show();
+                          break;
+                  }
+              }
+              function call_category(lang,id_1,id_2){
+                  jq_post_noloading('act.php','act=6&index_m1_id='+id_1+'&index_m2_id='+id_2+'&level=2',lang+' #category_m2_code');
+              }
+              function call_categoryLv3(lang,id_1,id_2,id_3){
+                  console.log(lang, id_1, id_2, id_3);
+                  jq_post_noloading('act.php','act=6&index_m1_id='+id_1+'&index_m2_id='+id_2+'&index_m3_id='+id_3+'&level=3',lang+' #category_m3_code');
+              }
+  
+              function getSelectValue(name) {
+                  return Number(document.querySelector('select[name="'+name+'"]').value);
+              }
+  
+          </script>
+      </div><!--wrap end-->
+  </div><!--contentBox end-->
+  <script>
+      //判斷是否在回收桶，在回收桶內則全部隱藏
+      $('.inTrash').each(function(){
+          var _formBox = $(this).closest('.edit_form');
+          _formBox.find('input, select, textarea').attr({'disabled':true,'readonly':true});
+          _formBox.find('.fileUpload img').eq(0).closest('li').siblings('li').remove();
+  
+          _formBox.find('#push_data').on('submit', function(e){
+              errorDialog('資料在回收桶內，請先回復資料。', '".showErrorFile(__FILE__)."');
+              return false;
+          });
+      });
+  
+    //判斷是否有編輯過動作
+    var edited = false; //判斷的全域
+    $(function(){
+      $('body').on('change',function(){
+        edited = true;
+        $('.mod a.fa-arrow-left').attr('onclick','');
+      });
+  
+      //開啟狀態按鈕偵測
+      $(document).on('click','.trigger',function(){
+        edited = true;
+        $('.mod a.fa-arrow-left').attr('onclick','');
+      });
+  
+      //ckeditor編輯偵測
+      CKEDITOR.on('instanceReady',function(item){
+        item.editor.on('change',function(){
+          edited = true;
+          $('.mod a.fa-arrow-left').attr('onclick','');
+        })
+      });
+  
+      //側邊選單偵測
+      $('.menu a').on('click',function(){
+        if(this.hasAttribute('href')){
+          if(edited){
+                      ChkEdited('您已變動文章，在離開前是否要儲存？', this.getAttribute('href'));
+                      return false;
+          }
+        }
+      });
+  
+      //返回上一頁按鈕偵測
+      $('.mod a.fa-arrow-left').on('click',function(){
+        if(edited){
+                  ChkEdited('您已變動文章，在離開前是否要儲存？', 'back');
+        }
+      });
+  
+    });
+  </script>
+  <script>
+      //進入內頁時偵測語系js
+      function chk_now_lang(){
+        var tabTarget = location.hash;
+        if(tabTarget == '')
+          tabTarget = $('.language.tab a:first').attr('href');
+  
+          //找不到該語系表單則切換到第一個表單
+          if($('div'+tabTarget).length == 0){
+              var firstForm = $('.contentBox .edit_form').eq(0).attr('id');
+  
+              //找不到表單時返回上一頁
+              if(firstForm == null){
+                  alert('網頁找不到資料，即將返回上一頁...');
+                  window.history.back();
+              }
+  
+              history.replaceState(null, null, '#'+firstForm);
+              window.location.reload();
+          }
+  
+          //找不到表單時返回上一頁
+          if($('div.edit_form').length == 0){
+              alert('網頁找不到資料，即將返回上一頁...');
+              window.history.back();
+          }
+  
+          if($('.language.tab').find('a').length > 0){
+            $('.language.tab').find('a').each(function(){
+              var tabContent = $(this).attr('href');
+              if(tabContent!=tabTarget){
+                $(this).removeClass('current');
+                $(tabContent).hide().removeClass('edit_now');
+              }else{
+                $(this).addClass('current');
+                $(tabContent).show().addClass('edit_now');
+              }
+            });
+          }else{
+              $('.contentBox .edit_form').eq(0).addClass('edit_now');
+          }
+      }
+  
+  
+  $(function(){
+      
+    //複製按鈕生成
+    var cpbtn = $('div.formTable[class*=edit_] [data-fields-type]');
+      if(cpbtn.length>0){
+      $(cpbtn).each(function(){
+              var _this = $(this);
+        var fieldsType = _this.data('fields-type');
+        var fieldsName = _this.data('fields-name');
+              var editShow   = _this.data('openbuilder');
+  
+                          if( fieldsType == 'ckeditor' && ( editShow == undefined || editShow == null ) )
+                  editShow = true;
+  
+              
+                    _this.removeAttr('data-fields-type data-fields-name data-openbuilder');
+  
+              //生成編輯器按鈕
+              if(fieldsType === 'ckeditor' && editShow){
+                  var _nowForm = _this.closest('form');
+                  var nowGroup = _nowForm.find('#data_m_group').val();
+                  var nowLang  = _nowForm.find('#data_m_lang').val();
+  
+                  var CBBtn    = document.createElement('a');
+                  CBBtn.innerHTML = '打開編輯器';
+                  CBBtn.className = "button color_blue openeditorbox";
+                  CBBtn.dataset.fancyboxType = 'iframe';
+                  CBBtn.setAttribute("href","../lib/contentBuilder/open_editor.php?field_name="+fieldsName+"_"+nowLang+"&field_group="+nowGroup);
+  
+                  _this.next('div').find('#'+fieldsName+'_'+nowLang).after(CBBtn);
+              }
+      })
+    }
+  
+    //偵測語系
+    chk_now_lang();
+  
+      
+  });
+  </script><script>
+      function changeBtn(Btn){
+          if(typeof getlang === "function"){
+              var tabTargetType = $(Btn).data('type');
+              getlang(tabTargetType);
+              $('#lang_select option[value='+tabTargetType+']').prop('selected','selected');
+          }
+  
+          var tabTarget = $(Btn).attr('href');
+          history.replaceState(null, null, location.pathname+location.search+tabTarget);
+          $(Btn).addClass('current').siblings().removeClass('current');
+          
+          $('.language.tab').find('a').each(function(){
+              var tabContent = $(this).attr('href');
+              if(tabContent!=tabTarget){
+                  $(tabContent).hide().removeClass('edit_now');
+              }else{
+                  $(tabContent).show().addClass('edit_now');
+              }
+          });
+      }
+  
+    $(function(){
+      //多語系按鈕
+      $('.language.tab').find('a').on('click', function(){
+        if(edited){
+                  ChkEdited('您已變動文章，是否要儲存？', '', changeBtn, this);
+              }else{
+                  changeBtn(this);
+              }
+        
+        return false;
+      });
+    });
+  </script>    	</div><!--mainContent end-->
+      </div><!--mainArea end-->
+  </div><!--outerWrap end-->
+  <div class="gotop" style="display: block;"><i class="fa fa-angle-up"></i></div>
+  <!--===系統視窗===-->
+  <!--loadingMask-->
+  <div id="loadingMask">
+    <div class="loading"><i class="fa fa-spinner fa-spin"></i></div>
+  </div>
+  <span style="display:none">
+  <a class="loading_top_pop" style="padding-left:210px;">loading按鈕</a>
+  </span>
+  <script>
+    $(function(){
+      $('.loading_top_pop').click(function(){
+        $.blockUI({
+                  message:$('#loadingMask'),
+                  css: { border: '0' } 
+              });
+      });
+    });
+  </script>
+  
+  <script>
+      var autherCount = 0;
+      var autherArray = ["PM\uff1a Deer","Designer\uff1a Hannah","FrontEnd\uff1a Randy","BackEnd\uff1a Rick\u3001Wayne","Release Date\uff1a ","Version\uff1a1.2.1.20200114"];
+      $('.ibestDataBox > .logo > img, .sideMenu > h1, .m_header > strong').on('click',function(){
+          autherCount++
+          if(autherCount == 3){
+              autherCount = 0;
+              alert(autherArray.join('\n'));
+          }
+      })
+  </script>
+  <script src="http://best18.ito.tw/plastlist/public/js/jqueryui/jquery-ui-core-min.js"></script> 
+  <script>
+      function copy_url(t){
+          document.getElementById("data_url"+t).select();
+          document.execCommand("Copy");
+          messageDialog('成功複製到剪貼簿');
+      }
+  
+      function counter_number(data){
+          if(data.value.match(/[^0-9]/g)){ 
+              alert('欄位值必須為數字!!');
+              data.value='';
+              data.focus();
+          }
+      }
+  
+      //js numberFormat / number.numberFormat(小數點後有幾位, 小數點的符號, 千分位的符號) / eg.number.numberFormat(2, '.', ',');
+      Number.prototype.numberFormat = function(c, d, t){
+      var n = this, 
+          c = isNaN(c = Math.abs(c)) ? 2 : c, 
+          d = d == undefined ? "." : d, 
+          t = t == undefined ? "," : t, 
+          s = n < 0 ? "-" : "", 
+          i = String(parseInt(n = Math.abs(Number(n) || 0).toFixed(c))), 
+          j = (j = i.length) > 3 ? j % 3 : 0;
+          return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+      };
+      
+    //新版toogle功能	
+    (function($) {
+      $.fn.clickToggle = function(func1, func2) {
+        var funcs = [func1, func2];
+        this.data('toggleclicked', 0);
+        this.click(function() {
+          var data = $(this).data();
+          var tc = data.toggleclicked;
+          $.proxy(funcs[tc], this)();
+          data.toggleclicked = (tc + 1) % 2;
+        });
+        return this;
+      };
+    }(jQuery));
+  
+    $(function(){		
+      //加狀態鈕
+      $('input.status').each(function(){
+        $(this).wrap('<div class="btn_trigger"/>');
+        
+        if($(this).prop('checked')){
+          $(this).after('<a class="trigger" data-tip="點擊可開關狀態"/>');
+        }else{
+          $(this).after('<a class="trigger off" data-tip="點擊可開關狀態"/>');
+        }
+      });
+      //點選開關狀態
+      $(document).on('click', '.trigger', function(){
+        $(this).toggleClass('off');		
+        var checkBox = $(this).siblings('.status');
+        checkBox.prop("checked", !checkBox.prop("checked"));	
+        $(this).parent().parent().parent().find('input[name^=index_id]').prop('checked',true);
+        return false;			
+      });
+      
+      //側邊次選單
+      $('ul.menu').find('li').each(function(){
+        if($(this).find('.submenu').length>0){
+          if($(this).hasClass('current')){
+            $(this).find('.submenu').show();
+          }
+          $(this).children('a').removeAttr('href').parent().addClass('dropDown');	
+        }
+      });
+      
+      $('ul.menu').find('li.dropDown').children('a').click(function(){
+        $(this).next('.submenu').toggle(200);
+        return false;
+      });
+      
+      //mobile_menu
+      $('a.toggleMenu').click(function(){
+        if($('.sideMenu').hasClass('open')){
+          $('body, .sideMenu').removeClass('open');
+          $('.mask').stop().fadeOut(200);
+        }else{
+          
+          $('body, .sideMenu').addClass('open');
+          $('.mask').stop().fadeIn(200);
+        }
+      });
+      
+      $('.mask').click(function(){
+        if($('.sideMenu').hasClass('open')){
+          $('body, .sideMenu').removeClass('open');
+          $(this).stop().fadeOut(200);
+        }else{
+          $('body, .sideMenu').addClass('open');
+          $(this).stop().fadeIn(200);
+        }
+      });
+      
+      //開關篩選功能
+      $('a.toggleFilter').clickToggle(function() {   
+        $(this).html('<i class="fa fa-caret-up"/>篩選功能')
+        $(this).siblings().stop(false,true).slideDown(200);
+      },
+      function() {
+        $(this).html('<i class="fa fa-caret-down"/>篩選功能')
+        $(this).siblings().stop(false,true).slideUp(200);
+      });
+      
+      //手機版移除多圖放大
+      if(isMobile){
+        $('.multiPhoto').find('.photoList').find('a').each(function(){
+          $(this).removeClass('openpic').removeAttr('href');
+        });
+      }
+      
+      //gotop
+      $('.gotop').click(function(){
+        $('html,body').animate({scrollTop:0},400);
+      });
+      
+      $(window).scroll(function(){
+        var scrollTop = $(window).scrollTop();
+        if(scrollTop > 100){
+          $('.gotop').show();
+        }else{
+          $('.gotop').hide();
+        }
+      });
+  
+      // 按鈕的切換
+      $('.checkBoxset input[type=radio]').on('click',function(e){
+        $(this).parents('li').addClass('selected').siblings().removeClass('selected');
+      });
+          $('.checkBoxset input[type=checkbox]').on('click',function(e){
+              if($(this).prop('checked')){
+                  $(this).parents('li').addClass('selected');
+              }else{
+                  $(this).parents('li').removeClass('selected');
+              }
+          });
+  
+          //關鍵字搜尋
+          $('#search_word').on('keyup',function(event){
+              if(event.keyCode === 13) {
+                  $(this).next('a').click();
+              }
+          });
+    });
+  </script>
+  
+  <!--cluetip-->
+  <link rel="stylesheet" href="http://best18.ito.tw/plastlist/manage/lib/cluetip/jquery.cluetip.css" type="text/css">
+  <script src="http://best18.ito.tw/plastlist/manage/lib/cluetip/jquery.cluetip.js"></script>
+  <script>
+  $(function(){
+      clue_action();
+  });
+  function clue_action(){
+      $('.clickset').unbind('click');
+      $('.clickset').cluetip({
+          width:250,
+          local:true,
+          sticky: true,
+          arrows:true,
+          activation:'click',
+          showTitle:false,
+          dropShadow:true,
+          closePosition: 'top',
+          closeText:'<i class="fa fa-remove"></i>',
+          topOffset:30
+      }); 
+  }
+  </script>
+  
+  <!--footable-->
+  <link rel="stylesheet" type="text/css" href="http://best18.ito.tw/plastlist/public/js/footable/footable.core.css">
+  <script src="http://best18.ito.tw/plastlist/public/js/footable/footable.js"></script>
+  <script>
+      $('table.responsive').footable();
+  </script>
+  
+  <!--tiptip-->
+  <link rel="stylesheet" href="http://best18.ito.tw/plastlist/manage/lib/tiptip/tipTip.css" type="text/css">
+  <script src="http://best18.ito.tw/plastlist/manage/lib/tiptip/jquery.tipTip.js"></script>
+  <script>
+    $(function() {		
+      if(isMobile==false || isTablet==false){
+        $('[data-tip]').tipTip({
+                  maxWidth:'350px',
+          delay:100,
+          fadeIn:100,
+          defaultPosition:'top',
+          attribute:"data-tip"
+        });
+      }
+    });
+  </script>
+  
+  <!--blockUI-->
+  <script src="http://best18.ito.tw/plastlist/public/js/jquery.blockUI.js"></script>
+  
+  <!-- fancyBox-->
+  <link rel="stylesheet" href="http://best18.ito.tw/plastlist/manage/lib/fancybox/jquery.fancybox.css" type="text/css" media="screen">
+  <script src="http://best18.ito.tw/plastlist/manage/lib/fancybox/jquery.fancybox.pack.js"></script>
+  <script>
+    $(function(){
+      $('.openpic').fancybox({
+        helpers:{
+          overlay:{locked: false}
+        }
+      });
+      $('.openlayer').fancybox({
+        width		: '100%',
+        maxWidth	: 1600,
+        openEffect	: 'none',
+        closeEffect	: 'none',
+        closeClick	: false,
+        helpers:{
+          overlay:{closeClick:false, locked: false}
+        }
+      });
+      $('.openeditorbox').fancybox({
+        "width":'100%',"height":'100%',
+        helpers:{
+          overlay:{closeClick:false, locked: false}
+        }
+      });
+    });
+  </script>
+  
+  <!--datepicker-->
+  <link rel="stylesheet" href="http://best18.ito.tw/plastlist/public/js/jqueryui/datepicker/datepicker.css">
+  <link rel="stylesheet" href="http://best18.ito.tw/plastlist/public/js/jqueryui/timepicker/jquery-ui-timepicker-addon.css">
+  <script src="http://best18.ito.tw/plastlist/public/js/jqueryui/jquery-ui-core-min.js"></script>
+  <script src="http://best18.ito.tw/plastlist/public/js/jqueryui/timepicker/cleanDatepicker.js"></script>
+  <script src="http://best18.ito.tw/plastlist/public/js/jqueryui/timepicker/jquery-ui-timepicker-addon.js"></script>
+  <script src="http://best18.ito.tw/plastlist/public/js/jqueryui/datepicker/zh_setting.js"></script>
+  <script>
+  $(function() {
+    $(".datepicker").datepicker({
+      minDate:'-10y'
+    });
+  
+      $('.timepicker').timepicker({
+          // timeInput: true,         //是否可手動輸入，預設:false
+          // stepMinute: 5,           //分鐘間隔，預設:1
+          timeOnlyTitle: '選擇時間',   //視窗名稱，預設:Choose Time
+      });
+  
+    $(".datetimepicker").datetimepicker({
+              "dateFormat": "yy-mm-dd",
+              "timeFormat": "HH:mm:ss",
+              'minDate':'-10y',
+              'beforeShow': function(){
+                cleanDatepicker();
+              },
+              'onClose':function(){
+                removeClearButton();
+              }
+    });
+  
+    $.datepicker.setDefaults($.datepicker.regional['zh-TW']);
+  });
+  </script>
+  
+  <!--拖曳功能-->
+  <script>
+  $(function() {
+    $('.draggable').draggable({
+      containment: "window",
+      disabled:true
+    });
+    
+    $('.toggleDrag').click(function(){
+      if($(this).parents('.draggable').hasClass('dragBox')){//如果已經可以拖曳
+        $(this).parents('.draggable').removeClass('dragBox')
+                     .find('label').addClass('col-1')
+                     .next('div').addClass('col-11');
+              $('.draggable').draggable('disable').attr('style','position: relative;');
+          }else{
+              $(this).parents('.draggable').addClass('dragBox')
+                     .find('label').removeClass('col-1')
+                     .next('div').removeClass('col-11');
+              $('.draggable').draggable('enable');
+      }
+    });
+  });
+  </script>
+  
+  <!--快捷鍵--> 
+  <script src="http://best18.ito.tw/plastlist/manage/lib/hotkeys.js"></script> 
+  <script>
+      //快速儲存
+      if($('ul.mod a.fa-save').length > 0){
+          $(document).bind('keydown', 'shift+s', function(){
+              $('ul.mod a.fa-save').click();
+          });
+      }
+  
+      //回上一頁
+      if($('.control .mod .fa-arrow-left').length > 0){
+          $(document).bind('keydown', 'shift+b', function(){
+              $('.control .mod .fa-arrow-left').click();
+          });
+      }
+      
+      //快速開啟多圖視窗
+      if($('#openMutipleFile').length > 0){
+          $(document).bind('keydown', 'shift+q', function(){
+              $('#openMutipleFile').click();
+          });
+      }
+      
+      $(document).on("keypress", "form", function(event) { 
+          if($(this).find('textarea').length < 1 ){
+              return event.keyCode != 13;
+          }
+      });
+  </script> 
+  
+  <!--CKeditor--> 
+  <script>
+      CKEDITOR.on( 'dialogDefinition', function( ev ) {
+          var dialogName = ev.data.name;
+          var dialogDefinition = ev.data.definition;
+  
+          if ( dialogName == 'table' ) {
+              var info = dialogDefinition.getContents( 'info' );
+  
+              info.get( 'txtWidth' )[ 'default' ] = '100%';       // Set default width to 100%
+             // info.get( 'txtBorder' )[ 'default' ] = '0';         // Set default border to 0
+          }
+          if ( dialogName == 'image' || dialogName == 'image2' ) {
+              var infoTab = dialogDefinition.getContents( 'info' );
+              infoTab.remove('txtWidth');
+              infoTab.remove('txtHeight');
+              infoTab.remove('ratioLock');
+          }
+      });
+  </script>
+  
+  <!--select2--> 
+  <link rel="stylesheet" href="http://best18.ito.tw/plastlist/manage/lib/select2/select2.min.css" type="text/css">
+  <script src="http://best18.ito.tw/plastlist/manage/lib/select2/select2.min.js"></script>
+  <script>
+      $(function(){
+          //單選
+          $('.Select2Js').select2();
+  
+          //單選多選
+          $('.MultipleSelect2Js').attr('multiple', 'multiple').select2({
+              placeholder: '請選擇',
+          });
+      })
+  </script>
+  
+  <!-- jquery-confirm.js -->
+  <link rel="stylesheet" href="http://best18.ito.tw/plastlist/manage/lib/jConfirm/jquery-confirm.min.css" type="text/css">
+  <script src="http://best18.ito.tw/plastlist/manage/lib/jConfirm/jquery-confirm.min.js"></script> 
+  <script>
+      jconfirm.defaults = {
+          icon: 'fa fa-warning',
+          type: 'red',
+          draggable: false,
+          containerFluid: true,
+          columnClass: 'g-d-4 g-6 g-ml-10 g-mv-11',
+          escapeKey: false,
+          backgroundDismiss: false,
+      }
+  
+      //頁面編輯
+      function ChkEdited(content, redirectUrl, func, tabBtn){
+          $('body').css('overflow','hidden');
+          $.confirm({
+              title: '系統訊息',
+              content: content,
+              escapeKey: 'otherBtn', //ESC key
+              buttons: {
+                  confirmBtn: {
+                      text: '確認儲存',
+                      btnClass: 'btn-blue',
+                      keys: ['enter'],
+                      action: function(){
+                          edited = false;
+                          $('ul.mod a.fa-save').click();
+  
+                          if(typeof func == 'function'){
+                              func(tabBtn);
+                          }else{
+                              $('iframe[name="rundata_action"]').on('load',function(){
+                                  if(redirectUrl == 'back'){
+                                      history.back();
+                                  }else if(typeof redirectUrl != 'undefined'){
+                                      location.href = redirectUrl;
+                                  }
+                              });
+                          }
+                      }
+                  },
+                  cancelBtn: {
+                      text: '放棄變更',
+                      btnClass: 'btn-red',
+                      action: function(){
+                          edited = false;
+                          $('body').css('overflow','scroll');
+  
+                          if(typeof func == 'function'){
+                              func(tabBtn);
+                              $('.mod a.fa-arrow-left').attr('onclick','javascript:history.back()');
+                          }else if(redirectUrl == 'back'){
+                              history.back();
+                          }else if(typeof redirectUrl != 'undefined'){
+                              location.href = redirectUrl;
+                          }
+                      }
+                  },
+                  otherBtn: {
+                      text: '停在本頁',
+                      action: function(){
+                          $('body').css('overflow','scroll');
+                      }
+                  },
+              }
+          });
+      }
+  
+      //提示視窗
+      function jConfirmDialog(title, Content, AutoCloseTime){
+          $('body').css('overflow','hidden');
+  
+          //是否開啟自動關閉
+          if(typeof AutoCloseTime == 'undefined' || AutoCloseTime == null || AutoCloseTime == 0){
+              AutoCloseTime = false;
+          }else{
+              AutoCloseTime = 'confirmBtn|'+AutoCloseTime;
+          }
+  
+          $.alert({
+              autoClose: AutoCloseTime,
+              title: title, //title
+              content: Content, //content
+              escapeKey: 'confirmBtn', //ESC key
+              backgroundDismiss: function(){
+                  $('body').css('overflow','scroll');
+                  return true;
+              },
+              buttons: {
+                  confirmBtn: {
+                      text: '確定',
+                      btnClass: 'btn-blue',
+                      keys: ['enter', 'space'],
+                      action: function(){
+                          $('body').css('overflow','scroll');
+                      }
+                  },
+              }
+          });
+      }
+  
+      function errorDialog(message, path){
+          //路徑
+          if(path == null || path == undefined || path == '') path = ''; 
+  
+          jConfirmDialog('錯誤訊息', ( path.length > 0 ? path + "<br>" : "" ) + message);
+      }
+  
+      function messageDialog(message, times){
+          //秒數(微秒)
+          if(times == null || times == undefined || times == '') times = 2000; 
+  
+          jConfirmDialog('系統訊息', message, times);
+      }
+  
+      function jConfirmList(formName){
+          $('body').css('overflow','hidden');
+          $.confirm({
+              title: '系統訊息',
+              content: '確定要執行？',
+              escapeKey: 'cancelBtn', //ESC key
+              buttons: {
+                  confirmBtn: {
+                      text: '確定',
+                      btnClass: 'btn-blue',
+                      keys: ['enter', 'space'],
+                      action: function(){
+                          document.forms[formName].submit();
+                          $('body').css('overflow','scroll');
+                      }
+                  },
+                  cancelBtn: {
+                      text: '取消',
+                      btnClass: 'btn-red',
+                      action: function(){
+                          $('body').css('overflow','scroll');
+                      }
+                  },
+              }
+          });
+      }
+  </script>
+  
+  <script>
+      var menuCurrent = function (page, unitTableName) {
+          console.log(page, unitTableName);
+          $('.menu a[href="../'+unitTableName.replace('en_', '')+'/'+page+'.php"]')
+              .addClass('current').parents().each(function(){
+                  if(!$(this).is('li')) {
+                      $(this).show().prev().addClass('open');
+                  } else {
+                      $(this).addClass('current');
+                      return false;
+                  }
+              });
+      }
+  </script>
+  
+  
+  <div id="cluetip-waitimage" style="position: absolute; display: none;"></div><div id="cluetip" style="position: absolute; display: none;"><div class="cluetip-outer" style="position: relative; z-index: 97;"><h3 class="cluetip-title ui-widget-header ui-cluetip-header"></h3><div class="cluetip-inner ui-widget-content ui-cluetip-content"></div></div><div class="cluetip-extra"></div></div><div id="tiptip_holder" style="max-width:350px;"><div id="tiptip_arrow"><div id="tiptip_arrow_inner"></div></div><div id="tiptip_content"></div></div><div class="cke_screen_reader_only cke_copyformatting_notification"><div aria-live="polite"></div></div></body>
+</html>

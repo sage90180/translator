@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <link
+    rel="stylesheet"
+    href="css/main.css"
+  >
+  <title>Sage 翻譯蒟落 2.0 SICK 一鍵上架</title>
+</head>
+
+<body>
+  <div class="title">SAGE翻譯蒟落 2.0 SICK 一鍵上架</div>
+  <div class="main">
+    <textarea
+      class="pasteHtmlArea"
+      cols="100"
+      rows="15"
+    ></textarea>
+    <button class="magicBtn">SAGE神奇魔法 Ｂ bo Ｂ bo</button>
+    <textarea
+      class="showArea"
+      cols="100"
+      rows="15"
+      id="showArea"
+    ></textarea>
+    <button
+      class="copy"
+      onclick="copyShowArea()"
+    >複製</button>
+    <div class="displayHtml"></div>
+  </div>
+
+  <script>
+    let pasteHtmlArea = document.querySelector('.pasteHtmlArea')
+    let showArea = document.querySelector('.showArea')
+    let displayHtml = document.querySelector('.displayHtml')
+    let magicBtn = document.querySelector('.magicBtn')
+
+
+    function getMainInfo() {
+      displayHtml.innerHTML = pasteHtmlArea.value
+
+      let keyWord = document.getElementsByTagName('h1')[0].innerText.replaceAll(' / ', '/')
+      // let typePart = document.querySelector('.product_attributes')
+      let typePartValue = document.querySelector('.product_attributes').innerText.replaceAll(': ', ':').replaceAll('no',
+        'No')
+
+      let fixKeyWordtypePartValue = keyWord.replaceAll('/', ' ') + ' SICK ' + typePartValue.replaceAll('Type:', '')
+        .replaceAll('Part No.:', ' ')
+
+      let newkeyWordtypePartValue = fixKeyWordtypePartValue.split(' ')
+      let newStrArr = []
+      for (let str of newkeyWordtypePartValue) {
+        let newStr = ''
+        newStr = str[0].toUpperCase() + str.slice(1)
+        newStrArr.push(newStr)
+      }
+
+      let describeTitles = document.querySelector('.tab_product_details').querySelectorAll('.js_toggle_activator')
+
+      let describeTable = document.querySelector('.tab_product_details').querySelectorAll('.js_toggle_content')
+
+      console.log(describeTitles)
+
+
+      let mainTableList = ''
+
+      for (i = 0; i < describeTitles.length; i++) {
+        mainTableList += `<span style="font-size:21px;"><strong>${describeTitles[i].innerText}</strong></span>`
+        mainTableList += describeTable[i].innerHTML + `<br>`
+      }
+
+
+      mainTableList += `<style type="text/css">.textEditor td { border: none; border-bottom: solid 1px black; padding: 7px 0px; } table , .footnote { width: 550px; } tr td:first-child {width: 250px; font-weight:900} table table td { border: none; border-bottom: solid 1px white !important; padding: 0px 0px !important } table table tr td:nth-child(2) {font-weight:500}
+       </style>`
+
+      let productImg = document.querySelector('.centered_content').getElementsByTagName('img')
+      let productImgStr = ''
+      productImgStr = productImg[0].src.replace('150', 'ZOOM')
+
+      let dataValue = `
+        javascript: 
+        javascript: void(
+        push_data.data_title.value = "${keyWord.replaceAll('/',' / ')}",
+        push_data.data_blink.value = "sick-${typePartValue.replaceAll('Type:','').replaceAll('Part No.:','-').toLowerCase()}",
+        push_data.data_no.value = "${typePartValue.replaceAll('Type:','').replaceAll('Part No.:',' ')}",
+        push_data.data_meta_description.value = "${newStrArr.join(' ')}",
+        push_data.data_meta_title.value = "${newStrArr.join(' ')}",
+        push_data.data_meta_keyword.value = "${newStrArr.join(',')}",
+
+        CKEDITOR.instances['data_spec_en'].setData('${typePartValue.replaceAll('Part', '<br>Part')}'),
+        CKEDITOR.instances['data_exp_en'].setData('${mainTableList}')
+        )
+        `
+      showArea.value = dataValue
+
+
+      // 下載
+      downFile(`${productImgStr}`,
+        `sick-${typePartValue.replaceAll('Type:','').replaceAll('Part No.:','-').toLowerCase()}`)
+
+    }
+
+    magicBtn.addEventListener('click', getMainInfo)
+
+
+
+    function downFile(imgsrc, name) { //下载图片地址和图片名
+      let image = new Image();
+      // 解决跨域 Canvas 污染问题
+      image.setAttribute("crossOrigin", "anonymous");
+      image.onload = function () {
+        let canvas = document.createElement("canvas");
+        canvas.width = image.width;
+        canvas.height = image.height;
+        let context = canvas.getContext("2d");
+        context.drawImage(image, 0, 0, image.width, image.height);
+        let url = canvas.toDataURL("image/png"); //得到图片的base64编码数据
+        let a = document.createElement("a"); // 生成一个a元素
+        let event = new MouseEvent("click"); // 创建一个单击事件
+        a.download = name || "photo"; // 设置图片名称
+        a.href = url; // 将生成的URL设置为a.href属性
+        a.dispatchEvent(event); // 触发a的单击事件
+      };
+      image.src = imgsrc;
+    }
+    // btn.addEventListener('click', () => {
+    //   downFile('https://cdn.sick.com/media/ZOOM/1/31/531/IM0006531.png', 'Yaya')
+    // })
+
+
+
+
+    function copyShowArea() {
+      var allDataValue = document.getElementById('showArea');
+
+      allDataValue.select();
+      document.execCommand('copy');
+    }
+  </script>
+</body>
+
+</html>

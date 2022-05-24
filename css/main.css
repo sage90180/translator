@@ -1,17 +1,28 @@
-table {
-  border: none;
-  width: 100%;
-  max-width: 300px;
+body {
+  margin: 0px;
 }
 
-table tr td {
-  border-bottom: solid 1px black;
+body .title {
+  background: black;
   font-weight: 900;
+  color: white;
+  margin: 0px;
+  padding: 10px;
+  text-align: center;
+  font-size: 30px;
 }
 
-table tr td:last-child {
-  font-weight: 400;
-  width: 40%;
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
+.main * {
+  margin: 5px;
+}
 /*# sourceMappingURL=main.css.map */

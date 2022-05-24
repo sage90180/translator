@@ -11,58 +11,61 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
-  <link
-    rel="stylesheet"
-    href="css/main.css"
-  >
   <title>Document</title>
 </head>
 
 <body>
-  <table>
-    <tbody>
-      <tr>
-        <td>Model No.</td>
-        <td>00</td>
-      </tr>
-      <tr>
-        <td>Head Material</td>
-        <td>Polyurethane foam</td>
-      </tr>
-      <tr>
-        <td>Head Width</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Head Thickness</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Head Length</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Handle Material</td>
-        <td>Polypropylene</td>
-      </tr>
-      <tr>
-        <td>Handle Width</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Handle Length</td>
-        <td>58mm</td>
-      </tr>
-      <tr>
-        <td>Total Length</td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>Packing</td>
-        <td>50pcs/bag</td>
-      </tr>
-    </tbody>
-  </table>
+  <textarea
+    class="getHtml"
+    cols="100"
+    rows="2"
+  ></textarea>
+  <button class="magic">SAGE神奇魔法 Ｂ波Ｂ波</button>
+  <textarea
+    class="describe"
+    cols="100"
+    rows="20"
+  ></textarea>
+  <button class="copy">複製</button>
+  <div class="displayHtml"></div>
 </body>
+<script>
+  let displayHtml = document.querySelector('.displayHtml')
+  let getHtml = document.querySelector('.getHtml')
+  let magicBtn = document.querySelector('.magic')
+
+  function handleMaginClick() {
+    displayHtml.innerHTML = getHtml.value
+
+    let titles = document.querySelectorAll('.js_toggle_activator')
+    let tables = document.querySelectorAll('.js_toggle_content')
+    let describe = document.querySelector('.describe')
+
+    let str = ''
+
+    for (i = 0; i < titles.length; i++) {
+      str += `<span style="font-size:21px;"><strong>${titles[i].innerHTML}</strong></span>`
+      str += tables[i].innerHTML + `<br>`
+    }
+
+    str += `<style type="text/css">.textEditor td { border: none; border-bottom: solid 1px black; padding: 7px 0px; } table , .footnote { width: 550px; } tr td:first-child {width: 250px; font-weight:900} table table td { border: none; border-bottom: solid 1px white !important; padding: 0px 0px !important } table table tr td:nth-child(2) {font-weight:500}
+  </style>`
+
+    describe.value = str
+  }
+
+  var copyBtn = document.querySelector('.copy')
+
+  function copyHTML() {
+
+    var content = document.querySelector('.describe')
+
+    content.select();
+    document.execCommand('copy');
+  }
+
+  magicBtn.addEventListener('click', handleMaginClick)
+  copyBtn.addEventListener('click', copyHTML)
+</script>
 
 </html>
