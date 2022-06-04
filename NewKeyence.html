@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <link
+    rel="stylesheet"
+    href="css/main.css"
+  >
+  <title>Sage 翻譯蒟落 2.0 Keyence 一鍵上架</title>
+</head>
+
+<body>
+  <div class="title">SAGE翻譯蒟落 2.0 Keyence 一鍵上架</div>
+  <div class="main">
+    <textarea
+      class="pasteHtmlArea"
+      cols="100"
+      rows="15"
+    ></textarea>
+    <button class="magicBtn">SAGE神奇魔法 Ｂ bo Ｂ bo</button>
+    <textarea
+      class="showArea"
+      cols="100"
+      rows="15"
+      id="showArea"
+    ></textarea>
+    <button
+      class="copy"
+      onclick="copyShowArea()"
+    >複製</button>
+    <input
+      type="text"
+      class="img-name"
+      style="width: 100%;"
+      onclick="copyImgName()"
+    >
+    <div class="displayHtml"></div>
+  </div>
+
+  <script>
+    let pasteHtmlArea = document.querySelector('.pasteHtmlArea')
+    let showArea = document.querySelector('.showArea')
+    let displayHtml = document.querySelector('.displayHtml')
+    let magicBtn = document.querySelector('.magicBtn')
+
+    function copyImgName() {
+      var imgName = document.querySelector('.img-name');
+      imgName.select();
+      document.execCommand('copy');
+    }
+
+
+    function getMainInfo() {
+      displayHtml.innerHTML = pasteHtmlArea.value
+
+      let keyWord = document.querySelector('.prd-utility-heading-1').innerText
+      // let typePart = document.querySelector('.product_attributes')
+      let typePartValue = document.querySelector('.prd-utility-body-medium.prd-utility-block').innerText
+
+      console.log(typePartValue)
+
+      let fixKeyWordtypePartValue = keyWord.replaceAll('(', '').replaceAll(')', '') + ' keyence ' + typePartValue
+
+      let newkeyWordtypePartValue = fixKeyWordtypePartValue.split(' ')
+      let newStrArr = []
+      for (let str of newkeyWordtypePartValue) {
+        let newStr = ''
+        newStr = str[0].toUpperCase() + str.slice(1)
+        newStrArr.push(newStr)
+      }
+
+
+      let describeTable = document.querySelector('.specTable-block')
+
+
+      let mainTableList = ''
+
+      mainTableList += `<span style="font-size:21px;"><strong>Specifications</strong></span>`
+      mainTableList += describeTable.innerHTML
+
+      mainTableList +=
+        `<style type="text/css">.textEditor table {width:100%; max-width: 650px;} table tr {border-bottom: solid 1px black !important} table tr td { border: none !important; font-weight: 900; } table tr td:last-child { font-weight: 400; width: 50%; }</style>`
+
+      // let productImg = document.querySelector('.centered_content').getElementsByTagName('img')
+      // let productImgStr = ''
+      // productImgStr = productImg[0].src.replace('150', 'ZOOM')
+
+      let dataValue = `
+        javascript: 
+        javascript: void(
+        push_data.data_title.value = "${keyWord}",
+        push_data.data_blink.value = "keyence-${typePartValue.toLowerCase()}",
+        push_data.data_no.value = "keyence ${typePartValue}",
+        push_data.data_meta_description.value = "${newStrArr.join(' ').replaceAll('(','').replaceAll(')','')}",
+        push_data.data_meta_title.value = "${newStrArr.join(' ')}",
+        push_data.data_meta_keyword.value = "${newStrArr.join(',')}",
+
+        CKEDITOR.instances['data_spec_en'].setData('Model No.：Keyence ${typePartValue}<br>'),
+        CKEDITOR.instances['data_exp_en'].setData('${mainTableList}')
+        )
+        `
+      showArea.value = dataValue
+
+
+      var imgName = document.querySelector('.img-name');
+      imgName.value = `${newStrArr.join('-')}`
+
+
+      // 下載
+      // downFile(`${productImgStr}`,
+      //   `sick-${typePartValue.replaceAll('Type:','').replaceAll('Part No.:','-').toLowerCase()}`)
+    }
+
+    magicBtn.addEventListener('click', getMainInfo)
+
+
+
+    // function downFile(imgsrc, name) { //下载图片地址和图片名
+    //   let image = new Image();
+    //   // 解决跨域 Canvas 污染问题
+    //   image.setAttribute("crossOrigin", "anonymous");
+    //   image.onload = function () {
+    //     let canvas = document.createElement("canvas");
+    //     canvas.width = image.width;
+    //     canvas.height = image.height;
+    //     let context = canvas.getContext("2d");
+    //     context.drawImage(image, 0, 0, image.width, image.height);
+    //     let url = canvas.toDataURL("image/png"); //得到图片的base64编码数据
+    //     let a = document.createElement("a"); // 生成一个a元素
+    //     let event = new MouseEvent("click"); // 创建一个单击事件
+    //     a.download = name || "photo"; // 设置图片名称
+    //     a.href = url; // 将生成的URL设置为a.href属性
+    //     a.dispatchEvent(event); // 触发a的单击事件
+    //   };
+    //   image.src = imgsrc;
+    // }
+
+
+
+
+    function copyShowArea() {
+      var allDataValue = document.getElementById('showArea');
+
+      allDataValue.select();
+      document.execCommand('copy');
+    }
+  </script>
+</body>
+
+</html>

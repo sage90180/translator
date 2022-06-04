@@ -11,7 +11,7 @@
     name="viewport"
     content="width=device-width, initial-scale=1.0"
   >
-  <title>KEYENCE 翻譯蒟落</title>
+  <title>3m 翻譯蒟落</title>
 </head>
 <style>
   input {
@@ -65,13 +65,12 @@
   >
     KEYENCE
   </a>
-  <h2 style="background: rgb(0, 250, 100);">KEYENCE 翻譯蒟落</h2>
+  <h2 style="background: rgb(0, 234, 255)">SICK 翻譯蒟落</h2>
   <a
-    href="https://docs.google.com/spreadsheets/d/1YX_Ok5eaN7iCN8ODxYikx_dqLF8-jhoU7KO_hro3exY/edit#gid=1141813937"
+    href="https://docs.google.com/spreadsheets/d/1YX_Ok5eaN7iCN8ODxYikx_dqLF8-jhoU7KO_hro3exY/edit#gid=595159070"
     target="_blank"
-    style="background: rgb(0, 250, 100);"
-  >KEYENCE
-    EXCEL統計</a>
+    style="background: rgb(0, 234, 255)"
+  >SICK EXCEL統計</a>
   <br> <br>
   <div>
     新增關鍵字
@@ -123,7 +122,7 @@
   <input
     type="text"
     class="new"
-    value="Specifications"
+    value="3M™"
   >
   <br>
   <textarea
@@ -131,7 +130,8 @@
     id="textArea"
     cols="30"
     rows="4"
-  >&lt;style type="text/css">.textEditor table {width:100%; max-width: 650px;} table tr {border-bottom: solid 1px black !important} table tr td { border: none !important; font-weight: 900; } table tr td:last-child { font-weight: 400; width: 50%; } &lt;/style&gt;</textarea>
+  >&lt;style type="text/css">.textEditor td { border: none; border-bottom: solid 1px black; padding: 7px 0px; } table , .footnote { width: 550px; } tr td:first-child {width: 250px; font-weight:900} table table td { border: none; border-bottom: solid 1px white !important; padding: 0px 0px !important } table table tr td:nth-child(2) {font-weight:500}
+  &lt;/style&gt;</textarea>
 
   <!-- 有影片的那個上架 -->
   <!-- <textarea
@@ -193,15 +193,15 @@
 
     document.addEventListener('click', (e) => {
       if (e.target.classList.contains('transform')) {
-        let newKeyWord = localStorage.getItem('keyWord') + ' '
+        let newKeyWord = localStorage.getItem('keyWord').replaceAll(' / ', '/') + ' '
 
-        let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + 'Keyence ' + transform_input.value
-          .replaceAll(
-            '/', ' ')
-        link.value = 'keyence-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
-        img.value = img.value = str.replaceAll(' ', '-').toLowerCase().replaceAll('(', '').replaceAll(')', '')
-        seo_describe.value = str.replaceAll('(', '').replaceAll(')', '')
-        seo_key.value = str.replaceAll(' ', ',').toLowerCase().replaceAll('(', '').replaceAll(')', '')
+        let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + '3M™ ' + transform_input.value.replaceAll(
+          '/', ' ')
+        link.value = '3M-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
+        img.value = '3M™-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
+        seo_describe.value = str
+        seo_key.value = str.replaceAll(' ', ',').toLowerCase().replaceAll('/', ',')
+
         let strArr = str.split(' ')
         let newStrArr = []
         for (let str of strArr) {
@@ -223,9 +223,9 @@
 
 
         // title.value = newStrArr.join(' ')
-        title.value = newKeyWord
-        type.value = 'Keyence ' + transform_input.value
-        seo_title.value = newStrArr.join(' ').replaceAll('(', '').replaceAll(')', '')
+        title.value = document.querySelector('.keyWord').value
+        type.value = '3M™ ' + transform_input.value
+        seo_title.value = newStrArr.join(' ')
         let dec = document.querySelector('.dec')
         dec.innerHTML = newStrArr.join(' ')
       }
