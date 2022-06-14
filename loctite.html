@@ -195,10 +195,15 @@
       if (e.target.classList.contains('transform')) {
         let newKeyWord = localStorage.getItem('keyWord').replaceAll(' / ', '/') + ' '
 
-        let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + '3M™ ' + transform_input.value.replaceAll(
-          '/', ' ')
-        link.value = '3M-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
-        img.value = '3M™-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
+        let str = newKeyWord.replaceAll('®', '') + transform_input.value
+          .replaceAll(
+            '®', '')
+        link.value = transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
+          .replaceAll('®',
+            '')
+        img.value = transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
+          .replaceAll('®',
+            '')
         seo_describe.value = str
         seo_key.value = str.replaceAll(' ', ',').toLowerCase().replaceAll('/', ',')
 
@@ -223,8 +228,8 @@
 
 
         // title.value = newStrArr.join(' ')
-        title.value = document.querySelector('.keyWord').value
-        type.value = '3M™ ' + transform_input.value
+        title.value = document.querySelector('.keyWord').value + ' ' + transform_input.value
+        type.value = transform_input.value.replaceAll('®', '')
         seo_title.value = newStrArr.join(' ')
         let dec = document.querySelector('.dec')
         dec.innerHTML = newStrArr.join(' ')

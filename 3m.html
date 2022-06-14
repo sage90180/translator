@@ -130,7 +130,7 @@
     id="textArea"
     cols="30"
     rows="4"
-  >&lt;style type="text/css">.textEditor td { border: none; border-bottom: solid 1px black; padding: 7px 0px; } table , .footnote { width: 550px; } tr td:first-child {width: 250px; font-weight:900} table table td { border: none; border-bottom: solid 1px white !important; padding: 0px 0px !important } table table tr td:nth-child(2) {font-weight:500}
+  >&lt;style type="text/css">.textEditor td { border: none; border-bottom: solid 1px black; padding: 7px 0px; } .textEditor table{max-width: 600px}
   &lt;/style&gt;</textarea>
 
   <!-- 有影片的那個上架 -->
@@ -224,7 +224,7 @@
 
         // title.value = newStrArr.join(' ')
         title.value = document.querySelector('.keyWord').value
-        type.value = '3M™ ' + transform_input.value
+        type.value = transform_input.value
         seo_title.value = newStrArr.join(' ')
         let dec = document.querySelector('.dec')
         dec.innerHTML = newStrArr.join(' ')

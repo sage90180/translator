@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <link
+    rel="stylesheet"
+    href="css/main.css"
+  >
+  <title>Sage 翻譯蒟落 2.0 OMRON 一鍵上架</title>
+</head>
+
+<body>
+  <div class="title">SAGE翻譯蒟落 2.0 OMRON 一鍵上架</div>
+  <div class="main">
+    <textarea
+      class="pasteHtmlArea"
+      cols="100"
+      rows="15"
+    ></textarea>
+    <button class="magicBtn">SAGE神奇魔法 Ｂ bo Ｂ bo</button>
+    <textarea
+      class="showArea"
+      cols="100"
+      rows="15"
+      id="showArea"
+    ></textarea>
+    <button
+      class="copy"
+      onclick="copyShowArea()"
+    >複製</button>
+
+    <input
+      type="text"
+      class="img-name"
+      style="width: 100%;"
+      onclick="copyImgName()"
+    >
+    <div class="displayHtml"></div>
+  </div>
+
+  <script>
+    let pasteHtmlArea = document.querySelector('.pasteHtmlArea')
+    let showArea = document.querySelector('.showArea')
+    let displayHtml = document.querySelector('.displayHtml')
+    let magicBtn = document.querySelector('.magicBtn')
+
+
+    function copyImgName() {
+      var imgName = document.querySelector('.img-name');
+      imgName.select();
+      document.execCommand('copy');
+    }
+
+
+    function getMainInfo() {
+      displayHtml.innerHTML = pasteHtmlArea.value
+
+      let keyWord = document.querySelector('.sub-title').innerText
+      let typePartValue = document.getElementsByTagName('h1')[0].innerText
+
+
+
+      let pageInfo = document.querySelector('.description').querySelector('.heading-B02').innerText
+      let pageInfoTableTitle = document.querySelector('.description').getElementsByTagName('th')
+      let pageInfoTableValue = document.querySelector('.description').getElementsByTagName('td')
+
+      var pageInfoTableTitleArr = Array.prototype.slice.call(pageInfoTableTitle)
+      var pageInfoTableValueArr = Array.prototype.slice.call(pageInfoTableValue)
+
+      var pageInfoList = `${pageInfo}<br><br>`
+      for (i = 0; i < pageInfoTableValueArr.length; i++) {
+        pageInfoList += `${pageInfoTableTitleArr[i].innerText}：${pageInfoTableValueArr[i].innerText}<br>`
+      }
+
+
+      let fixKeyWordtypePartValue = keyWord + ' Omron ' + typePartValue
+
+      let newkeyWordtypePartValue = fixKeyWordtypePartValue.split(' ')
+      let newStrArr = []
+      for (let str of newkeyWordtypePartValue) {
+        let newStr = ''
+        newStr = str[0].toUpperCase() + str.slice(1)
+        newStrArr.push(newStr)
+      }
+
+      let describeTitles = document.querySelector('.tabs').getElementsByTagName('a')
+      let describeTables = document.querySelector('.editable-block').querySelectorAll('.tableA01')
+      let mainTableList = ''
+
+      var describeTitlesArr = Array.prototype.slice.call(describeTitles)
+
+      for (i = 0; i < describeTitles.length; i++) {
+        if (i == 0) {
+          mainTableList += `<span style="font-size:21px;"><strong>${describeTitlesArr[i].innerText}</strong></span><br>`
+          describeTables.forEach(e => {
+            mainTableList += `${e.outerHTML}`
+          })
+          mainTableList += '<br>'
+        }
+      }
+
+
+      mainTableList +=
+        `<span style="font-size:21px;"><strong>Mounting hole dimensions</strong></span><br />
+        <img alt="E00000942928" src="http://best18.ito.tw/plastlist/upload/catalog_b/E00000942928.gif" title="E00000942928" /><br />
+        <br />
+        <span style="font-size:21px;"><strong>Terminals</strong></span><br />
+        <img alt="S011_Z-01H_E" src="http://best18.ito.tw/plastlist/upload/catalog_b/S011_Z-01H_E.jpeg" title="S011_Z-01H_E" /><br />
+        <br />
+        <span style="font-size:21px;"><strong>Applicable load diagram</strong></span><br />
+        <img alt="F1307_Z_E" src="http://best18.ito.tw/plastlist/upload/catalog_b/F1307_Z_E.jpeg" title="F1307_Z_E" /><br />
+        <br />
+        <style type="text/css">.textEditor table {width: 100%; max-width: 650px} .textEditor img { max-width: 600px; } .textEditor th { background: white; color: black; border: none; font-weight: 700; border-bottom: solid 1px black; text-align: left; width: 250px} .textEditor td { border: none; border-bottom: solid 1px black }
+        </style><style type="text/css">.textEditor table {width: 100%; max-width: 650px} .textEditor img { max-width: 600px; } .textEditor th { background: white; color: black; border: none; font-weight: 700; border-bottom: solid 1px black; text-align: left; width: 250px} .textEditor td { border: none; border-bottom: solid 1px black }</style>`
+
+
+      let dataValue = `
+        javascript: 
+        javascript: void(
+        push_data.data_title.value = "${fixKeyWordtypePartValue}",
+        push_data.data_blink.value = "omron-${typePartValue.toLowerCase()}",
+        push_data.data_no.value = "${typePartValue}",
+        push_data.data_meta_description.value = "${newStrArr.join(' ')}",
+        push_data.data_meta_title.value = "${newStrArr.join(' ')}",
+        push_data.data_meta_keyword.value = "${newStrArr.join(',')}",
+
+        CKEDITOR.instances['data_spec_en'].setData('${pageInfoList}'),
+        CKEDITOR.instances['data_exp_en'].setData('${mainTableList}')
+        )
+        `
+      showArea.value = dataValue
+
+      var imgName = document.querySelector('.img-name');
+      imgName.value = `${newStrArr.join('-').toLowerCase()}`
+
+
+      // let productImgWraps = document.querySelectorAll('.image')
+      // let productImgStr = ''
+
+      // productImgWraps.forEach((productImg, index) => {
+      //   let productImgStr
+      //   productImgStr = productImg.getElementsByTagName('img')[0].src.replace("http://127.0.0.1:8080/",
+      //     "https://www.ia.omron.com/")
+
+      //   downFile(`${productImgStr}`, `omron-${typePartValue.toLowerCase()}-${index}`)
+      // })
+
+
+
+    }
+
+    magicBtn.addEventListener('click', getMainInfo)
+
+
+
+    function downFile(imgsrc, name) { //下载图片地址和图片名
+      let image = new Image();
+      // 解决跨域 Canvas 污染问题
+      image.setAttribute("crossOrigin", "anonymous");
+      image.onload = function () {
+        let canvas = document.createElement("canvas");
+        canvas.width = image.width;
+        canvas.height = image.height;
+        let context = canvas.getContext("2d");
+        context.drawImage(image, 0, 0, image.width, image.height);
+        let url = canvas.toDataURL("image/png"); //得到图片的base64编码数据
+        let a = document.createElement("a"); // 生成一个a元素
+        let event = new MouseEvent("click"); // 创建一个单击事件
+        a.download = name || "photo"; // 设置图片名称
+        a.href = url; // 将生成的URL设置为a.href属性
+        a.dispatchEvent(event); // 触发a的单击事件
+      };
+      image.src = imgsrc;
+    }
+
+
+
+
+    function copyShowArea() {
+      var allDataValue = document.getElementById('showArea');
+
+      allDataValue.select();
+      document.execCommand('copy');
+    }
+  </script>
+</body>
+
+</html>
