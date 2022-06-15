@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Document</title>
+</head>
+
+<body>
+  <input
+    type="text"
+    class="number"
+    value="70110"
+  >
+  <button class="submit">轉換</button> 701101
+  <br>
+  <br>
+  <textarea
+    name=""
+    id=""
+    cols="100"
+    rows="30"
+    class="textValue"
+    onclick="copyTextArea()"
+  ></textarea>
+
+  <script>
+    let input = document.querySelector('.number')
+    let submit = document.querySelector('.submit')
+    let textValue = document.querySelector('.textValue')
+
+    let dataValue
+
+    submit.addEventListener('click', () => {
+      let dataValue = `
+        javascript: 
+        javascript: void(
+        push_data.data_title.value = "Inspection Dot Point Gauge/ Film Ruler/ Gauge Template",
+        push_data.data_blink.value = "part-no-${input.value}",
+        push_data.data_no.value = "${input.value}",
+        push_data.data_meta_description.value = "Inspection Dot Point Gauge Film Ruler Gauge Template Part No ${input.value}",
+        push_data.data_meta_title.value = "Inspection Dot Point Gauge Film Ruler Gauge Template Part No ${input.value}",
+        push_data.data_meta_keyword.value = "inspection,dot,point,gauge,film,ruler,gauge,template,${input.value}",
+
+        CKEDITOR.instances['data_spec_en'].setData('Part No. : ${input.value}<br>Material : PET<br><br>'),
+        CKEDITOR.instances['data_exp_en'].setData('<ul>
+          <li>Applied in inspection for PCB, electronic components, machinery, optoelectronics, LCD, printing, textile and other industries.</li>
+          <li>Product customization is available.</li>
+          <li>Calibration certificate can be provided by request.</li>
+        </ul>')
+        )
+        `
+      textValue.value = dataValue
+    })
+
+    function copyTextArea() {
+      var textValue = document.querySelector('.textValue');
+      textValue.select();
+      document.execCommand('copy');
+    }
+  </script>
+
+</body>
+
+</html>
