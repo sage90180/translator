@@ -91,14 +91,14 @@
       let dataValue = `
         javascript: 
         javascript: void(
-        push_data.data_title.value = "${keyWord.replaceAll('/',' / ')}",
+        push_data.data_title.value = "${keyWord.replaceAll('/',' / ').replaceAll('sensors','sensors Sick ')}",
         push_data.data_blink.value = "sick-${typePartValue.replaceAll('Type:','').replaceAll('Part No.:','-').toLowerCase()}",
         push_data.data_no.value = "${typePartValue.replaceAll('Type:','').replaceAll('Part No.:',' ')}",
         push_data.data_meta_description.value = "${newStrArr.join(' ')}",
         push_data.data_meta_title.value = "${newStrArr.join(' ')}",
         push_data.data_meta_keyword.value = "${newStrArr.join(',')}",
 
-        CKEDITOR.instances['data_spec_en'].setData('${typePartValue.replaceAll('Part', '<br>Part')}'),
+        CKEDITOR.instances['data_spec_en'].setData('${typePartValue.replaceAll('Part', '<br>Part')}<br><br>'),
         CKEDITOR.instances['data_exp_en'].setData('${mainTableList}')
         )
         `
@@ -107,7 +107,7 @@
 
       // 下載
       downFile(`${productImgStr}`,
-        `sick-${typePartValue.replaceAll('Type:','').replaceAll('Part No.:','-').toLowerCase()}`)
+        `sick-${typePartValue.replaceAll('Type:','').replaceAll('Part No.:','-').replaceAll('_','').toLowerCase()}`)
 
     }
 
