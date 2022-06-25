@@ -110,17 +110,9 @@
 
 
       mainTableList +=
-        `<span style="font-size:21px;"><strong>Mounting hole dimensions</strong></span><br />
-        <img alt="E00000942928" src="http://best18.ito.tw/plastlist/upload/catalog_b/E00000942928.gif" title="E00000942928" /><br />
+        `
         <br />
-        <span style="font-size:21px;"><strong>Terminals</strong></span><br />
-        <img alt="S011_Z-01H_E" src="http://best18.ito.tw/plastlist/upload/catalog_b/S011_Z-01H_E.jpeg" title="S011_Z-01H_E" /><br />
-        <br />
-        <span style="font-size:21px;"><strong>Applicable load diagram</strong></span><br />
-        <img alt="F1307_Z_E" src="http://best18.ito.tw/plastlist/upload/catalog_b/F1307_Z_E.jpeg" title="F1307_Z_E" /><br />
-        <br />
-        <style type="text/css">.textEditor table {width: 100%; max-width: 650px} .textEditor img { max-width: 600px; } .textEditor th { background: white; color: black; border: none; font-weight: 700; border-bottom: solid 1px black; text-align: left; width: 250px} .textEditor td { border: none; border-bottom: solid 1px black }
-        </style><style type="text/css">.textEditor table {width: 100%; max-width: 650px} .textEditor img { max-width: 600px; } .textEditor th { background: white; color: black; border: none; font-weight: 700; border-bottom: solid 1px black; text-align: left; width: 250px} .textEditor td { border: none; border-bottom: solid 1px black }</style>`
+        <style type="text/css">.textEditor table {width: 100%; max-width: 650px} .textEditor img { max-width: 600px; } .textEditor th { background: white; color: black; border: none; font-weight: 700; border-bottom: solid 1px black; text-align: left; width: 100px} .textEditor td { border: none; border-bottom: solid 1px black }`
 
 
       let dataValue = `
@@ -140,7 +132,7 @@
       showArea.value = dataValue
 
       var imgName = document.querySelector('.img-name');
-      imgName.value = `${newStrArr.join('-').toLowerCase()}`
+      imgName.value = `${newStrArr.join('-').toLowerCase().replace('(','').replace(')','')}`
 
 
       // let productImgWraps = document.querySelectorAll('.image')
