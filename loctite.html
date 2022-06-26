@@ -195,7 +195,7 @@
       if (e.target.classList.contains('transform')) {
         let newKeyWord = localStorage.getItem('keyWord').replaceAll(' / ', '/') + ' '
 
-        let str = newKeyWord.replaceAll('®', '') + ' Henkel ' + transform_input.value
+        let str = newKeyWord.replaceAll('®', '') + ' Henkel' + transform_input.value
           .replaceAll(
             '®', '')
         link.value = transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
