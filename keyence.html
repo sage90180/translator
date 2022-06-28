@@ -198,7 +198,8 @@
         let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + 'Keyence ' + transform_input.value
           .replaceAll(
             '/', ' ')
-        link.value = 'keyence-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
+        link.value = newKeyWord.toLowerCase().replaceAll(',', '').replaceAll('°', '').replaceAll(' ', '-') +
+          'keyence-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
         img.value = img.value = str.replaceAll(' ', '-').toLowerCase().replaceAll('(', '').replaceAll(')', '')
         seo_describe.value = str.replaceAll('(', '').replaceAll(')', '')
         seo_key.value = str.replaceAll(' ', ',').toLowerCase().replaceAll('(', '').replaceAll(')', '')

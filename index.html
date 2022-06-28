@@ -207,13 +207,20 @@
       }
     }
 
+
+
     document.addEventListener('click', (e) => {
       if (e.target.classList.contains('transform')) {
         let newKeyWord = localStorage.getItem('keyWord') + ' '
 
         let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + 'OMRON ' + transform_input.value.replaceAll(
           '/', ' ')
-        link.value = 'omron-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
+
+        link.value = newKeyWord.toLowerCase().replaceAll(',', '').replaceAll('°', '').replaceAll(' ', '-')
+          .replaceAll('(', '')
+          .replaceAll(')', '') + 'omron-' + transform_input.value
+          .toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
+
         img.value = str.replaceAll(' ', '-').toLowerCase()
         seo_describe.value = str
         seo_key.value = str.replaceAll(' ', ',').toLowerCase()

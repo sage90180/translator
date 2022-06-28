@@ -198,7 +198,8 @@
         let str = newKeyWord.replaceAll('®', '') + 'henkel ' + transform_input.value
           .replaceAll(
             '®', '')
-        link.value = transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
+        link.value = newKeyWord.toLowerCase().replaceAll(' ', '-') + transform_input.value.toLowerCase().replaceAll(
+            '/', '-').replaceAll(' ', '-')
           .replaceAll('®',
             '')
         img.value = transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')

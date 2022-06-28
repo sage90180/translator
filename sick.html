@@ -197,7 +197,8 @@
 
         let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + 'SICK ' + transform_input.value.replaceAll(
           '/', ' ')
-        link.value = 'sick-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
+        link.value = newKeyWord.toLowerCase().replaceAll(',', '').replaceAll('°', '').replaceAll(' ', '-') +
+          'sick-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
         img.value = 'sick-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
         seo_describe.value = str
         seo_key.value = str.replaceAll(' ', ',').toLowerCase().replaceAll('/', ',')
