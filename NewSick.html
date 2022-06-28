@@ -92,7 +92,7 @@
         javascript: 
         javascript: void(
         push_data.data_title.value = "${keyWord.replaceAll('/',' / ').replaceAll('sensors','sensors Sick ')}",
-        push_data.data_blink.value = "sick-${typePartValue.replaceAll('Type:','').replaceAll('Part No.:','-').toLowerCase()}",
+        push_data.data_blink.value = "${newStrArr.join('-').toLowerCase()}",
         push_data.data_no.value = "${typePartValue.replaceAll('Type:','').replaceAll('Part No.:',' ')}",
         push_data.data_meta_description.value = "${newStrArr.join(' ')}",
         push_data.data_meta_title.value = "${newStrArr.join(' ')}",

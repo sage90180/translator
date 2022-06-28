@@ -95,13 +95,13 @@
       let describeTable = document.querySelector('.specTable-block')
 
 
-      // let mainTableList = ''
+      let mainTableList = ''
 
-      // mainTableList += `<span style="font-size:21px;"><strong>Specifications</strong></span><br><br>`
-      // mainTableList += describeTable.innerHTML
+      mainTableList += `<span style="font-size:21px;"><strong>Specifications</strong></span><br><br>`
+      mainTableList += describeTable.innerHTML
 
-      // mainTableList +=
-      //   `<style type="text/css">.textEditor table {width:100%; max-width: 650px;} table tr {border-bottom: solid 1px black !important} table tr td { border: none !important; font-weight: 900; } table tr td:last-child { font-weight: 400; width: 50%; }</style>`
+      mainTableList +=
+        `<style type="text/css">.textEditor table {width:100%; max-width: 650px;} table tr {border-bottom: solid 1px black !important} table tr td { border: none !important; font-weight: 900; } table tr td:last-child { font-weight: 400; width: 50%; }</style>`
 
       // let productImg = document.querySelector('.centered_content').getElementsByTagName('img')
       // let productImgStr = ''
@@ -111,7 +111,7 @@
         javascript: 
         javascript: void(
         push_data.data_title.value = "${keyWord}",
-        push_data.data_blink.value = "keyence-${typePartValue.toLowerCase()}",
+        push_data.data_blink.value = "${newStrArr.join('-').toLowerCase()}",
         push_data.data_no.value = "keyence ${typePartValue}",
         push_data.data_meta_description.value = "${newStrArr.join(' ').replaceAll('(','').replaceAll(')','')}",
         push_data.data_meta_title.value = "${newStrArr.join(' ')}",
@@ -129,8 +129,8 @@
       var imgName = document.querySelector('.img-name');
       imgName.value = `${newStrArr.join('-').toLowerCase()}`
 
-      // var pageTable = document.querySelector('.page-table');
-      // pageTable.value = mainTableList
+      var pageTable = document.querySelector('.page-table');
+      pageTable.value = mainTableList
 
 
       // 下載
