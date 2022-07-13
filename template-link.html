@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>Document</title>
+</head>
+
+<style>
+  input {
+    width: 100%;
+    padding: 5px;
+  }
+
+  input:focus {
+    background: yellow;
+  }
+</style>
+
+<body>
+  <button class="btn">生成</button>
+  <div class="wrap"></div>
+</body>
+
+<script>
+  let btn = document.querySelector('.btn')
+  let wrap = document.querySelector('.wrap')
+
+
+  function copyInput(input) {
+    var textValue = input
+    textValue.select();
+    document.execCommand('copy');
+  }
+
+  btn.addEventListener('click', () => {
+    for (var i = 1; i < 123; i++) {
+      let input = document.createElement('input')
+      if (i < 10) {
+        input.setAttribute('value', `dot-point-gauge-film-ruler-gauge-template-70110${i}`)
+      } else if (i > 99) {
+        let n = i + 100
+        input.setAttribute('value', `dot-point-gauge-film-ruler-gauge-template-701${n}`)
+      } else {
+        input.setAttribute('value', `dot-point-gauge-film-ruler-gauge-template-7011${i}`)
+      }
+      wrap.appendChild(input)
+      input.addEventListener('click', e => {
+        copyInput(e.target)
+      })
+    }
+  })
+</script>
+
+</html>
