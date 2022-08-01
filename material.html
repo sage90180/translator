@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta
+    http-equiv="X-UA-Compatible"
+    content="IE=edge"
+  >
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+  <title>鋼鐵翻譯</title>
+</head>
+<style>
+  input {
+    width: 450px;
+    margin: 5px 0px;
+  }
+
+  table {
+    text-align: center;
+  }
+
+  .footnote {
+    width: 500px;
+  }
+
+  textEditor table thead th {
+    font-weight: 900;
+  }
+
+  textEditor table {
+    border: solid 1px black;
+  }
+
+  textEditor table tr {
+    background: wheat;
+    color: black;
+    border-bottom: solid 1px black;
+  }
+
+  textEditor tr:last-child table tr {
+    border-bottom: solid 1px white;
+  }
+</style>
+
+<body>
+  <a
+    href="index.html"
+    style="padding: 10px;background: rgb(250, 250, 0);margin-right: 20px"
+  >
+    OMRON
+  </a>
+  <a
+    href="sick.html"
+    style="padding: 10px;background: rgb(0, 234, 255);margin-right: 20px"
+  >
+    SICK
+  </a>
+  <a
+    href="keyence.html"
+    style="padding: 10px;background: rgb(0, 250, 100)"
+  >
+    KEYENCE
+  </a>
+  <a
+    href="https://docs.google.com/spreadsheets/d/1YX_Ok5eaN7iCN8ODxYikx_dqLF8-jhoU7KO_hro3exY/edit#gid=0"
+    target="_blank"
+    style="background: rgb(255, 255, 0)"
+  >OMRON
+    EXCEL統計</a>
+  <h2 style="background: rgb(255, 255, 0)">鋼材上架</h2>
+  <img
+    src="images/cold-work-steel-heat-treatment-steel-böhler-k105.png"
+    alt=""
+  >
+  <img
+    src="images/tool-steel-plastic-mold-steel-buderus-2311-p20.png"
+    alt=""
+  >
+  <br> <br>
+  <div>
+    新增關鍵字
+    <input
+      type="text"
+      class="keyWord"
+    >
+    <button class="save">儲存</button>
+  </div>
+  型號
+  <input
+    class="transform_input"
+    type="text"
+  > <button class="transform">轉換</button>
+  <br><br>
+  <div>標題：<input
+      class="title new"
+      type="text"
+    > <span>Ex: Nordson EFD Performus X Dispenser</span></div>
+  <div>自訂網址：<input
+      class="link new"
+      type="text"
+    > <span>Ex: nordson-efd-performus-x-dispenser</span></div>
+  <div>型號：<input
+      class="type new"
+      type="text"
+    > <span>Ex: Ex: Nordson EFD Performus X</span></div>
+  <hr>
+  <div>SEO標題：<input
+      class="seo_title new"
+      type="text"
+    > <span>Ex: Nordson EFD Performus X Dispenser</span></div>
+  <div>SEO描述語：<input
+      class="seo_describe new"
+      type="text"
+    > <span>Ex: Nordson EFD Performus X Dispenser</span></div>
+  <div>SEO關鍵字：<input
+      class="seo_key new"
+      type="text"
+    > <span>Ex:
+      nordson,efd,performus,x,dispenser,smt,pcb,assembly</span>
+  </div>
+  <hr>
+  <div>圖片名字：<input
+      class="img new"
+      type="text"
+    > <span>Ex: nordson-efd-performus-x-dispenser</span></div>
+
+  <h2>Metal&Plastics / Heat Treated Steel / Tool Steel/ Plastic Mold Steel</h2>
+  <!-- <h3>Hasco</h3> -->
+  <input
+    type="text"
+    class="new"
+    value="omron"
+  >
+  <br>
+  <h3>Buderus</h3>
+  <textarea
+    name=""
+    id="textArea"
+    cols="50"
+    rows="10"
+  >
+  <strong><span style="font-size:21px;">Chemical Composition</span></strong><br />
+&nbsp;
+<table border="1" cellpadding="1" cellspacing="1" style="width:100%;">
+	<thead>
+		<tr>
+			<th scope="col" style="background-color: rgb(255, 255, 255); text-align: left;">&nbsp;</th>
+			<th scope="col" style="background-color: rgb(255, 255, 255); text-align: left;"><span style="color:#000000;"><strong>C</strong></span></th>
+			<th scope="col" style="background-color: rgb(255, 255, 255); text-align: left;"><span style="color:#000000;"><strong>Si</strong></span></th>
+			<th scope="col" style="background-color: rgb(255, 255, 255); text-align: left;"><span style="color:#000000;"><strong>Mn</strong></span></th>
+			<th scope="col" style="background-color: rgb(255, 255, 255); text-align: left;"><span style="color:#000000;"><strong>P</strong></span></th>
+			<th scope="col" style="background-color: rgb(255, 255, 255); text-align: left;"><span style="color:#000000;"><strong>S</strong></span></th>
+			<th scope="col" style="background-color: rgb(255, 255, 255); text-align: left;"><span style="color:#000000;"><strong>Cr</strong></span></th>
+			<th scope="col" style="background-color: rgb(255, 255, 255); text-align: left;"><span style="color:#000000;">Mo</span></th>
+			<th scope="col" style="background-color: rgb(255, 255, 255); text-align: left;"><span style="color:#000000;">V</span></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><strong>Typical analysis</strong></td>
+			<td>0.40</td>
+			<td>1.05</td>
+			<td>0.40</td>
+			<td>0.025</td>
+			<td>0.003</td>
+			<td>5.20</td>
+			<td>1.40</td>
+			<td>1.00</td>
+		</tr>
+		<tr>
+			<td><strong>Chemical composition<br />
+			as per SEL</strong></td>
+			<td>0.35&ndash;<br />
+			0.42</td>
+			<td>0.80&ndash;<br />
+			1.20</td>
+			<td>0.25&ndash;<br />
+			0.50</td>
+			<td>&le;&nbsp;<br />
+			0.030</td>
+			<td>&le;&nbsp;<br />
+			0.025</td>
+			<td>4.80&ndash;<br />
+			5.50</td>
+			<td>1.20&ndash;<br />
+			1.50</td>
+			<td>0.85&ndash;<br />
+			1.15</td>
+		</tr>
+	</tbody>
+</table>
+&nbsp;
+
+<table border="1" cellpadding="1" cellspacing="1" style="width:100%;">
+	<tbody>
+		<tr>
+			<td><strong>Register of European<br />
+			Steels (SEL)</strong></td>
+			<td>X 40 CrMoV 5-1</td>
+		</tr>
+		<tr>
+			<td><strong>DIN EN ISO 4957</strong></td>
+			<td>X 40 CrMoV 5-1</td>
+		</tr>
+		<tr>
+			<td><strong>AFNOR</strong></td>
+			<td>X 40 CDV 5</td>
+		</tr>
+		<tr>
+			<td><strong>AISI</strong></td>
+			<td>H 13</td>
+		</tr>
+		<tr>
+			<td><strong>BS</strong></td>
+			<td>BH 13</td>
+		</tr>
+	</tbody>
+</table>
+<br />
+<span style="font-size:21px;"><strong>Characteristics</strong></span><br />
+CrMoV alloyed hot work tool steel with double V content compared to grade 2343 ISO-B. Very good tempering properties, good toughness, good hardness at high temperatures, very good compressive strength, insensitive to thermal shock. Better wear resistance than grade 2343. Good machinability in the annealed state. Can be cooled in water with limitations.<br />
+<br />
+<span style="font-size:21px;"><strong>Applications</strong></span><br />
+Extrusion tools including pipe extruders: highly stressed mould inserts, dummy blocks, extrusion<br />
+stems, die holders, stem heads; especially for profi le dies, insert and bridge type tools for compacting<br />
+light alloys, liners and line holders.<br />
+<br />
+Highly stressed plastic moulds, mould inserts with abrasive stress, as occurs when processing thermo-<br />
+setting plastics, thermoplastics and composite materials.<br />
+<br />
+Die-casting moulds and mould inserts, sliders, cores, ejectors and fi lling sleeves.<br />
+<br />
+<span style="font-size:21px;"><strong>Physical properties (reference values)</strong></span>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width:100%;">
+	<tbody>
+		<tr>
+			<td><strong>Thermal expansion<br />
+			coeffi cient (10<sup>&ndash;6</sup>/K)</strong></td>
+			<td>20&ndash;100 &deg;C<br />
+			10.5</td>
+			<td>20&ndash;250 &deg;C<br />
+			11.3</td>
+			<td>20&ndash;500 &deg;C<br />
+			12.1</td>
+		</tr>
+		<tr>
+			<td><strong>Thermal conductivity<br />
+			(W/mK)</strong></td>
+			<td>20 &deg;C<br />
+			23.0</td>
+			<td>250 &deg;C<br />
+			25.0</td>
+			<td>500 &deg;C<br />
+			27.0</td>
+		</tr>
+		<tr>
+			<td><strong>Young&rsquo;s modulus<br />
+			(GPa)</strong></td>
+			<td>20 &deg;C<br />
+			210</td>
+			<td>250 &deg;C<br />
+			195</td>
+			<td>500 &deg;C<br />
+			172</td>
+		</tr>
+	</tbody>
+</table>
+<style type="text/css">.textEditor td { border: none; border-bottom: solid 1px black; padding: 7px 0px; } .textEditor table {  max-width: 1000px; } .textEditor table tr:first-child th {border: none; border-bottom: solid 2px black  }
+</style>
+
+  
+</textarea>
+
+
+  <h3>BOHLER</h3>
+  <textarea
+    name=""
+    id=""
+    cols="50"
+    rows="10"
+  >
+  <span style="font-size:21px;"><strong>Description</strong></span><br />
+B&Ouml;HLER M303 is a corrosion resistant martensitic chromium steel, offering excellent toughness, corrosion and wear resistance. It is characterized by improved machinability and polishability.<br />
+<br />
+<span style="font-size:21px;"><strong>Property Features</strong></span>
+<ul>
+	<li>Very high toughness &amp; ductility</li>
+	<li>Good wear resistance</li>
+	<li>Very good machinabilty</li>
+	<li>Good dimensional stability</li>
+	<li>Very good polishability</li>
+	<li>Very high&nbsp;corrosion resistance</li>
+	<li>No heat treatment necessary</li>
+	<li>Pre-hardened</li>
+</ul>
+<br />
+<span style="font-size:21px;"><strong>Specification</strong></span>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width:100%;">
+	<tbody>
+		<tr>
+			<td><strong>Corrosion resistance</strong></td>
+			<td><strong>Machinability supplied</strong></td>
+			<td><strong>Polishability</strong></td>
+			<td><strong>Toughness</strong></td>
+			<td><strong>Wear resistance</strong></td>
+		</tr>
+		<tr>
+			<td>★★☆☆☆</td>
+			<td>★☆☆☆☆</td>
+			<td>★★★☆☆</td>
+			<td>★★☆☆☆</td>
+			<td>★★★★☆</td>
+		</tr>
+	</tbody>
+</table>
+<br />
+<span style="font-size:21px;"><strong>Chemical Composition</strong></span>
+
+<table border="1" cellpadding="1" cellspacing="1" style="width:100%;">
+	<tbody>
+		<tr>
+			<td style="background-color: rgb(255, 255, 255); text-align: left;"><strong><span style="color:#000000;">C</span></strong></td>
+			<td style="background-color: rgb(255, 255, 255); text-align: left;"><strong><span style="color:#000000;">Si</span></strong></td>
+			<td style="background-color: rgb(255, 255, 255); text-align: left;"><strong><span style="color:#000000;">Mn</span></strong></td>
+			<td style="background-color: rgb(255, 255, 255); text-align: left;"><strong><span style="color:#000000;">Cr</span></strong></td>
+			<td style="background-color: rgb(255, 255, 255); text-align: left;"><strong><span style="color:#000000;">Mo</span></strong></td>
+			<td style="background-color: rgb(255, 255, 255); text-align: left;"><strong><font color="#000000">Ni</font></strong></td>
+		</tr>
+		<tr>
+			<td>0.27</td>
+			<td>0.30</td>
+			<td>0.65</td>
+			<td>14.50</td>
+			<td>1.00</td>
+			<td>0.85</td>
+		</tr>
+	</tbody>
+</table>
+Chemical composition (average %)<br />
+<br />
+<span style="font-size:21px;"><strong>Applications</strong></span>
+
+<ul>
+	<li>Blow Molding</li>
+	<li>Camera lenses</li>
+	<li>Components for Displays</li>
+	<li>Comps. for Food processing and Animal Feed</li>
+	<li>Drilling Tools and Components</li>
+	<li>Electronic Industry</li>
+	<li>Extrusion</li>
+	<li>Food processing Industry</li>
+	<li>Forging (Hot / Semi-hot)</li>
+	<li>General Components for Mechanical Engineering</li>
+	<li>Hotrunner systems</li>
+	<li>Injection Molding</li>
+	<li>Lamps/Lenses for Automotive</li>
+	<li>Other Components</li>
+	<li>Packaging</li>
+	<li>Plastic Extrusion</li>
+	<li>Pumps and High Pressure Components</li>
+	<li>Screws and Barrels</li>
+	<li>Standard Parts (Molds, Plates, Pins, Punches)</li>
+	<li>Tool Holders (milling, drilling, turning &amp; chucks)</li>
+	<li>Water Power</li>
+	<li>Well Logging Tools
+	<style type="text/css">.textEditor td { border: none; border-bottom: solid 1px black; padding: 7px 0px; } .textEditor table {  max-width: 1000px; } .textEditor table tr:first-child th {border: none; border-bottom: solid 2px black  }
+	</style>
+	</li>
+</ul>
+
+  </style>
+  
+</textarea>
+  <ul>
+    <li>Chemical Composition</li>
+    <li>Characteristics</li>
+    <li>Applications</li>
+    <li>Physical properties (reference values)</li>
+  </ul>
+
+
+  <!-- 有影片的那個上架 -->
+  <!-- <textarea
+    name=""
+    id="textArea"
+    cols="30"
+    rows="10"
+  >    &lt;style type="text/css">.textEditor table {border: none; max-width: 600px} .textEditor td { border: none; border-bottom: solid 1px black; padding: 7px 0px; width: 50% } .textEditor img { max-width: 600px; } .textEditor tr:first-child td {border-bottom: solid 2px black; font-weight: 900} table ~ table { margin: 10px 0px } 
+  &lt;/style&gt;</textarea> -->
+
+
+  <!-- <textarea
+    name=""
+    id="textArea"
+    cols="30"
+    rows="10"
+  >    &lt;style type="text/css">.textEditor td { border: none; border-bottom: solid 1px black; padding: 7px 0px; } table ,
+  .footnote { width: 550px; } tr td:first-child {width: 250px; font-weight:900} table table td { border: none;
+  border-bottom: solid 1px
+  white !important; padding: 0px 0px !important }
+  &lt;/style&gt;</textarea> -->
+  <button onclick="copyStyleBoard()">Copy</button>
+
+  <br><br><br>
+  <div>
+    下面兩個工具可以把pdf檔案的頁面轉換word
+    <a href="https://www.ilovepdf.com/zh-tw/pdf_to_word">轉world_1</a>
+    <a href="https://smallpdf.com/zh-TW/pdf-converter">轉world_2</a>
+  </div>
+  <br><br>
+  <br><br>
+  <a href="https://drive.google.com/drive/u/0/folders/1poa6ROYB5R6h71benZQynSHg693AfGSx">雲端圖片</a>
+  <br><br>
+  <a href="http://en.sudong.com">http://en.sudong.com</a>
+
+
+
+
+  <script>
+    let transform_input = document.querySelector('.transform_input')
+    let title = document.querySelector('.title')
+    let link = document.querySelector('.link')
+    let img = document.querySelector('.img')
+    let type = document.querySelector('.type')
+    let seo_title = document.querySelector('.seo_title')
+    let seo_describe = document.querySelector('.seo_describe')
+    let seo_key = document.querySelector('.seo_key')
+
+
+
+    window.onload = () => {
+      console.log(localStorage.getItem('keyWord'))
+      if (localStorage.getItem('keyWord')) {
+        document.querySelector('.keyWord').value = localStorage.getItem('keyWord')
+      } else {
+        console.log('123')
+      }
+    }
+
+
+
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('transform')) {
+        let newKeyWord = localStorage.getItem('keyWord') + ' '
+
+        let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + transform_input.value.replaceAll(
+          '/', ' ')
+
+        link.value = newKeyWord.toLowerCase().replaceAll(',', '').replaceAll('°', '').replaceAll(' ', '-')
+          .replaceAll('(', '')
+          .replaceAll(')', '') + transform_input.value
+          .toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
+
+        img.value = str.replaceAll(' ', '-').toLowerCase()
+        seo_describe.value = str
+        seo_key.value = str.replaceAll(' ', ',').toLowerCase()
+
+        let strArr = str.split(' ')
+        let newStrArr = []
+        for (let str of strArr) {
+          let newStr = ''
+          newStr = str[0].toUpperCase() + str.slice(1)
+          newStrArr.push(newStr)
+        }
+
+
+        let titleWords = localStorage.getItem('keyWord').split(' ')
+        let newTitleWords = []
+
+        for (let str of titleWords) {
+          let newStr = ''
+          newStr = str[0].toUpperCase() + str.slice(1)
+          newTitleWords.push(newStr)
+        }
+
+
+
+        // title.value = newStrArr.join(' ')
+        title.value = document.querySelector('.keyWord').value.replaceAll('/', '')
+        type.value = transform_input.value
+        seo_title.value = newStrArr.join(' ')
+        let dec = document.querySelector('.dec')
+        dec.innerHTML = newStrArr.join(' ')
+      }
+
+      if (e.target.classList.contains('new')) {
+        e.target.select()
+        document.execCommand('copy')
+      }
+      if (e.target.classList.contains('save')) {
+        let keyWordInput = document.querySelector('.keyWord').value.replaceAll('/', '')
+        localStorage.setItem('keyWord', keyWordInput)
+      }
+
+
+    })
+
+    function copyStyleBoard() {
+
+      var content = document.getElementById('textArea');
+
+      content.select();
+      document.execCommand('copy');
+    }
+  </script>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+.textEditor p {
+  margin: 0px;
+}
+
+.textEditor table {
+  width: 100%;
+  max-width: 650px;
+}
+
+.textEditor table tr th {
+  background: white;
+  color: black;
+  border: none;
+}
+
+.textEditor table tr td {
+  border: none;
+  border-bottom: solid 1px black;
+  width: 100px;
+}
+
+.textEditor table tr td:first-child {
+  font-weight: 900;
+}
+
+.textEditor table table tr td {
+  border-bottom: none;
+}
+
+.textEditor table table tr th {
+  border-bottom: solid 1px black;
+}
+
+.textEditor table table tr td:last-child {
+  font-weight: 400;
+}
+
+.textEditor table table table tr td {
+  border-bottom: solid 1px black;
+}
+
+.textEditor table table table tr th {
+  border-bottom: solid 1px black;
+}
+/*# sourceMappingURL=table.css.map */
