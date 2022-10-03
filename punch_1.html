@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  table,
+  td,
+  th {
+    border: solid 1px;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 5px;
+  }
+</style>
+
+<body>
+  <div id="app">
+    <textarea name="" id="" cols="100" rows="3">{{styleStr}}</textarea>
+    <table>
+      <thead>
+        <tr>
+          <td colspan="3" rowspan="1">Code No.</td>
+          <td rowspan="2">d</td>
+          <td rowspan="2">D</td>
+          <td rowspan="2">Wire<br />
+            diameter</td>
+          <td rowspan="2">Solid<br />
+            height</td>
+          <td rowspan="2">F<br />
+            max</td>
+          <td colspan="2" rowspan="2">N｛kgf｝<br />
+            max</td>
+          <td colspan="2" rowspan="1">Spring constant</td>
+          <td rowspan="2">@/P<br />
+            （1～9P）</td>
+        </tr>
+        <tr>
+          <td>Code</td>
+          <td>D</td>
+          <td>L</td>
+          <td colspan="2" rowspan="1">N/mm｛kgf｝</td>
+        </tr>
+      </thead>
+      <tbody v-for="(tr,a) in resultTrTdSplite">
+        <tr v-for="(td,index) in tr">
+          <td :rowspan="tr.length" v-if="index === 0">{{tr[0][0]}}</td>
+          <td v-if="index !== 0" v-for="(data) in td">{{data}}</td>
+        </tr>
+      </tbody>
+      <!-- <tbody>
+        <tr>
+          <td colspan="3">&nbsp;</td>
+          <td colspan="4">Operation frequency</td>
+          <td colspan="2">1 million times</td>
+          <td colspan="2">500,000 times</td>
+          <td colspan="2">300,000 times</td>
+          <td>&nbsp</td>
+        </tr>
+      </tbody> -->
+    </table>
+  </div>
+
+  <script script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const {
+      createApp
+    } = Vue
+
+    // str = ``
+    // str = ``
+    // str = ``
+    // str = ``
+    str = `WWP 
+8 100 8.5ormore 11.5orless 0.9 23 70 21.3 {2.2} 0.30 {0.031} 150
+8 125 8.5ormore 11.5orless 0.9 28 87.5 24.0 {2.5} 0.27 {0.028} 230
+8 150 8.5ormore 11.5orless 0.9 33 105 23.7 {2.4} 0.23 {0.023} 290
+8 175 8.5ormore 11.5orless 0.9 40 122.5 21.6 {2.2} 0.18 {0.018} 360
+8 200 8.5ormore 11.5orless 0.9 46 140 22.0 {2.2} 0.16 {0.016} 440
+8 250 8.5ormore 11.5orless 0.9 55 175 20.6 {2.1} 0.12 {0.012} 590
+8 300 8.5ormore 11.5orless 0.9 71 210 20.6 {2.1} 0.10 {0.010} 750
+8 500 8.5ormore 11.5orless 0.9 118 350 20.6 {2.1} 0.06 {0.006} 1,110;
+10 100 10.5ormore 13.5orless 1.0 23 70 26.1 {2.7} 0.37 {0.038} 160
+10 125 10.5ormore 13.5orless 1.0 30 87.5 24.0 {2.5} 0.27 {0.028} 240
+10 150 10.5ormore 13.5orless 1.0 35 105 24.7 {2.5} 0.24 {0.024} 300
+10 175 10.5ormore 13.5orless 1.0 40 122.5 24.0 {2.5} 0.20 {0.020} 370
+10 200 10.5ormore 13.5orless 1.0 45 140 24.7 {2.5} 0.18 {0.018} 450
+10 250 10.5ormore 13.5orless 1.0 56 175 25.7 {2.6} 0.15 {0.015} 610
+10 300 10.5ormore 13.5orless 1.0 64 210 24.7 {2.5} 0.12 {0.012} 780
+10 500 10.5ormore 13.5orless 1.0 106 350 27.5 {2.8} 0.08 {0.008} 1,150;
+13 100 13.5ormore 17orless 1.2 17 70 41.2 {4.2} 0.59 {0.060} 170
+13 125 13.5ormore 17orless 1.2 22 87.5 36.9 {3.8} 0.42 {0.043} 250
+13 150 13.5ormore 17orless 1.2 26 105 33.0 {3.4} 0.31 {0.032} 310
+13 175 13.5ormore 17orless 1.2 34 122.5 30.0 {3.1} 0.25 {0.025} 390
+13 200 13.5ormore 17orless 1.2 37 140 31.6 {3.2} 0.23 {0.023} 480
+13 250 13.5ormore 17orless 1.2 42 175 32.6 {3.3} 0.19 {0.019} 660
+13 300 13.5ormore 17orless 1.2 53 210 30.9 {3.2} 0.15 {0.015} 840
+13 500 13.5ormore 17orless 1.2 80 350 34.3 {3.5} 0.10 {0.010} 1,200;
+16 100 16.5ormore 21orless 1.4 18.9 70 37.8 {3.9} 0.54 {0.055} 250
+16 125 16.5ormore 21orless 1.4 22.4 87.5 38.5 {3.9} 0.44 {0.045} 350
+16 150 16.5ormore 21orless 1.4 25.9 105 38.9 {3.9} 0.37 {0.038} 500
+16 175 16.5ormore 21orless 1.4 29.4 122.5 38.0 {3.9} 0.31 {0.032} 600
+16 200 16.5ormore 21orless 1.4 33.6 140 37.8 {3.9} 0.27 {0.028} 650
+16 250 16.5ormore 21orless 1.4 42 175 38.5 {3.9} 0.22 {0.022} 750
+16 300 16.5ormore 21orless 1.4 46.2 210 39.9 {4.0} 0.19 {0.019} 800
+16 500 16.5ormore 21orless 1.4 79.8 350 38.5 {3.9} 0.11 {0.011} 1,150;
+20 100 20.5ormore 25.7orless 1.6 16.8 70 48.3 {4.9} 0.69 {0.070} 380
+20 125 20.5ormore 25.7orless 1.6 19.2 87.5 49.0 {5.0} 0.56 {0.057} 530
+20 150 20.5ormore 25.7orless 1.6 22.4 105 48.3 {4.9} 0.46 {0.047} 740
+20 175 20.5ormore 25.7orless 1.6 25.6 122.5 47.7 {4.9} 0.39 {0.040} 880
+20 200 20.5ormore 25.7orless 1.6 28.8 140 47.6 {4.9} 0.34 {0.035} 1,030
+20 250 20.5ormore 25.7orless 1.6 35.2 175 47.2 {4.9} 0.27 {0.028} 1,100
+20 300 20.5ormore 25.7orless 1.6 41.6 210 48.3 {4.8} 0.23 {0.023} 1,200
+20 500 20.5ormore 25.7orless 1.6 65.6 350 49.0 {4.9} 0.14 {0.014} 1,700`
+
+
+
+    this.trSplit = this.str.split('\n')
+    this.trSplit = this.str.split('\n')
+    this.trLength = this.str.split('\n').length
+    this.blockSplit = this.str.split(';')
+
+    createApp({
+      data() {
+        return {
+          str,
+          trSplit,
+          trLength,
+          blockSplit,
+          tdSplit: [],
+          tdLength: '',
+          trBlockLength: [],
+          trTdSplite: [],
+          resultTrTdSplite: [],
+          styleStr: `<style type="text/css">.textEditor table {width: 100%; min-width: 800px} .textEditor table tr td {text-align: center; vertical-align: middle;} </style>`
+        }
+      },
+      mounted() {
+        this.blockSplit.forEach(arr => {
+          arr.split('\n')
+          this.tdSplit.push(arr.split('\n'))
+          this.trBlockLength.push(arr.split('\n').length - 1)
+        });
+        // splice(n, 1)
+        // console.log(this.tdSplit)
+        this.tdSplit.forEach(arr => {
+          if (arr[0] === '') {
+            arr.splice(0, 1)
+          }
+          arr.forEach(arr => {
+            this.trTdSplite.push(arr.split(' '))
+          })
+        })
+
+        this.tdLength = this.tdSplit[0][2].split(' ').length
+
+
+        let newArr = []
+        blockSplit.forEach(arr => {
+          newArr.push(arr.split('\n'))
+        })
+
+
+        newArr.forEach(arr => {
+          if (arr[0] === '') {
+            arr.splice(0, 1)
+          }
+
+          let sliceNum = arr.length
+          arr.forEach(test => {
+            // console.log(sliceNum)
+            arr.push(test.split(' '))
+          })
+          arr.splice(0, sliceNum)
+        });
+
+        this.resultTrTdSplite = newArr
+        console.log(this.resultTrTdSplite)
+
+
+      }
+    }).mount('#app')
+  </script>
+
+</body>
+
+</html>

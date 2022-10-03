@@ -77,8 +77,10 @@
   <!-- <h3>Hasco</h3> -->
   <input type="text" class="new" value="omron">
   <br>
-  <textarea name="" id="textArea" cols="30" rows="4">&lt;style type="text/css">.textEditor table {width: 100%; max-width: 650px} .textEditor img { max-width: 600px; } .textEditor th { background: white; color: black; border: none; font-weight: 700; border-bottom: solid 1px black; text-align: left; width: 120px} .textEditor td { border: none; border-bottom: solid 1px black }
-  &lt;/style&gt;</textarea>
+  <textarea name="" id="textArea" cols="30" rows="4">
+  </textarea>
+  <!-- <textarea name="" id="textArea" cols="30" rows="4">&lt;style type="text/css">.textEditor table {width: 100%; max-width: 650px} .textEditor img { max-width: 600px; } .textEditor th { background: white; color: black; border: none; font-weight: 700; border-bottom: solid 1px black; text-align: left; width: 120px} .textEditor td { border: none; border-bottom: solid 1px black }
+  &lt;/style&gt;</textarea> -->
 
   <ul>
     <li>Actuator：Panel mount roller plunger</li>
@@ -141,7 +143,7 @@
     let seo_title = document.querySelector('.seo_title')
     let seo_describe = document.querySelector('.seo_describe')
     let seo_key = document.querySelector('.seo_key')
-
+    var content = document.getElementById('textArea');
 
 
     window.onload = () => {
@@ -168,6 +170,14 @@
         seo_describe.value = str
         seo_key.value = str.replaceAll(' ', ',').toLowerCase()
 
+
+        let modelPart = transform_input.value.split(' ')
+
+
+        content.value = `Model No. ${modelPart[0]}
+Part No. ${modelPart[1]}
+        `
+
         let strArr = str.split(' ')
         let newStrArr = []
         for (let str of strArr) {
@@ -189,11 +199,12 @@
         link.value = newStrArr.join('-')
 
         // title.value = newStrArr.join(' ')
-        title.value = document.querySelector('.keyWord').value + " " + transform_input.value
+        title.value = document.querySelector('.keyWord').value
         type.value = transform_input.value
         seo_title.value = newStrArr.join(' ')
         let dec = document.querySelector('.dec')
         dec.innerHTML = newStrArr.join(' ')
+
       }
 
       if (e.target.classList.contains('new')) {

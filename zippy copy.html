@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nippy</title>
+</head>
+
+<body>
+  <h3>Nippy 翻譯</h3>
+  <textarea class="transferData" name="" id="" cols="30" rows="20" style="width: 100%;"></textarea>
+  <button style="margin: 10px 0px;" class="transfer">轉 換</button>
+  <textarea class="showArea" name="" id="" cols="30" rows="20" style="width: 100%;"></textarea>
+  <div class="displayHtml"></div>
+  <img class="testimg" src="" alt="">
+
+
+
+  <script>
+    let transferBtn = document.querySelector('.transfer')
+    let transferData = document.querySelector('.transferData')
+    let showArea = document.querySelector('.showArea')
+    let displayHtml = document.querySelector('.displayHtml')
+
+    transferBtn.addEventListener('click', () => {
+      displayHtml.innerHTML = transferData.value
+
+      let title = document.getElementById('hllevel2').innerText.replaceAll('(', ' ').replaceAll(')', ' ')
+      let type = document.getElementById('hllevel3').innerText.replaceAll('(', ' ').replaceAll(')', '')
+
+      let specificationsTitle = document.getElementById('LB_title_Specifications').innerText
+      let specificationsText = document.getElementById('LB_Specifications').innerHTML
+
+      let ratingTitle = document.getElementById('LB_title_Rating').innerText
+      let ratingText = document.getElementById('LB_Rating').innerHTML
+
+      let applicationTitle = document.getElementById('LB_title_Application').innerText
+      let applicationText = document.getElementById('LB_Application').outerHTML
+
+      let dimensionsTitle = document.getElementById('LB_title_ps_DimensionsDescPic').innerText
+      let dimensionsImg = document.getElementById('IMG_ps_DimensionPic')
+
+      let orderInformationTitle = document.getElementById('LB_title_ps_OrderInformationPic').innerText
+      let orderInformationImg = document.getElementById('IMG_ps_OrderInformationPic')
+
+      let terminalTypesTitle = document.getElementById('LB_title_ps_TerminalTypesPic').innerText
+      let terminalTypesImg = document.getElementById('IMG_ps_TerminalTypesPic')
+
+      let opCharacterTitle = document.getElementById('LB_title_ps_OpCharacterPic').innerText
+      let opCharacterImg = document.getElementById('IMG_ps_OpCharacterPic')
+
+      let configurationTitle = document.getElementById('LB_title_ps_ConfigurationPic').innerText
+      let configurationImg = document.getElementById('IMG_ps_ConfigurationPic')
+
+      let newStr = (title + type).split(' ')
+      let newStrArr = []
+      for (let str of newStr) {
+        let newStr = ''
+        newStr = str[0].toUpperCase() + str.slice(1)
+        newStrArr.push(newStr)
+      }
+
+
+      function downFile(imgsrc, name) { //下载图片地址和图片名
+        let image = new Image();
+        // 解决跨域 Canvas 污染问题
+        image.setAttribute("crossOrigin", "anonymous");
+        image.onload = function () {
+          let canvas = document.createElement("canvas");
+          canvas.width = image.width;
+          canvas.height = image.height;
+          let context = canvas.getContext("2d");
+          context.drawImage(image, 0, 0, image.width, image.height);
+          let url = canvas.toDataURL("image/png"); //得到图片的base64编码数据
+          let a = document.createElement("a"); // 生成一个a元素
+          let event = new MouseEvent("click"); // 创建一个单击事件
+          a.download = name || "photo"; // 设置图片名称
+          a.href = url; // 将生成的URL设置为a.href属性
+          a.dispatchEvent(event); // 触发a的单击事件
+        };
+        image.src = imgsrc;
+      }
+
+      let dimensionsImgStr = ''
+      dimensionsImgStr = dimensionsImg.src.replaceAll('http://127.0.0.1:3308', 'http://www.zippy.com')
+      // 下載
+      downFile(`${dimensionsImgStr}`,
+        `test`
+      )
+
+      let titleArr = transferData.value.match(/<span id="LB_title_(.*?)<\/span>/gm)
+
+      // <span id="LB_title_Specifications" style="color:#FF9900;">SPECIFICATIONS</span>
+
+      titleArr.forEach(e => {
+        console.log(e.match(/style="color:#FF9900;">(.*?)<\/span>/)[1])
+      });
+
+
+      let describe = `<div style="font-size: 21px;font-weight: 900">${specificationsTitle}</div>
+      ${specificationsText}
+      <br>
+      <div style="font-size: 21px;font-weight: 900">${ratingTitle}</div>
+      ${ratingText}
+      <br><br>
+      <div style="font-size: 21px;font-weight: 900">${applicationTitle}</div>
+      ${applicationText}
+      <br><br>
+      <div style="font-size: 21px;font-weight: 900">${dimensionsTitle}</div>
+      <br>
+      <div style="font-size: 21px;font-weight: 900">${orderInformationTitle}</div>
+      <br>
+      <div style="font-size: 21px;font-weight: 900">${terminalTypesTitle}</div>
+      <br>
+      <div style="font-size: 21px;font-weight: 900">${configurationTitle}</div>
+      <br>
+      `
+
+      let dataValue = `
+        javascript: 
+        javascript: void(
+        push_data.data_title.value = "${title + type}",
+        push_data.data_blink.value = "${newStrArr.join('-')}",
+        push_data.data_no.value = "${type}",
+        push_data.data_meta_description.value = "${newStrArr.join(' ')}",
+        push_data.data_meta_title.value = "${newStrArr.join(' ')}",
+        push_data.data_meta_keyword.value = "${newStrArr.join(',')}",
+
+        CKEDITOR.instances['data_spec_en'].setData('<div style="font-size: 21px;">${type}</div>'),
+        CKEDITOR.instances['data_exp_en'].setData('${describe}')
+        )
+      `
+
+
+
+      showArea.value = dataValue
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<style>
+  table,
+  td,
+  th {
+    border: solid 1px;
+    border-collapse: collapse;
+    text-align: center;
+    padding: 5px;
+  }
+</style>
+
+<body>
+  <div id="app">
+    <textarea name="" id="" cols="100" rows="3">{{styleStr}}</textarea>
+    <table>
+      <thead>
+        <tr>
+          <td colspan="3" rowspan="1">Code No.</td>
+          <td rowspan="2">d</td>
+          <td rowspan="2">Solid<br />
+            height</td>
+          <td rowspan="2">F<br />
+            max</td>
+          <td rowspan="2">N{kgf}<br />
+            max</td>
+          <td rowspan="2">@/P<br />
+            (1~9P)</td>
+        </tr>
+        <tr>
+          <td>Code</td>
+          <td>D</td>
+          <td>L</td>
+        </tr>
+      </thead>
+      <tbody v-for="tr in resultTrTdSplite">
+        <tr v-for="(td,index) in tr">
+          <td :rowspan="tr.length" v-if="index === 0">{{tr[0][0]}}</td>
+          <td :rowspan="tr.length" v-if="index === 1">{{tr[0][1]}}</td>
+          <td v-for="data in td" v-if="index !== 0">{{data}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script>
+    const {
+      createApp
+    } = Vue
+
+    // str = ``
+    // str = ``
+    // str = ``
+    // str = ``
+    // str = ``
+    // str = ``
+    str = `SSWM 16 8 400.1{40.8} 450.1{45.9} 500.1{51.0}
+20 78.5 {8.01} 13.1 5.1 5.8 6.4 145
+25 62.8 {6.41} 15.7 6.4 7.2 8.0 145
+30 52.4 {5.34} 18.8 7.7 8.6 9.6 155
+35 44.9 {4.58} 21.9 9.0 10.1 11.2 160
+40 39.3 {4.01} 25.0 10.2 11.5 12.8 180
+45 34.9 {3.56} 28.2 11.5 13.0 14.4 185
+50 31.4 {3.21} 31.3 12.8 14.4 16.0 195
+55 28.6 {2.91} 34.4 14.1 15.8 17.6 215
+60 26.2 {2.67} 37.6 15.4 17.3 19.2 225
+65 24.2 {2.47} 40.7 16.6 18.7 20.8 235
+70 22.4 {2.29} 43.8 17.9 20.2 22.4 250
+75 20.9 {2.14} 47.0 19.2 21.6 24.0 260
+80 19.6 {2.00} 50.1 20.5 23.0 25.6 275
+90 17.5 {1.78} 56.3 23.0 25.9 28.8 285
+100 15.7 {1.60} 62.6 25.6 28.8 32.0 305;
+SSWM 18 9 509.9{52.0} 573.7{58.5} 637.4{65.0}
+20 99.6 {10.16} 13.1 5.1 5.8 6.4 155
+25 79.7 {8.13} 15.7 6.4 7.2 8.0 155
+30 66.4 {6.78} 18.8 7.7 8.6 9.6 160
+35 56.9 {5.81} 21.9 9.0 10.1 11.2 180
+40 49.8 {5.08} 25.0 10.2 11.5 12.8 185
+45 44.3 {4.52} 28.2 11.5 13.0 14.4 195
+50 39.8 {4.07} 31.3 12.8 14.4 16.0 215
+55 36.2 {3.70} 34.4 14.1 15.8 17.6 225
+60 33.2 {3.39} 37.6 15.4 17.3 19.2 235
+65 30.6 {3.13} 40.7 16.6 18.7 20.8 250
+70 28.5 {2.90} 43.8 17.9 20.2 22.4 260
+75 26.6 {2.71} 47.0 19.2 21.6 24.0 275
+80 24.9 {2.54} 50.1 20.5 23.0 25.6 285
+90 22.1 {2.26} 56.3 23.0 25.9 28.8 315
+100 19.9 {2.03} 62.6 25.6 28.8 32.0 335;
+SSWM 20 10 627.6{64.0} 706.1{72.0} 784.5{80.0}
+20 122.6 {12.51} 13.1 5.1 5.8 6.4 155
+25 98.1 {10.01} 15.7 6.4 7.2 8.0 155
+30 81.7 {8.34} 18.8 7.7 8.6 9.6 160
+35 70.0 {7.15} 21.9 9.0 10.1 11.2 180
+40 61.3 {6.25} 25.0 10.2 11.5 12.8 185
+45 54.5 {5.56} 28.2 11.5 13.0 14.4 195
+50 49.0 {5.00} 31.3 12.8 14.4 16.0 215
+55 44.6 {4.55} 34.4 14.1 15.8 17.6 225
+60 40.9 {4.17} 37.6 15.4 17.3 19.2 235
+65 37.7 {3.85} 40.7 16.6 18.7 20.8 250
+70 35.0 {3.57} 43.8 17.9 20.2 22.4 260
+75 32.7 {3.34} 47.0 19.2 21.6 24.0 275
+80 30.6 {3.13} 50.1 20.5 23.0 25.6 285
+90 27.2 {2.78} 56.3 23.0 25.9 28.8 315
+100 24.5 {2.50} 62.6 25.6 28.8 32.0 335
+125 19.6 {2.00} 78.2 32.0 36.0 40.0 365
+150 16.3 {1.67} 93.9 38.4 43.2 48.0 415;
+SSWM 22 11 761.0{77.6} 856.1{87.3} 951.2{97.0}
+25 119.0 {12.14} 15.7 6.4 7.2 8.0 160
+30 99.1 {10.12} 18.8 7.7 8.6 9.6 170
+35 85.0 {8.67} 21.9 9.0 10.1 11.2 180
+40 74.4 {7.59} 25.0 10.2 11.5 12.8 185
+45 66.1 {6.74} 28.2 11.5 13.0 14.4 195
+50 59.5 {6.07} 31.3 12.8 14.4 16.0 195
+55 54.1 {5.52} 34.4 14.1 15.8 17.6 205
+60 49.6 {5.06} 37.6 15.4 17.3 19.2 215
+65 45.8 {4.67} 40.7 16.6 18.7 20.8 225
+70 42.5 {4.34} 43.8 17.9 20.2 22.4 235
+75 39.7 {4.05} 47.0 19.2 21.6 24.0 240
+80 37.2 {3.79} 50.1 20.5 23.0 25.6 250
+90 33.1 {3.37} 56.3 23.0 25.9 28.8 270
+100 29.7 {3.03} 62.6 25.6 28.8 32.0 275
+125 23.8 {2.43} 78.2 32.0 36.0 40.0 325
+150 19.8 {2.02} 93.9 38.4 43.2 48.0 365`
+
+
+
+
+
+
+    this.trSplit = this.str.split('\n')
+    this.trSplit = this.str.split('\n')
+    this.trLength = this.str.split('\n').length
+    this.blockSplit = this.str.split(',')
+
+    createApp({
+      data() {
+        return {
+          str,
+          trSplit,
+          trLength,
+          blockSplit,
+          tdSplit: [],
+          tdLength: '',
+          trBlockLength: [],
+          trTdSplite: [],
+          resultTrTdSplite: [],
+          styleStr: `<style type="text/css">.textEditor table {width: 400px} .textEditor table tr td {text-align: center; vertical-align: middle;} </style>`
+        }
+      },
+      mounted() {
+        this.blockSplit.forEach(arr => {
+          arr.split('\n')
+          this.tdSplit.push(arr.split('\n'))
+          this.trBlockLength.push(arr.split('\n').length - 1)
+        });
+        // splice(n, 1)
+        // console.log(this.tdSplit)
+        this.tdSplit.forEach(arr => {
+          if (arr[0] === '') {
+            arr.splice(0, 1)
+          }
+          arr.forEach(arr => {
+            this.trTdSplite.push(arr.split(' '))
+          })
+        })
+
+        this.tdLength = this.tdSplit[0][2].split(' ').length
+
+
+        let newArr = []
+        blockSplit.forEach(arr => {
+          newArr.push(arr.split('\n'))
+        })
+
+
+        newArr.forEach(arr => {
+          if (arr[0] === '') {
+            arr.splice(0, 1)
+          }
+
+          let sliceNum = arr.length
+          arr.forEach(test => {
+            // console.log(sliceNum)
+            arr.push(test.split(' '))
+          })
+          arr.splice(0, sliceNum)
+        });
+
+        this.resultTrTdSplite = newArr
+        console.log(this.resultTrTdSplite[0][0][1])
+
+
+      }
+    }).mount('#app')
+  </script>
+
+</body>
+
+</html>

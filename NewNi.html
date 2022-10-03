@@ -62,7 +62,12 @@
   </div>
   型號
   <input class="transform_input" type="text"> <button class="transform">轉換</button>
+  <hr>
+
+  <textarea class="allInfo" style="width: 100%;" name="" id="" cols="30" rows="30"></textarea>
   <br><br>
+  <div>圖片名字：<input class="img new" type="text"> <span>Ex: nordson-efd-performus-x-dispenser</span></div>
+  <hr>
   <div>標題：<input class="title new" type="text"> <span>Ex: Nordson EFD Performus X Dispenser</span></div>
   <div>自訂網址：<input class="link new" type="text"> <span>Ex: nordson-efd-performus-x-dispenser</span></div>
   <div>型號：<input class="type new" type="text"> <span>Ex: Ex: Nordson EFD Performus X</span></div>
@@ -72,13 +77,13 @@
   <div>SEO關鍵字：<input class="seo_key new" type="text"> <span>Ex:
       nordson,efd,performus,x,dispenser,smt,pcb,assembly</span>
   </div>
-  <hr>
-  <div>圖片名字：<input class="img new" type="text"> <span>Ex: nordson-efd-performus-x-dispenser</span></div>
   <!-- <h3>Hasco</h3> -->
   <input type="text" class="new" value="omron">
   <br>
-  <textarea name="" id="textArea" cols="30" rows="4">&lt;style type="text/css">.textEditor table {width: 100%; max-width: 650px} .textEditor img { max-width: 600px; } .textEditor th { background: white; color: black; border: none; font-weight: 700; border-bottom: solid 1px black; text-align: left; width: 120px} .textEditor td { border: none; border-bottom: solid 1px black }
-  &lt;/style&gt;</textarea>
+  <textarea name="" id="textArea" cols="30" rows="4">
+  </textarea>
+  <!-- <textarea name="" id="textArea" cols="30" rows="4">&lt;style type="text/css">.textEditor table {width: 100%; max-width: 650px} .textEditor img { max-width: 600px; } .textEditor th { background: white; color: black; border: none; font-weight: 700; border-bottom: solid 1px black; text-align: left; width: 120px} .textEditor td { border: none; border-bottom: solid 1px black }
+  &lt;/style&gt;</textarea> -->
 
   <ul>
     <li>Actuator：Panel mount roller plunger</li>
@@ -95,26 +100,6 @@
   <h4>Applicable load diagram</h4>
 
 
-  <!-- 有影片的那個上架 -->
-  <!-- <textarea
-    name=""
-    id="textArea"
-    cols="30"
-    rows="10"
-  >    &lt;style type="text/css">.textEditor table {border: none; max-width: 600px} .textEditor td { border: none; border-bottom: solid 1px black; padding: 7px 0px; width: 50% } .textEditor img { max-width: 600px; } .textEditor tr:first-child td {border-bottom: solid 2px black; font-weight: 900} table ~ table { margin: 10px 0px } 
-  &lt;/style&gt;</textarea> -->
-
-
-  <!-- <textarea
-    name=""
-    id="textArea"
-    cols="30"
-    rows="10"
-  >    &lt;style type="text/css">.textEditor td { border: none; border-bottom: solid 1px black; padding: 7px 0px; } table ,
-  .footnote { width: 550px; } tr td:first-child {width: 250px; font-weight:900} table table td { border: none;
-  border-bottom: solid 1px
-  white !important; padding: 0px 0px !important }
-  &lt;/style&gt;</textarea> -->
   <button onclick="copyStyleBoard()">Copy</button>
 
   <br><br><br>
@@ -141,7 +126,8 @@
     let seo_title = document.querySelector('.seo_title')
     let seo_describe = document.querySelector('.seo_describe')
     let seo_key = document.querySelector('.seo_key')
-
+    var content = document.getElementById('textArea');
+    var allInfo = document.querySelector('.allInfo');
 
 
     window.onload = () => {
@@ -168,6 +154,14 @@
         seo_describe.value = str
         seo_key.value = str.replaceAll(' ', ',').toLowerCase()
 
+
+        let modelPart = transform_input.value.split(' ')
+
+
+        content.value = `Model No. ${modelPart[0]}
+Part No. ${modelPart[1]}
+        `
+
         let strArr = str.split(' ')
         let newStrArr = []
         for (let str of strArr) {
@@ -189,12 +183,34 @@
         link.value = newStrArr.join('-')
 
         // title.value = newStrArr.join(' ')
-        title.value = document.querySelector('.keyWord').value + " " + transform_input.value
+        title.value = document.querySelector('.keyWord').value
         type.value = transform_input.value
         seo_title.value = newStrArr.join(' ')
-        let dec = document.querySelector('.dec')
-        dec.innerHTML = newStrArr.join(' ')
+
+
+
+        let dataValue = `
+        javascript: 
+        javascript: void(
+        push_data.data_title.value = "${document.querySelector('.keyWord').value}",
+        push_data.data_blink.value = "${newStrArr.join('-')}",
+        push_data.data_no.value = "${transform_input.value}",
+        push_data.data_meta_description.value = "${str}",
+        push_data.data_meta_title.value = "${newStrArr.join(' ')}",
+        push_data.data_meta_keyword.value = "${newStrArr.join(',')}",
+
+        CKEDITOR.instances['data_spec_en'].setData('<div style="font-size: 21px">Model No. ${modelPart[0]}<br>
+Part No. ${modelPart[1]}</div><br><br>')
+        )
+        `
+
+
+        allInfo.value = dataValue
+
       }
+
+
+
 
       if (e.target.classList.contains('new')) {
         e.target.select()

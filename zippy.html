@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nippy</title>
+</head>
+
+<body>
+  <h3>Nippy 翻譯</h3>
+  <div>DIMENSIONS</div>
+  <div>style="max-width: 500px"</div>
+  <br>
+  <textarea class="transferData" name="" id="" cols="30" rows="10" style="width: 100%;"></textarea>
+  <button style="margin: 10px 0px;" class="transfer">轉 換</button>
+  <textarea class="showArea" name="" id="" cols="30" rows="20" style="width: 100%;"></textarea>
+  <div class="displayHtml"></div>
+  <img class="testimg" src="" alt="">
+
+
+
+  <script>
+    let transferBtn = document.querySelector('.transfer')
+    let transferData = document.querySelector('.transferData')
+    let showArea = document.querySelector('.showArea')
+    let displayHtml = document.querySelector('.displayHtml')
+
+    transferBtn.addEventListener('click', () => {
+      displayHtml.innerHTML = transferData.value
+
+      let title = document.getElementById('hllevel2').innerText.replaceAll('(', ' ').replaceAll(')', ' ')
+      let type = document.getElementById('hllevel3').innerText.replaceAll('(', '').replaceAll(')', '')
+
+      console.log(title)
+      console.log(type)
+
+      // title type整理
+      let newStr = (title + " " + type).split(' ')
+      let newStrArr = []
+      for (let str of newStr) {
+        let newStr = ''
+        newStr = str[0].toUpperCase() + str.slice(1)
+        newStrArr.push(newStr)
+      }
+
+      // 取得title
+      let getTitleArr = transferData.value.match(/<span id="LB_title_(.*?)<\/span>/gm)
+      let titleArr = []
+      getTitleArr.forEach(e => {
+        titleArr.push(e.match(/style="color:#FF9900;">(.*?)<\/span>/)[1])
+      });
+
+      //取得 id
+      // id="LB_Specifications"
+      let getIdArr = transferData.value.match(/<span id="LB_title_(.*?)" style="color:#FF9900;">/gm)
+      let idArr = []
+      getIdArr.forEach(e => {
+        idArr.push(e.match(/<span id="LB_title_(.*?)" style="color:#FF9900;">/)[1])
+        // console.log(e)
+      });
+
+
+      let describe = ''
+      idArr.forEach(e => {
+        let titleDom = document.getElementById(`LB_title_${e}`)
+        let elementDom = document.getElementById(`LB_${e}`)
+
+        if (elementDom !== null) {
+          describe += `<div style="font-size: 21px;font-weight: 900">${titleDom.innerText}</div>`
+          elementDom !== null ? (describe += elementDom.outerHTML + '<br><br>') : ''
+        } else {
+          describe += `<div style="font-size: 21px;font-weight: 900">${titleDom.innerText}</div><br>`
+        }
+
+      });
+
+      describe += '<style type="text/css">.textEditor img { max-width: 700px }</style>'
+
+
+      let dataValue = `
+        javascript: 
+        javascript: void(
+        push_data.data_title.value = "${title +' '+ type}",
+        push_data.data_blink.value = "${newStrArr.join('-')}",
+        push_data.data_no.value = "${type}",
+        push_data.data_meta_description.value = "${newStrArr.join(' ')}",
+        push_data.data_meta_title.value = "${newStrArr.join(' ')}",
+        push_data.data_meta_keyword.value = "${newStrArr.join(',')}",
+
+        CKEDITOR.instances['data_spec_en'].setData('<div style="font-size: 21px;">${type}</div><br>'),
+        CKEDITOR.instances['data_exp_en'].setData('${describe}')
+        )
+      `
+
+
+
+
+
+      showArea.value = dataValue
+    })
+  </script>
+</body>
+
+</html>
