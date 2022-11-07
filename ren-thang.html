@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SICK 翻譯蒟落</title>
+  <title>睿成 翻譯蒟落</title>
 </head>
 <style>
   input {
@@ -65,7 +65,7 @@
   <!-- <h3>Hasco</h3> -->
   <input type="text" class="new" value="SICK">
   <br>
-  <textarea name="" id="textArea" cols="30" rows="4">&lt;style type="text/css">.textEditor table td { border: none; border-bottom: solid 1px white !important; padding: 0px 0px !important }
+  <textarea name="" id="textArea" cols="30" rows="4">&lt;style type="text/css">.textEditor table {max-width: 650px}  .textEditor table td { border: none; border-bottom: solid 1px black !important; text-align: center; } .textEditor img {max-width: 300px}
   &lt;/style&gt;</textarea>
 
 
@@ -111,11 +111,10 @@
       if (e.target.classList.contains('transform')) {
         let newKeyWord = localStorage.getItem('keyWord').replaceAll(' / ', '/') + ' '
 
-        let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + 'SICK ' + transform_input.value.replaceAll(
+        let str = newKeyWord.replaceAll(',', '').replaceAll('°', '') + transform_input.value.replaceAll(
           '/', ' ')
-        link.value = newKeyWord.toLowerCase().replaceAll(',', '').replaceAll('°', '').replaceAll(' ', '-') +
-          'sick-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
-        img.value = 'sick-' + transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
+        // link.value = newKeyWord.toLowerCase().replaceAll(',', '').replaceAll('°', '').replaceAll(' ', '-') +
+        //   transform_input.value.toLowerCase().replaceAll('/', '-').replaceAll(' ', '-')
         seo_describe.value = str
         seo_key.value = str.replaceAll(' ', ',').toLowerCase().replaceAll('/', ',')
 
@@ -143,6 +142,9 @@
         title.value = document.querySelector('.keyWord').value
         type.value = transform_input.value
         seo_title.value = newStrArr.join(' ')
+        link.value = newStrArr.join('-')
+
+        img.value = newStrArr.join('-')
         let dec = document.querySelector('.dec')
         dec.innerHTML = newStrArr.join(' ')
       }
