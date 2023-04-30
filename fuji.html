@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FUJI</title>
+</head>
+<style>
+  label {
+    display: inline-block;
+    width: 120px !important;
+    text-align: right;
+  }
+
+  input {
+    width: 500px;
+    margin: 5px 0px;
+  }
+
+  table {
+    text-align: center;
+  }
+
+  .footnote {
+    width: 500px;
+  }
+
+  /* textEditor table thead th {
+    font-weight: 900;
+  }
+
+  textEditor table {
+    border: solid 1px black;
+  }
+
+  textEditor table tr {
+    background: wheat;
+    color: black;
+    border-bottom: solid 1px black;
+  }
+
+  textEditor tr:last-child table tr {
+    border-bottom: solid 1px white;
+  } */
+</style>
+
+<body>
+  <h1>FUJI</h1>
+  <div>
+    <label for="">型號：</label>
+    <input type="text" class="keyWord">
+    <button class="save">儲存</button>
+  </div>
+  <label for="">描述句：</label>
+  <input class="transform_input" type="text"> <button class="transform">轉換</button>
+  <br><br>
+  <div><label for="">標題：</label><input class="title new" type="text"> <span>Ex: Nordson EFD Performus X Dispenser</span>
+  </div>
+  <div><label for="">自訂網址：</label><input class="link new" type="text"> <span>Ex:
+      nordson-efd-performus-x-dispenser</span></div>
+  <div><label for="">型號：</label><input class="type new" type="text"> <span>Ex: Ex: Nordson EFD Performus X</span></div>
+  <hr>
+  <div><label for="">SEO標題：</label><input class="seo_title new" type="text"> <span>Ex: Nordson EFD Performus X
+      Dispenser</span></div>
+  <div><label for="">SEO描述語：</label><input class="seo_describe new" type="text"> <span>Ex: Nordson EFD Performus X
+      Dispenser</span></div>
+  <div><label for="">SEO關鍵字：</label><input class="seo_key new" type="text"> <span>Ex:
+      nordson,efd,performus,x,dispenser,smt,pcb,assembly</span>
+  </div>
+  <hr>
+  <div><label for="">內頁簡述：</label>
+    <input type="text" class="page-describe new"></div>
+
+  <br>
+  <div><label for="">圖片名字：</label><input class="img new" type="text"> <span>Ex: nordson-efd-performus-x-dispenser</span>
+  </div>
+  <!-- <h3>Hasco</h3> -->
+
+  <br>
+  <script>
+    let transform_input = document.querySelector('.transform_input')
+    let title = document.querySelector('.title')
+    let link = document.querySelector('.link')
+    let img = document.querySelector('.img')
+    let type = document.querySelector('.type')
+    let seo_title = document.querySelector('.seo_title')
+    let seo_describe = document.querySelector('.seo_describe')
+    let seo_key = document.querySelector('.seo_key')
+    let pageDescribe = document.querySelector('.page-describe')
+
+
+
+    window.onload = () => {
+      console.log(localStorage.getItem('keyWord'))
+      if (localStorage.getItem('keyWord')) {
+        document.querySelector('.keyWord').value = localStorage.getItem('keyWord')
+      } else {
+        console.log('123')
+      }
+    }
+
+
+
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('transform')) {
+        let newKeyWord = localStorage.getItem('keyWord') + ' '
+
+        let str = newKeyWord + transform_input.value
+        seo_key.value = str.replaceAll(' ', ',').toLowerCase()
+
+        let strArr = str.split(' ')
+        let newStrArr = []
+        for (let str of strArr) {
+          let newStr = ''
+          newStr = str[0].toUpperCase() + str.slice(1)
+          newStrArr.push(newStr)
+        }
+
+
+        let linkWords = localStorage.getItem('keyWord').split(' ')
+        let newLinkWords = []
+
+        for (let str of linkWords) {
+          let newStr = ''
+          newStr = str[0].toUpperCase() + str.slice(1)
+          newLinkWords.push(newStr)
+        }
+
+
+        let decStr = transform_input.value
+
+        let decStrArr = decStr.split(' ')
+        let newDecStrArr = []
+        for (let str of decStrArr) {
+          let newStr = ''
+          newStr = str[0].toUpperCase() + str.slice(1)
+          newDecStrArr.push(newStr)
+        }
+
+
+        title.value = document.querySelector('.keyWord').value
+        link.value = newLinkWords.join('-')
+        type.value = document.querySelector('.keyWord').value.replaceAll('Smt', 'SMT')
+        seo_title.value = newStrArr.join(' ').replaceAll('And', 'and').replaceAll('Smt', 'SMT')
+        seo_describe.value = newStrArr.join(' ').replaceAll('And', 'and').replaceAll('Smt', 'SMT')
+        img.value = newStrArr.join('-').replaceAll('And', 'and').replaceAll('Smt', 'SMT')
+        pageDescribe.value = newDecStrArr.join(' ').replaceAll('And', 'and').replaceAll('Smt', 'SMT')
+      }
+
+      if (e.target.classList.contains('new')) {
+        e.target.select()
+        document.execCommand('copy')
+      }
+      if (e.target.classList.contains('save')) {
+        let keyWordInput = document.querySelector('.keyWord').value
+        localStorage.setItem('keyWord', keyWordInput)
+      }
+
+
+    })
+
+    function copyStyleBoard() {
+
+      var content = document.getElementById('textArea');
+
+      content.select();
+      document.execCommand('copy');
+    }
+  </script>
+
+</body>
+
+</html>
